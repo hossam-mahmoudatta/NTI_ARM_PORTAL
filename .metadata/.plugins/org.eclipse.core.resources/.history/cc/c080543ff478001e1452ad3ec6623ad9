@@ -1,0 +1,29 @@
+ /******************************************************************************
+ *
+ * Module File: Common Standard - Platform Types Abstraction
+ *
+ * File Name: STD_TYPES.h
+ *
+ * Description: Datatypes for ARM
+ *
+ * Author: Hossam Mahmoud
+ *
+ *******************************************************************************/
+
+/*******************************************************************************
+ *                              							Include Libraries						                       		   *
+ *******************************************************************************/
+
+/*******************************************************************************
+ *                              						Macros Declarations	                         					  *
+ *******************************************************************************/
+
+#ifndef STD_TYPES_H
+#define STD_TYPES_H
+
+typedef unsigned char        u8 ;
+typedef unsigned short int   u16;
+typedef unsigned long  int   u32; 
+
+
+#endif

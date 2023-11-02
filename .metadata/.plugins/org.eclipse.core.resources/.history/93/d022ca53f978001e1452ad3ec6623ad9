@@ -1,0 +1,93 @@
+ /******************************************************************************
+ *
+ * Module: RCC (Reset & Clock Control)
+ *
+ * File Name: RCC_PRIVATE.h
+ *
+ * Description: Header file for the RCC Driver Registers
+ *
+ * Author: Hossam Mahmoud
+ *
+ *******************************************************************************/
+
+/*******************************************************************************
+ *                              							Include Libraries						                       		   *
+ *******************************************************************************/
+
+#ifndef RCC_PRIVATE_H
+#define RCC_PRIVATE_H
+
+#include "../LIB/STD_TYPES.h"
+#include "../LIB/BIT_MATH.h"
+
+/*******************************************************************************
+ *                              							Timer0 Registers					                   				     *
+ *******************************************************************************/
+
+typedef struct {
+	u8 HSION: 		1;		// Internal high-speed clock enable
+	u8 HSIRDY: 	1;		// Internal high-speed clock ready flag
+	u8              : 	1;		// Res
+	u8 HSITRIM: 	5;		// Internal high-speed clock trimming
+	u8 HSICAL: 	8; 	// Internal high-speed clock calibration
+	u8 HSEON: 		1;		// HSE clock enable
+	u8 HSERDY: 	1;		// External high-speed clock ready flag
+	u8 HSEBYP: 	1;		// External high-speed clock bypass
+	u8 CSSON: 		1;		// Clock security system enable
+	u8              :		4;		// Res
+	u8 PLLON:		1;		// PLL enable
+	u8 PLLRDY: 	1;		// PLL Clock Ready Flag
+	u8              : 	6;		// Waveform Generation Mode
+} RCC_CR;
+#define RCC_CR_REG      ((volatile volatilevolatileRCC_CR*) 0x40021000)			// RCC CLOCK CONTROL REGISTER
+
+typedef struct {
+	u8 SW: 		2;		// Internal high-speed clock enable
+	u8 SWS: 	2;		// Internal high-speed clock ready flag
+	u8 HPRE       : 	4;		// Res
+	u8 PPRE1: 	3;		// Internal high-speed clock trimming
+	u8 PPRE2: 	3; 	// Internal high-speed clock calibration
+	u8 ADCPRE: 	2;		// HSE clock enable
+	u8 PLLSRC: 	1;		// External high-speed clock ready flag
+	u8 PLLXTPRE: 1;		// External high-speed clock bypass
+	u8 PLLMUL: 	4;		// Clock security system enable
+	u8 USBPRE:		1;		// PLL enable
+	u8              :		1;		// Res
+	u8 MCO: 			3;		// Microcontroller clock output
+	u8              : 	5;		// Res
+} RCC_CFGR;
+#define RCC_CFGR_REG    	((volatile RCC_CFGR*)0x40021004)			// RCC CLOCK CONFIG REGISTER
+
+
+#define RCC_CIR        			*((u32*)0x40021008)			// RCC MAIN REGISTER
+#define RCC_APB2RSTR   	*((u32*)0x4002100C)			// RCC MAIN REGISTER
+#define RCC_APB1RSTR   	*((u32*)0x40021010)			// RCC MAIN REGISTER
+#define RCC_AHBENR     	*((u32*)0x40021014)			// RCC MAIN REGISTER
+#define RCC_APB2ENR    	*((u32*)0x40021018)			// RCC MAIN REGISTER
+#define RCC_APB1ENR    	*((u32*)0x4002101C)			// RCC MAIN REGISTER
+#define RCC_BDCR       		*((u32*)0x40021020)			// RCC MAIN REGISTER
+#define RCC_CSR        		*((u32*)0x40021024)			// RCC MAIN REGISTER
+
+
+/* Clock Types */
+#define RCC_HSE_CRYSTAL      0
+#define RCC_HSE_RC           1
+#define RCC_HSI              2
+#define RCC_PLL              3
+
+/* PLL Options */
+#define RCC_PLL_IN_HSI_DIV_2  0
+#define RCC_PLL_IN_HSE_DIV_2  1
+#define RCC_PLL_IN_HSE        2
+
+
+
+
+
+
+
+
+
+
+
+#endif

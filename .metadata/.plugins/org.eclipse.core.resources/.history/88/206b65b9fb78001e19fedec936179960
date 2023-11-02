@@ -1,0 +1,62 @@
+ /******************************************************************************
+ *
+ * Module: RCC (Reset & Clock Control)
+ *
+ * File Name: RCC_PRIVATE.h
+ *
+ * Description: Header file for the RCC Driver Registers
+ *
+ * Author: Hossam Mahmoud
+ *
+ *******************************************************************************/
+
+/*******************************************************************************
+ *                              							Include Libraries						                       		   *
+ *******************************************************************************/
+
+#ifndef _RCC_CONFIG_H
+#define _RCC_CONFIG_H
+
+#include "RCC_PRIVATE.h"
+
+/*******************************************************************************
+ *                              							Timer0 Registers					                   				     *
+ *******************************************************************************/
+
+/* Clock Types */
+#define RCC_HSE_CRYSTAL      0
+#define RCC_HSE_RC           1
+#define RCC_HSI              2
+#define RCC_PLL              3
+
+/* PLL Options */
+#define RCC_PLL_IN_HSI_DIV_2  0
+#define RCC_PLL_IN_HSE_DIV_2  1
+#define RCC_PLL_IN_HSE        2
+
+
+/* Options:    RCC_HSE_CRYSTAL
+               RCC_HSE_RC
+               RCC_HSI
+               RCC_PLL			   */
+#define RCC_CLOCK_TYPE    RCC_HSE_CRYSTAL
+
+
+/* Options:     RCC_PLL_IN_HSI_DIV_2
+                RCC_PLL_IN_HSE_DIV_2
+				RCC_PLL_IN_HSE      */
+/* Note: Select value only if you have PLL as input clock source */
+#if RCC_CLOCK_TYPE == RCC_PLL
+#define RCC_PLL_INPUT     RCC_PLL_IN_HSE_DIV_2
+#endif
+
+
+/* Options: 2 to 16 */
+/* Note: Select value only if you have PLL as input clock source */
+#if RCC_CLOCK_TYPE == RCC_PLL
+#define RCC_PLL_MUL_VAL   4
+#endif
+
+
+
+#endif
