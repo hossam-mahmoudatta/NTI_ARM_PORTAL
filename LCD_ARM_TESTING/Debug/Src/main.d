@@ -1,4 +1,5 @@
-Src/main.o: ../Src/main.c ../Src/../Inc/MCAL/RCC_DRIVER/RCC_INTERFACE.h \
+Src/main.o: ../Src/main.c ../Src/APP_INTERFACE.h \
+ ../Src/../Inc/MCAL/RCC_DRIVER/RCC_INTERFACE.h \
  ../Src/../Inc/MCAL/RCC_DRIVER/RCC_CONFIG.h \
  ../Src/../Inc/MCAL/RCC_DRIVER/RCC_PRIVATE.h \
  ../Src/../Inc/MCAL/RCC_DRIVER/../../LIB/BIT_MATH.h \
@@ -12,7 +13,11 @@ Src/main.o: ../Src/main.c ../Src/../Inc/MCAL/RCC_DRIVER/RCC_INTERFACE.h \
  ../Src/../Inc/MCAL/GPIO_DRIVER/GPIO_CONFIG.h \
  ../Src/../Inc/MCAL/GPIO_DRIVER/GPIO_PRIVATE.h \
  ../Src/../Inc/MCAL/GPIO_DRIVER/../../LIB/BIT_MATH.h \
- ../Src/../Inc/MCAL/GPIO_DRIVER/../../LIB/STD_TYPES.h
+ ../Src/../Inc/MCAL/GPIO_DRIVER/../../LIB/STD_TYPES.h \
+ ../Src/../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h \
+ ../Src/../Inc/HAL/LCD_DRIVER/../../LIB/BIT_MATH.h \
+ ../Src/../Inc/HAL/LCD_DRIVER/../../LIB/STD_TYPES.h
+../Src/APP_INTERFACE.h:
 ../Src/../Inc/MCAL/RCC_DRIVER/RCC_INTERFACE.h:
 ../Src/../Inc/MCAL/RCC_DRIVER/RCC_CONFIG.h:
 ../Src/../Inc/MCAL/RCC_DRIVER/RCC_PRIVATE.h:
@@ -28,3 +33,6 @@ Src/main.o: ../Src/main.c ../Src/../Inc/MCAL/RCC_DRIVER/RCC_INTERFACE.h \
 ../Src/../Inc/MCAL/GPIO_DRIVER/GPIO_PRIVATE.h:
 ../Src/../Inc/MCAL/GPIO_DRIVER/../../LIB/BIT_MATH.h:
 ../Src/../Inc/MCAL/GPIO_DRIVER/../../LIB/STD_TYPES.h:
+../Src/../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:
+../Src/../Inc/HAL/LCD_DRIVER/../../LIB/BIT_MATH.h:
+../Src/../Inc/HAL/LCD_DRIVER/../../LIB/STD_TYPES.h:

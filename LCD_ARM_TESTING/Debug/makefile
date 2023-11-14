@@ -14,6 +14,7 @@ RM := rm -rf
 -include Inc/MCAL/SYSTICK_DRIVER/subdir.mk
 -include Inc/MCAL/RCC_DRIVER/subdir.mk
 -include Inc/MCAL/GPIO_DRIVER/subdir.mk
+-include Inc/HAL/LCD_DRIVER/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)

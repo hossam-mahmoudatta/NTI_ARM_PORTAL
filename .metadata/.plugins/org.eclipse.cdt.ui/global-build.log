@@ -45,3 +45,241 @@ Finished building: LCD_ARM_TESTING.hex
 Finished building: LCD_ARM_TESTING.list
  
  
+16:23:20 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-size   LCD_ARM_TESTING.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1652	      8	   1576	   3236	    ca4	LCD_ARM_TESTING.elf
+Finished building: default.size.stdout
+ 
+16:23:24 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-size   LCD_ARM_TESTING.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1652	      8	   1576	   3236	    ca4	LCD_ARM_TESTING.elf
+Finished building: default.size.stdout
+ 
+16:59:44 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.d" -MT"Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.o"
+../Src/main.c: In function 'main':
+../Src/main.c:37:51: error: 'FuncISR' undeclared (first use in this function)
+   37 |                 SYSTICK_voidSetDelay_ms_ISR(1500, FuncISR);
+      |                                                   ^~~~~~~
+../Src/main.c:37:51: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PRIVATE.h:20,
+                 from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_CONFIG.h:20,
+                 from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_INTERFACE.h:20,
+                 from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c:17:
+../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c: In function 'SysTick_Handler':
+../Inc/MCAL/SYSTICK_DRIVER/../../LIB/BIT_MATH.h:34:49: warning: value computed is not used [-Wunused-value]
+   34 | #define GET_BIT(VAR,BIT)          ((VAR >> BIT) & 1)
+      |                                   ~~~~~~~~~~~~~~^~~~
+../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c:117:9: note: in expansion of macro 'GET_BIT'
+  117 |         GET_BIT(STK_CTRL_REG, STK_CTRL_COUNTFLAG);
+      |         ^~~~~~~
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+17:02:55 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidExecution':
+../Src/APP_PROGRAM.c:34:43: error: 'FuncISR' undeclared (first use in this function)
+   34 |         SYSTICK_voidSetDelay_ms_ISR(1500, FuncISR);
+      |                                           ^~~~~~~
+../Src/APP_PROGRAM.c:34:43: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:28: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+17:03:15 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc -o "LCD_ARM_TESTING.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\LCD_ARM_TESTING\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LCD_ARM_TESTING.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LCD_ARM_TESTING.elf
+ 
+arm-none-eabi-size   LCD_ARM_TESTING.elf 
+arm-none-eabi-objdump -h -S  LCD_ARM_TESTING.elf  > "LCD_ARM_TESTING.list"
+arm-none-eabi-objcopy  -O ihex  LCD_ARM_TESTING.elf  "LCD_ARM_TESTING.hex"
+   text	   data	    bss	    dec	    hex	filename
+   1680	      8	   1576	   3264	    cc0	LCD_ARM_TESTING.elf
+Finished building: default.size.stdout
+ 
+Finished building: LCD_ARM_TESTING.hex
+Finished building: LCD_ARM_TESTING.list
+ 
+ 
+17:03:19 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-size   LCD_ARM_TESTING.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1680	      8	   1576	   3264	    cc0	LCD_ARM_TESTING.elf
+Finished building: default.size.stdout
+ 
+17:03:31 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc -o "LCD_ARM_TESTING.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\LCD_ARM_TESTING\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LCD_ARM_TESTING.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LCD_ARM_TESTING.elf
+ 
+arm-none-eabi-size   LCD_ARM_TESTING.elf 
+arm-none-eabi-objdump -h -S  LCD_ARM_TESTING.elf  > "LCD_ARM_TESTING.list"
+arm-none-eabi-objcopy  -O ihex  LCD_ARM_TESTING.elf  "LCD_ARM_TESTING.hex"
+   text	   data	    bss	    dec	    hex	filename
+   1680	      8	   1576	   3264	    cc0	LCD_ARM_TESTING.elf
+Finished building: default.size.stdout
+ 
+Finished building: LCD_ARM_TESTING.hex
+Finished building: LCD_ARM_TESTING.list
+ 
+ 
+17:08:53 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:3:10: fatal error: main.h: No such file or directory
+    3 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+make: *** [Inc/HAL/LCD_DRIVER/subdir.mk:19: Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+17:11:12 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.d" -MT"Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.o"
+arm-none-eabi-gcc "../Inc/MCAL/RCC_DRIVER/RCC_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/MCAL/RCC_DRIVER/RCC_PROGRAM.d" -MT"Inc/MCAL/RCC_DRIVER/RCC_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/MCAL/RCC_DRIVER/RCC_PROGRAM.o"
+arm-none-eabi-gcc "../Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.d" -MT"Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.o"
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+In file included from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PRIVATE.h:20,
+                 from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_CONFIG.h:20,
+                 from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_INTERFACE.h:20,
+                 from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c:17:
+../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c: In function 'SysTick_Handler':
+../Inc/MCAL/SYSTICK_DRIVER/../../LIB/BIT_MATH.h:34:49: warning: value computed is not used [-Wunused-value]
+   34 | #define GET_BIT(VAR,BIT)          ((VAR >> BIT) & 1)
+      |                                   ~~~~~~~~~~~~~~^~~~
+../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c:117:9: note: in expansion of macro 'GET_BIT'
+  117 |         GET_BIT(STK_CTRL_REG, STK_CTRL_COUNTFLAG);
+      |         ^~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:3:10: fatal error: main.h: No such file or directory
+    3 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+make: *** [Inc/HAL/LCD_DRIVER/subdir.mk:19: Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+17:17:11 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.d" -MT"Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.o"
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidSendCommand':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:26:9: warning: implicit declaration of function 'HAL_GPIO_WritePin' [-Wimplicit-function-declaration]
+   26 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_RESET);
+      |         ^~~~~~~~~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:26:27: error: 'GPIOB' undeclared (first use in this function)
+   26 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_RESET);
+      |                           ^~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:26:27: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:26:34: error: 'GPIO_PIN_9' undeclared (first use in this function)
+   26 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_RESET);
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:26:46: error: 'GPIO_PIN_RESET' undeclared (first use in this function)
+   26 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_RESET);
+      |                                              ^~~~~~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:28:34: error: 'GPIO_PIN_10' undeclared (first use in this function)
+   28 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
+      |                                  ^~~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:31:34: error: 'GPIO_PIN_8' undeclared (first use in this function)
+   31 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, ((Copy_u8Command>>7) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:32:34: error: 'GPIO_PIN_7' undeclared (first use in this function)
+   32 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, ((Copy_u8Command>>6) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:33:34: error: 'GPIO_PIN_6' undeclared (first use in this function)
+   33 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, ((Copy_u8Command>>5) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:34:34: error: 'GPIO_PIN_5' undeclared (first use in this function)
+   34 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, ((Copy_u8Command>>4) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:35:34: error: 'GPIO_PIN_4' undeclared (first use in this function)
+   35 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, ((Copy_u8Command>>3) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:36:34: error: 'GPIO_PIN_3' undeclared (first use in this function)
+   36 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, ((Copy_u8Command>>2) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:37:34: error: 'GPIO_PIN_1' undeclared (first use in this function)
+   37 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, ((Copy_u8Command>>1) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:38:34: error: 'GPIO_PIN_0' undeclared (first use in this function)
+   38 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, ((Copy_u8Command>>0) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:40:34: error: 'GPIO_PIN_11' undeclared (first use in this function)
+   40 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_11, GPIO_PIN_SET);
+      |                                  ^~~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:40:47: error: 'GPIO_PIN_SET' undeclared (first use in this function)
+   40 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_11, GPIO_PIN_SET);
+      |                                               ^~~~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:41:9: warning: implicit declaration of function 'HAL_Delay' [-Wimplicit-function-declaration]
+   41 |         HAL_Delay(2);
+      |         ^~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'CLCD_voidSendData':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:47:27: error: 'GPIOB' undeclared (first use in this function)
+   47 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_SET);
+      |                           ^~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:47:34: error: 'GPIO_PIN_9' undeclared (first use in this function)
+   47 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_SET);
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:47:46: error: 'GPIO_PIN_SET' undeclared (first use in this function)
+   47 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_SET);
+      |                                              ^~~~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:50:34: error: 'GPIO_PIN_10' undeclared (first use in this function)
+   50 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
+      |                                  ^~~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:50:47: error: 'GPIO_PIN_RESET' undeclared (first use in this function)
+   50 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
+      |                                               ^~~~~~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:53:34: error: 'GPIO_PIN_8' undeclared (first use in this function)
+   53 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, ((Copy_u8Data>>7) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:54:34: error: 'GPIO_PIN_7' undeclared (first use in this function)
+   54 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, ((Copy_u8Data>>6) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:55:34: error: 'GPIO_PIN_6' undeclared (first use in this function)
+   55 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, ((Copy_u8Data>>5) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:56:34: error: 'GPIO_PIN_5' undeclared (first use in this function)
+   56 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, ((Copy_u8Data>>4) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:57:34: error: 'GPIO_PIN_4' undeclared (first use in this function)
+   57 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, ((Copy_u8Data>>3) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:58:34: error: 'GPIO_PIN_3' undeclared (first use in this function)
+   58 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, ((Copy_u8Data>>2) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:59:34: error: 'GPIO_PIN_1' undeclared (first use in this function)
+   59 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, ((Copy_u8Data>>1) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:60:34: error: 'GPIO_PIN_0' undeclared (first use in this function)
+   60 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, ((Copy_u8Data>>0) &0x01));
+      |                                  ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:63:34: error: 'GPIO_PIN_11' undeclared (first use in this function)
+   63 |         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_11, GPIO_PIN_SET);
+      |                                  ^~~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'CLCD_voidInit':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:74:9: warning: implicit declaration of function 'CLCD_voidSendCommand'; did you mean 'LCD_voidSendCommand'? [-Wimplicit-function-declaration]
+   74 |         CLCD_voidSendCommand(0b00111000);
+      |         ^~~~~~~~~~~~~~~~~~~~
+      |         LCD_voidSendCommand
+make: *** [Inc/HAL/LCD_DRIVER/subdir.mk:19: Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.

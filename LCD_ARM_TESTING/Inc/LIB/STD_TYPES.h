@@ -32,18 +32,26 @@
 #define LOGIC_HIGH					1 //(1u)
 #define LOGIC_LOW					0 //(0u)
 
-#define NULL_PTR					((void*)0x00)
-#define NULL						0
-typedef unsigned char				u8;          /*           0 .. 255              */
-typedef signed char           		s8;          /*        -128 .. +127             */
+#define NULL_PTR						((void*)0x00)
+#define NULL								0
+
+#define OK 			  						0
+#define NOK 		  						1
+#define NULL_POINTER  				2
+#define TIMEOUT_STATE 			3
+#define BUSY_STATE    				4
+
+typedef unsigned char					u8;          /*           0 .. 255              */
+typedef signed char           			s8;          /*        -128 .. +127             */
 typedef unsigned short				u16;         /*           0 .. 65535            */
-typedef signed short          		s16;         /*      -32768 .. +32767           */
-typedef unsigned long         		u32;         /*           0 .. 4294967295       */
+typedef signed short          			s16;         /*      -32768 .. +32767           */
+typedef unsigned long         			u32;         /*           0 .. 4294967295       */
 typedef signed long           			s32;         /* -2147483648 .. +2147483647      */
-typedef unsigned long long		u64;         /*       0 .. 18446744073709551615  */
-typedef signed long long			s64;         /* -9223372036854775808 .. 9223372036854775807 */
-typedef float									float32;
-typedef double								float64;
+typedef unsigned long long			u64;         /*       0 .. 18446744073709551615  */
+typedef signed long long				s64;         /* -9223372036854775808 .. 9223372036854775807 */
+typedef float								f32;
+typedef double								f64;
+typedef long double  					f80;
 typedef const char						cu8;
 
 #endif

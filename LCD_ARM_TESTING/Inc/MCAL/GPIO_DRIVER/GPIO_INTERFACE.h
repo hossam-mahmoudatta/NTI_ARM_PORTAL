@@ -1,25 +1,26 @@
  /******************************************************************************
  *
- * Module: RCC (Reset & Clock Control)
+ * Module: GPIO (Reset & Clock Control)
  *
- * File Name: RCC_INTERFACE.h
+ * File Name: GPIO_INTERFACE.h
  *
- * Description: Header file for the RCC Driver FUNCTION PROTOTYPES
+ * Description: Header file for the GPIO Driver FUNCTION PROTOTYPES
  *
  * Author: Hossam Mahmoud
  *
  *******************************************************************************/
 
 /*******************************************************************************
- *                              							Include Libraries						                       		   *
+ *                              					Include Libraries						                       		   *
  *******************************************************************************/
+
 #ifndef GPIO_INTERFACE_H
 #define GPIO_INTERFACE_H
 
 #include "GPIO_CONFIG.h"
 
 /*******************************************************************************
- *                              						RCC Function Prototypes					               			     *
+ *                              				GPIO Function Prototypes					               			     *
  *******************************************************************************/
 
 // Initializes the RCC Module with the necessary Configurations

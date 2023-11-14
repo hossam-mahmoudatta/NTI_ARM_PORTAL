@@ -1,10 +1,10 @@
 /******************************************************************************
  *
- * Module: RCC (Reset & Clock Control)
+ * Module: SYSTICK (SYSTEM TIMER)
  *
- * File Name: RCC_PROGRAM.c
+ * File Name: SYSTICK_PROGRAM.c
  *
- * Description: Source file for the RCC Driver
+ * Description: Source file for the SYSTICK Driver
  *
  * Author: Hossam Mahmoud
  *
