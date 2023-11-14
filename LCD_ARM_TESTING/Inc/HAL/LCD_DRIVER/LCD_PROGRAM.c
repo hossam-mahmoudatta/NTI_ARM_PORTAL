@@ -21,138 +21,152 @@
  *******************************************************************************/
 
 // Initializes and enables the LCD Module to start functionality
-void LCD_voidInit(void) {
+void LCD_voidInitialization(void) {
 	// Initialize RS Pin
-	GPIO_voidSetPinDirection(LCD_INIT_PORT, LCD_RS, PIN_OUTPUT_MODE);
+	GPIO_voidSetPinDirection(LCD_RS, LCD_INIT_PORT, PIN_OUTPUT_MODE);
 
 	// Initialize Enable Pin
-	GPIO_voidSetPinDirection(LCD_INIT_PORT, LCD_ENABLE, PIN_OUTPUT_MODE);
+	GPIO_voidSetPinDirection(LCD_ENABLE, LCD_INIT_PORT, PIN_OUTPUT_MODE);
 
 	// LCD Power On Internal Delay is 15 mS
-	_delay_ms(20);
+	delay(30);
 
 	// Setup the port and pins for the data pins inside the LCD
-	if (LCD_BIT_MODE == LCD_8_BIT) {
-		GPIO_voidSetPinDirection(PIN_0, PORT_A, OUTSPEED_10MHZ_PUSHPULL);
-		GPIO_voidSetPortDirection(LCD_DATA_PORT, PORT_OUTPUT);
+#if (LCD_BIT_MODE == LCD_8_BIT)
+		for(u8 PINx = 0 ; PINx < LCD_8_BIT ; PINx++)
+		{
+			GPIO_voidSetPinDirection(PINx, LCD_DATA_PORT, PIN_OUTPUT_MODE);
+		}
 		LCD_voidSendCommand(LCD_TWO_LINE_EIGHT_BIT);
-	}
-	else {
-		GPIO_voidSetPinDirection(LCD_DATA_PORT, LCD_DATAPIN_D4, PIN_OUTPUT);
-		GPIO_voidSetPinDirection(LCD_DATA_PORT, LCD_DATAPIN_D5, PIN_OUTPUT);
-		GPIO_voidSetPinDirection(LCD_DATA_PORT, LCD_DATAPIN_D6, PIN_OUTPUT);
-		GPIO_voidSetPinDirection(LCD_DATA_PORT, LCD_DATAPIN_D7, PIN_OUTPUT);
-
+#else
+		for(u8 PINx = 0 ; PINx < LCD_4_BIT ; PINx++)
+		{
+			GPIO_voidSetPinDirection(PINx, LCD_DATA_PORT, PIN_OUTPUT_MODE);
+		}
 
 		LCD_voidSendCommand(LCD_2LINES_FOUR_BIT_INIT1);
 		LCD_voidSendCommand(LCD_2LINES_FOUR_BIT_INIT2);
 		LCD_voidSendCommand(LCD_2LINES_5x7_DOTS);
-		//LCD_voidSendCommand(LCD_2LINES_FOUR_BIT);
-		_delay_ms(2);
-	}
+		delay(5);
+#endif
 
 	LCD_voidSendCommand(LCD_CURSOR_OFF);
-	_delay_ms(2);
+	delay(5);
 	LCD_voidSendCommand(LCD_CLEAR_DISPLAY);
-	_delay_ms(2);
-	//LCD_voidSendCommand(LCD_ENTRY_MODE);
-
+	delay(5);
 }
 
 
 // Sends a command to the LCD
 void LCD_voidSendCommand(u8 copy_u8Command) {
 	// Set RS Pin to '0'
-	GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_RS, LOGIC_LOW);
-	_delay_ms(1);
+	GPIO_voidSetPinValue(LCD_RS, LCD_INIT_PORT, GPIO_ODR_LOW);
+	delay(1);
+
 	// Set Enable Pin to '1'
-	GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, LOGIC_HIGH);
-	_delay_ms(1);
+	GPIO_voidSetPinValue(LCD_ENABLE, LCD_INIT_PORT, GPIO_ODR_HIGH);
+	delay(1);
 
 #if (LCD_BIT_MODE == LCD_8_BIT)
-		GPIO_voidSetPortValue(LCD_DATA_PORT, copy_u8Command);
-		_delay_ms(2);
+	for(u8 BITx = 0 ; BITx < LCD_8_BIT ; BITx++)
+	{
+		// Write the command bit by bit on the LCD Data Port
+		GPIO_voidSetPinValue(BITx, LCD_DATA_PORT, GET_BIT(copy_u8Command, BITx));
+	}
+	delay(2);
 
-		// Set Enable Pin to '0'
-		GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, LOGIC_LOW);
-		_delay_ms(2);
+	// Set Enable Pin to '0'
+	GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, GPIO_ODR_LOW);
+	delay(2);
 #else
-		// Inserts the command in the assigned PORT to be sent to the LCD
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D4, GET_BIT(copy_u8Command, 4));
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D5, GET_BIT(copy_u8Command, 5));
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D6, GET_BIT(copy_u8Command, 6));
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D7, GET_BIT(copy_u8Command, 7));
+	// Inserts the command in the assigned PORT to be sent to the LCD
+	for(u8 BITx = 0 ; BITx < LCD_4_BIT ; BITx++)
+	{
+		// Write the command bit by bit on the LCD Data Port FROM the 4th Bit -> 7th Bit
+		GPIO_voidSetPinValue(BITx, LCD_DATA_PORT, GET_BIT(copy_u8Command, (BITx + 4)));
+	}
+	delay(1);
 
-		_delay_ms(1);
-		// Set Enable Pin to '0'
-		GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, LOGIC_LOW);
-		_delay_ms(1);
-		// Set Enable Pin to '1'
-		GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, LOGIC_HIGH);
-		_delay_ms(1);
+	// Set Enable Pin to '0'
+	GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, GPIO_ODR_LOW);
+	delay(1);
+	// Set Enable Pin to '1'
+	GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, GPIO_ODR_HIGH);
+	delay(1);
 
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D4, GET_BIT(copy_u8Command, 0));
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D5, GET_BIT(copy_u8Command, 1));
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D6, GET_BIT(copy_u8Command, 2));
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D7, GET_BIT(copy_u8Command, 3));
+	for(u8 BITx = 0 ; BITx < LCD_4_BIT ; BITx++)
+	{
+		// Write the command bit by bit on the LCD Data Port FROM the 0th Bit -> 3th Bit
+		GPIO_voidSetPinValue(BITx, LCD_DATA_PORT, GET_BIT(copy_u8Command, BITx));
+	}
+	delay(1);
 
-		_delay_ms(1);
-		// Set Enable Pin to '0'
-		GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, LOGIC_LOW);
-		_delay_ms(1);
+	// Set Enable Pin to '0'
+	GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, GPIO_ODR_LOW);
+	delay(1);
+
 #endif
+
 }
 
 
 // Displays a character on the LCD
-void LCD_voidSendData(u8 copy_u8data) {
+void LCD_voidSendData(u8 copy_u8Data) {
 	// Set RS Pin to '1'
-	GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_RS, LOGIC_HIGH);
-	_delay_ms(1);
+	GPIO_voidSetPinValue(LCD_RS, LCD_INIT_PORT, GPIO_ODR_HIGH);
+	delay(1);
+
 	// Set Enable Pin to '1'
-	GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, LOGIC_HIGH);
-	_delay_ms(1);
+	GPIO_voidSetPinValue(LCD_ENABLE, LCD_INIT_PORT, GPIO_ODR_HIGH);
+	delay(1);
 
 #if (LCD_BIT_MODE == LCD_8_BIT)
-		GPIO_voidSetPortValue(LCD_DATA_PORT, copy_u8data);
-		_delay_ms(2);
+	for(u8 BITx = 0 ; BITx < LCD_8_BIT ; BITx++)
+	{
+		// Write the command bit by bit on the LCD Data Port
+		GPIO_voidSetPinValue(BITx, LCD_DATA_PORT, GET_BIT(copy_u8Data, BITx));
+	}
+	delay(2);
 
-		// Set Enable Pin to '0'
-		GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, LOGIC_LOW);
-		_delay_ms(2);
+	// Set Enable Pin to '0'
+	GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, GPIO_ODR_LOW);
+	delay(2);
 #else
-		// Inserts the command in the assigned PORT to be sent to the LCD
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D4, GET_BIT(copy_u8data, 4));
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D5, GET_BIT(copy_u8data, 5));
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D6, GET_BIT(copy_u8data, 6));
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D7, GET_BIT(copy_u8data, 7));
+	// Inserts the command in the assigned PORT to be sent to the LCD
+	for(u8 BITx = 0 ; BITx < LCD_4_BIT ; BITx++)
+	{
+		// Write the command bit by bit on the LCD Data Port FROM the 4th Bit -> 7th Bit
+		GPIO_voidSetPinValue(BITx, LCD_DATA_PORT, GET_BIT(copy_u8Data, (BITx + 4)));
+	}
+	delay(1);
 
-		_delay_ms(1);
-		// Set Enable Pin to '0'
-		GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, LOGIC_LOW);
-		_delay_ms(1);
-		// Set Enable Pin to '1'
-		GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, LOGIC_HIGH);
-		_delay_ms(1);
+	// Set Enable Pin to '0'
+	GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, GPIO_ODR_LOW);
+	delay(1);
+	// Set Enable Pin to '1'
+	GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, GPIO_ODR_HIGH);
+	delay(1);
 
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D4, GET_BIT(copy_u8data, 0));
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D5, GET_BIT(copy_u8data, 1));
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D6, GET_BIT(copy_u8data, 2));
-		GPIO_voidSetPinValue(LCD_DATA_PORT, LCD_DATAPIN_D7, GET_BIT(copy_u8data, 3));
+	for(u8 BITx = 0 ; BITx < LCD_4_BIT ; BITx++)
+	{
+		// Write the command bit by bit on the LCD Data Port FROM the 0th Bit -> 3th Bit
+		GPIO_voidSetPinValue(BITx, LCD_DATA_PORT, GET_BIT(copy_u8Data, BITx));
+	}
+	delay(1);
 
-		_delay_ms(1);
-		// Set Enable Pin to '0'
-		GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, LOGIC_LOW);
-		_delay_ms(1);
+	// Set Enable Pin to '0'
+	GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, GPIO_ODR_LOW);
+	delay(1);
+
 #endif
 }
 
 
 // Displays a string on the LCD
-void LCD_voidDisplayString(cu8 *str) {
+void LCD_voidDisplayString(cu8 *copy_cu8Str) {
 	u8 i = 0;
-	while(str[i] != '\0') {
-		LCD_voidSendData(str[i]);
+	while(copy_cu8Str[i] != '\0') {
+		LCD_voidSendData(copy_cu8Str[i]);
 		i++;
 	}
 }
@@ -183,12 +197,12 @@ void LCD_voidSetCursor(u8 copy_u8row, u8 copy_u8_col) {
 
 
 // LCD only understands ASCII, so this converts Int to a string
-void LCD_voidIntgerToString(u32 copy_u32data) {
+void LCD_voidIntgerToString(u32 copy_u32Data) {
 	// A string to hold the ASCII values
 	cu8 buffer[16];
 
 	// Converts data to its ASCII
-	itoa(copy_u32data, buffer, 10);
+	itoa(copy_u32Data, buffer, 10);
 
 	// Display string with the results in the buffer
 	LCD_voidDisplayString(buffer);
@@ -199,14 +213,6 @@ void LCD_voidClearScreen(void) {
 	// Clears the LCD Display
 	LCD_voidSendCommand(LCD_CLEAR_DISPLAY);
 }
-
-
-
-
-
-
-
-
 
 
 

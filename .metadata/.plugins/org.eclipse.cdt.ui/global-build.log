@@ -283,3 +283,501 @@ arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu
 make: *** [Inc/HAL/LCD_DRIVER/subdir.mk:19: Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o] Error 1
 make: *** Waiting for unfinished jobs....
 "make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:00:29 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidInit':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:26:57: error: 'PIN_OUTPUT' undeclared (first use in this function)
+   26 |         GPIO_voidSetPinDirection(LCD_INIT_PORT, LCD_RS, PIN_OUTPUT);
+      |                                                         ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:26:57: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:32:9: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+   32 |         _delay_ms(20);
+      |         ^~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:37:17: warning: implicit declaration of function 'GPIO_voidSetPortDirection'; did you mean 'GPIO_voidSetPinDirection'? [-Wimplicit-function-declaration]
+   37 |                 GPIO_voidSetPortDirection(LCD_DATA_PORT, PORT_OUTPUT);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 GPIO_voidSetPinDirection
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:37:58: error: 'PORT_OUTPUT' undeclared (first use in this function)
+   37 |                 GPIO_voidSetPortDirection(LCD_DATA_PORT, PORT_OUTPUT);
+      |                                                          ^~~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidIntgerToString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:191:28: warning: passing argument 2 of 'itoa' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  191 |         itoa(copy_u32data, buffer, 10);
+      |                            ^~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:21,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+C:\ST_ARM_IDE\STM32CubeIDE_1.11.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:227:20: note: expected 'char *' but argument is of type 'const cu8 *' {aka 'const char *'}
+  227 | char *  itoa (int, char *, int);
+      |                    ^~~~~~
+make: *** [Inc/HAL/LCD_DRIVER/subdir.mk:19: Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:00:54 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidInit':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:29:61: error: 'PIN_OUTPUT' undeclared (first use in this function)
+   29 |         GPIO_voidSetPinDirection(LCD_INIT_PORT, LCD_ENABLE, PIN_OUTPUT);
+      |                                                             ^~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:29:61: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:32:9: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+   32 |         _delay_ms(20);
+      |         ^~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:37:17: warning: implicit declaration of function 'GPIO_voidSetPortDirection'; did you mean 'GPIO_voidSetPinDirection'? [-Wimplicit-function-declaration]
+   37 |                 GPIO_voidSetPortDirection(LCD_DATA_PORT, PORT_OUTPUT);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 GPIO_voidSetPinDirection
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:37:58: error: 'PORT_OUTPUT' undeclared (first use in this function)
+   37 |                 GPIO_voidSetPortDirection(LCD_DATA_PORT, PORT_OUTPUT);
+      |                                                          ^~~~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidIntgerToString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:191:28: warning: passing argument 2 of 'itoa' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  191 |         itoa(copy_u32data, buffer, 10);
+      |                            ^~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:21,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+C:\ST_ARM_IDE\STM32CubeIDE_1.11.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:227:20: note: expected 'char *' but argument is of type 'const cu8 *' {aka 'const char *'}
+  227 | char *  itoa (int, char *, int);
+      |                    ^~~~~~
+make: *** [Inc/HAL/LCD_DRIVER/subdir.mk:19: Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:52:51 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.d" -MT"Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.o"
+arm-none-eabi-gcc "../Inc/MCAL/RCC_DRIVER/RCC_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/MCAL/RCC_DRIVER/RCC_PROGRAM.d" -MT"Inc/MCAL/RCC_DRIVER/RCC_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/MCAL/RCC_DRIVER/RCC_PROGRAM.o"
+arm-none-eabi-gcc "../Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.d" -MT"Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.o"
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+In file included from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PRIVATE.h:20,
+                 from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_CONFIG.h:20,
+                 from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_INTERFACE.h:20,
+                 from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c:17:
+../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c: In function 'SysTick_Handler':
+../Inc/MCAL/SYSTICK_DRIVER/../../LIB/BIT_MATH.h:34:49: warning: value computed is not used [-Wunused-value]
+   34 | #define GET_BIT(VAR,BIT)          ((VAR >> BIT) & 1)
+      |                                   ~~~~~~~~~~~~~~^~~~
+../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c:117:9: note: in expansion of macro 'GET_BIT'
+  117 |         GET_BIT(STK_CTRL_REG, STK_CTRL_COUNTFLAG);
+      |         ^~~~~~~
+../Src/APP_PROGRAM.c: In function 'APP_voidSystemInitialization':
+../Src/APP_PROGRAM.c:27:49: error: 'OUTSPEED_10MHZ_PUSHPULL' undeclared (first use in this function); did you mean 'OUTPUT_SPEED_10MHZ_PUSHPULL'?
+   27 |         GPIO_voidSetPinDirection(PIN_0, PORT_A, OUTSPEED_10MHZ_PUSHPULL);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                                 OUTPUT_SPEED_10MHZ_PUSHPULL
+../Src/APP_PROGRAM.c:27:49: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:28: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidInit':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:43:73: error: 'PIN_OUTPUT' undeclared (first use in this function); did you mean 'PIN_OUTPUT_MODE'?
+   43 |                 GPIO_voidSetPinDirection(LCD_DATAPIN_D4, LCD_DATA_PORT, PIN_OUTPUT);
+      |                                                                         ^~~~~~~~~~
+      |                                                                         PIN_OUTPUT_MODE
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:43:73: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidSendCommand':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:65:9: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+   65 |         _delay_ms(1);
+      |         ^~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidIntgerToString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:189:28: warning: passing argument 2 of 'itoa' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  189 |         itoa(copy_u32data, buffer, 10);
+      |                            ^~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:21,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+C:\ST_ARM_IDE\STM32CubeIDE_1.11.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:227:20: note: expected 'char *' but argument is of type 'const cu8 *' {aka 'const char *'}
+  227 | char *  itoa (int, char *, int);
+      |                    ^~~~~~
+make: *** [Inc/HAL/LCD_DRIVER/subdir.mk:19: Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:53:19 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidSystemInitialization':
+../Src/APP_PROGRAM.c:27:49: error: 'OUTSPEED_10MHZ_PUSHPULL' undeclared (first use in this function); did you mean 'OUTPUT_SPEED_10MHZ_PUSHPULL'?
+   27 |         GPIO_voidSetPinDirection(PIN_0, PORT_A, OUTSPEED_10MHZ_PUSHPULL);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                                 OUTPUT_SPEED_10MHZ_PUSHPULL
+../Src/APP_PROGRAM.c:27:49: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidInit':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:43:73: error: 'PIN_OUTPUT' undeclared (first use in this function); did you mean 'PIN_OUTPUT_MODE'?
+   43 |                 GPIO_voidSetPinDirection(LCD_DATAPIN_D4, LCD_DATA_PORT, PIN_OUTPUT);
+      |                                                                         ^~~~~~~~~~
+      |                                                                         PIN_OUTPUT_MODE
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:43:73: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:57:9: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
+   57 |         delay(5);
+      |         ^~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidSendCommand':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:65:9: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+   65 |         _delay_ms(1);
+      |         ^~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidIntgerToString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:189:28: warning: passing argument 2 of 'itoa' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  189 |         itoa(copy_u32data, buffer, 10);
+      |                            ^~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:21,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+C:\ST_ARM_IDE\STM32CubeIDE_1.11.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:227:20: note: expected 'char *' but argument is of type 'const cu8 *' {aka 'const char *'}
+  227 | char *  itoa (int, char *, int);
+      |                    ^~~~~~
+make: *** [Src/subdir.mk:28: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Inc/HAL/LCD_DRIVER/subdir.mk:19: Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:54:11 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidSystemInitialization':
+../Src/APP_PROGRAM.c:27:49: error: 'OUTSPEED_10MHZ_PUSHPULL' undeclared (first use in this function); did you mean 'OUTPUT_SPEED_10MHZ_PUSHPULL'?
+   27 |         GPIO_voidSetPinDirection(PIN_0, PORT_A, OUTSPEED_10MHZ_PUSHPULL);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                                 OUTPUT_SPEED_10MHZ_PUSHPULL
+../Src/APP_PROGRAM.c:27:49: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:28: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidInit':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:43:73: error: 'PIN_OUTPUT' undeclared (first use in this function); did you mean 'PIN_OUTPUT_MODE'?
+   43 |                 GPIO_voidSetPinDirection(LCD_DATAPIN_D4, LCD_DATA_PORT, PIN_OUTPUT);
+      |                                                                         ^~~~~~~~~~
+      |                                                                         PIN_OUTPUT_MODE
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:43:73: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidSendCommand':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:65:9: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+   65 |         _delay_ms(1);
+      |         ^~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidIntgerToString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:189:28: warning: passing argument 2 of 'itoa' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  189 |         itoa(copy_u32data, buffer, 10);
+      |                            ^~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:21,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+C:\ST_ARM_IDE\STM32CubeIDE_1.11.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:227:20: note: expected 'char *' but argument is of type 'const cu8 *' {aka 'const char *'}
+  227 | char *  itoa (int, char *, int);
+      |                    ^~~~~~
+make: *** [Inc/HAL/LCD_DRIVER/subdir.mk:19: Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:55:01 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidSystemInitialization':
+../Src/APP_PROGRAM.c:27:49: error: 'OUTSPEED_10MHZ_PUSHPULL' undeclared (first use in this function); did you mean 'OUTPUT_SPEED_10MHZ_PUSHPULL'?
+   27 |         GPIO_voidSetPinDirection(PIN_0, PORT_A, OUTSPEED_10MHZ_PUSHPULL);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                                 OUTPUT_SPEED_10MHZ_PUSHPULL
+../Src/APP_PROGRAM.c:27:49: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:28: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidSendCommand':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:65:9: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+   65 |         _delay_ms(1);
+      |         ^~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidIntgerToString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:189:28: warning: passing argument 2 of 'itoa' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  189 |         itoa(copy_u32data, buffer, 10);
+      |                            ^~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:21,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+C:\ST_ARM_IDE\STM32CubeIDE_1.11.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:227:20: note: expected 'char *' but argument is of type 'const cu8 *' {aka 'const char *'}
+  227 | char *  itoa (int, char *, int);
+      |                    ^~~~~~
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:58:19 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidSystemInitialization':
+../Src/APP_PROGRAM.c:27:49: error: 'OUTSPEED_10MHZ_PUSHPULL' undeclared (first use in this function); did you mean 'OUTPUT_SPEED_10MHZ_PUSHPULL'?
+   27 |         GPIO_voidSetPinDirection(PIN_0, PORT_A, OUTSPEED_10MHZ_PUSHPULL);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                                 OUTPUT_SPEED_10MHZ_PUSHPULL
+../Src/APP_PROGRAM.c:27:49: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:28: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidSendCommand':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:85:17: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+   85 |                 _delay_ms(1);
+      |                 ^~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidIntgerToString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:190:28: warning: passing argument 2 of 'itoa' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  190 |         itoa(copy_u32data, buffer, 10);
+      |                            ^~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:21,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+C:\ST_ARM_IDE\STM32CubeIDE_1.11.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:227:20: note: expected 'char *' but argument is of type 'const cu8 *' {aka 'const char *'}
+  227 | char *  itoa (int, char *, int);
+      |                    ^~~~~~
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:05:26 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidSystemInitialization':
+../Src/APP_PROGRAM.c:27:49: error: 'OUTSPEED_10MHZ_PUSHPULL' undeclared (first use in this function); did you mean 'OUTPUT_SPEED_10MHZ_PUSHPULL'?
+   27 |         GPIO_voidSetPinDirection(PIN_0, PORT_A, OUTSPEED_10MHZ_PUSHPULL);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                                 OUTPUT_SPEED_10MHZ_PUSHPULL
+../Src/APP_PROGRAM.c:27:49: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:28: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidInit':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:35:33: error: token "{" is not valid in preprocessor expressions
+   35 | #if (LCD_BIT_MODE == LCD_8_BIT) {
+      |                                 ^
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:42:7: warning: extra tokens at end of #else directive [-Wendif-labels]
+   42 | #else {
+      |       ^
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:20,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: At top level:
+../Inc/HAL/LCD_DRIVER/LCD_CONFIG.h:54:57: error: expected declaration specifiers or '...' before numeric constant
+   54 | #define LCD_CURSOR_OFF                                  0x0C
+      |                                                         ^~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:55:29: note: in expansion of macro 'LCD_CURSOR_OFF'
+   55 |         LCD_voidSendCommand(LCD_CURSOR_OFF);
+      |                             ^~~~~~~~~~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_CONFIG.h:22,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:20,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:56:15: error: expected declaration specifiers or '...' before numeric constant
+   56 |         delay(5);
+      |               ^
+../Inc/HAL/LCD_DRIVER/../../LIB/STD_FUNCTIONS.h:26:57: note: in definition of macro 'delay'
+   26 | #define delay(d)                SYSTICK_voidSetDelay_ms(d)
+      |                                                         ^
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:20,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+../Inc/HAL/LCD_DRIVER/LCD_CONFIG.h:47:65: error: expected declaration specifiers or '...' before numeric constant
+   47 | #define LCD_CLEAR_DISPLAY                                       0x01
+      |                                                                 ^~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:57:29: note: in expansion of macro 'LCD_CLEAR_DISPLAY'
+   57 |         LCD_voidSendCommand(LCD_CLEAR_DISPLAY);
+      |                             ^~~~~~~~~~~~~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_CONFIG.h:22,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:20,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:58:15: error: expected declaration specifiers or '...' before numeric constant
+   58 |         delay(5);
+      |               ^
+../Inc/HAL/LCD_DRIVER/../../LIB/STD_FUNCTIONS.h:26:57: note: in definition of macro 'delay'
+   26 | #define delay(d)                SYSTICK_voidSetDelay_ms(d)
+      |                                                         ^
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:59:1: error: expected identifier or '(' before '}' token
+   59 | }
+      | ^
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidSendData':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:116:9: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+  116 |         _delay_ms(1);
+      |         ^~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidIntgerToString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:196:28: warning: passing argument 2 of 'itoa' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  196 |         itoa(copy_u32data, buffer, 10);
+      |                            ^~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:21,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+C:\ST_ARM_IDE\STM32CubeIDE_1.11.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:227:20: note: expected 'char *' but argument is of type 'const cu8 *' {aka 'const char *'}
+  227 | char *  itoa (int, char *, int);
+      |                    ^~~~~~
+make: *** [Inc/HAL/LCD_DRIVER/subdir.mk:19: Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:05:50 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidSystemInitialization':
+../Src/APP_PROGRAM.c:27:49: error: 'OUTSPEED_10MHZ_PUSHPULL' undeclared (first use in this function); did you mean 'OUTPUT_SPEED_10MHZ_PUSHPULL'?
+   27 |         GPIO_voidSetPinDirection(PIN_0, PORT_A, OUTSPEED_10MHZ_PUSHPULL);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                                 OUTPUT_SPEED_10MHZ_PUSHPULL
+../Src/APP_PROGRAM.c:27:49: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:28: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidSendData':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:114:9: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+  114 |         _delay_ms(1);
+      |         ^~~~~~~~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidIntgerToString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:194:28: warning: passing argument 2 of 'itoa' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  194 |         itoa(copy_u32data, buffer, 10);
+      |                            ^~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:21,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+C:\ST_ARM_IDE\STM32CubeIDE_1.11.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:227:20: note: expected 'char *' but argument is of type 'const cu8 *' {aka 'const char *'}
+  227 | char *  itoa (int, char *, int);
+      |                    ^~~~~~
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:31:51 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidSystemInitialization':
+../Src/APP_PROGRAM.c:27:49: error: 'OUTSPEED_10MHZ_PUSHPULL' undeclared (first use in this function); did you mean 'OUTPUT_SPEED_10MHZ_PUSHPULL'?
+   27 |         GPIO_voidSetPinDirection(PIN_0, PORT_A, OUTSPEED_10MHZ_PUSHPULL);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                                 OUTPUT_SPEED_10MHZ_PUSHPULL
+../Src/APP_PROGRAM.c:27:49: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../Inc/HAL/LCD_DRIVER/../../MCAL/GPIO_DRIVER/GPIO_PRIVATE.h:20,
+                 from ../Inc/HAL/LCD_DRIVER/../../MCAL/GPIO_DRIVER/GPIO_CONFIG.h:20,
+                 from ../Inc/HAL/LCD_DRIVER/../../MCAL/GPIO_DRIVER/GPIO_INTERFACE.h:20,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_CONFIG.h:20,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:20,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidSendCommand':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:86:88: warning: suggest parentheses around '+' inside '>>' [-Wparentheses]
+   86 |                 GPIO_voidSetPinValue(BITx, LCD_DATA_PORT, GET_BIT(copy_u8Command, BITx + 4));
+      |                                                                                   ~~~~~^~~
+../Inc/HAL/LCD_DRIVER/../../MCAL/GPIO_DRIVER/../../LIB/BIT_MATH.h:34:44: note: in definition of macro 'GET_BIT'
+   34 | #define GET_BIT(VAR,BIT)          ((VAR >> BIT) & 1)
+      |                                            ^~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidSendData':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:139:85: warning: suggest parentheses around '+' inside '>>' [-Wparentheses]
+  139 |                 GPIO_voidSetPinValue(BITx, LCD_DATA_PORT, GET_BIT(copy_u8Data, BITx + 4));
+      |                                                                                ~~~~~^~~
+../Inc/HAL/LCD_DRIVER/../../MCAL/GPIO_DRIVER/../../LIB/BIT_MATH.h:34:44: note: in definition of macro 'GET_BIT'
+   34 | #define GET_BIT(VAR,BIT)          ((VAR >> BIT) & 1)
+      |                                            ^~~
+make: *** [Src/subdir.mk:28: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidDisplayString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:168:15: error: 'str' undeclared (first use in this function)
+  168 |         while(str[i] != '\0') {
+      |               ^~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:168:15: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidIntgerToString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:205:28: warning: passing argument 2 of 'itoa' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  205 |         itoa(copy_u32Data, buffer, 10);
+      |                            ^~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:21,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+C:\ST_ARM_IDE\STM32CubeIDE_1.11.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:227:20: note: expected 'char *' but argument is of type 'const cu8 *' {aka 'const char *'}
+  227 | char *  itoa (int, char *, int);
+      |                    ^~~~~~
+make: *** [Inc/HAL/LCD_DRIVER/subdir.mk:19: Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:32:40 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidDisplayString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:168:15: error: 'str' undeclared (first use in this function)
+  168 |         while(str[i] != '\0') {
+      |               ^~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:168:15: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidIntgerToString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:205:28: warning: passing argument 2 of 'itoa' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  205 |         itoa(copy_u32Data, buffer, 10);
+      |                            ^~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:21,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+C:\ST_ARM_IDE\STM32CubeIDE_1.11.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:227:20: note: expected 'char *' but argument is of type 'const cu8 *' {aka 'const char *'}
+  227 | char *  itoa (int, char *, int);
+      |                    ^~~~~~
+make: *** [Inc/HAL/LCD_DRIVER/subdir.mk:19: Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:33:00 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidDisplayString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:169:34: error: 'str' undeclared (first use in this function)
+  169 |                 LCD_voidSendData(str[i]);
+      |                                  ^~~
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:169:34: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidIntgerToString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:205:28: warning: passing argument 2 of 'itoa' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  205 |         itoa(copy_u32Data, buffer, 10);
+      |                            ^~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:21,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+C:\ST_ARM_IDE\STM32CubeIDE_1.11.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:227:20: note: expected 'char *' but argument is of type 'const cu8 *' {aka 'const char *'}
+  227 | char *  itoa (int, char *, int);
+      |                    ^~~~~~
+make: *** [Inc/HAL/LCD_DRIVER/subdir.mk:19: Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:33:09 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidIntgerToString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:205:28: warning: passing argument 2 of 'itoa' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  205 |         itoa(copy_u32Data, buffer, 10);
+      |                            ^~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:21,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+C:\ST_ARM_IDE\STM32CubeIDE_1.11.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:227:20: note: expected 'char *' but argument is of type 'const cu8 *' {aka 'const char *'}
+  227 | char *  itoa (int, char *, int);
+      |                    ^~~~~~
+arm-none-eabi-gcc -o "LCD_ARM_TESTING.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\LCD_ARM_TESTING\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LCD_ARM_TESTING.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LCD_ARM_TESTING.elf
+ 
+arm-none-eabi-size   LCD_ARM_TESTING.elf 
+arm-none-eabi-objdump -h -S  LCD_ARM_TESTING.elf  > "LCD_ARM_TESTING.list"
+arm-none-eabi-objcopy  -O ihex  LCD_ARM_TESTING.elf  "LCD_ARM_TESTING.hex"
+   text	   data	    bss	    dec	    hex	filename
+   1680	      8	   1576	   3264	    cc0	LCD_ARM_TESTING.elf
+Finished building: default.size.stdout
+ 
+Finished building: LCD_ARM_TESTING.hex
+ 
+Finished building: LCD_ARM_TESTING.list
+ 
+21:34:48 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidIntgerToString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:205:28: warning: passing argument 2 of 'itoa' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  205 |         itoa(copy_u32Data, buffer, 10);
+      |                            ^~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:21,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+C:\ST_ARM_IDE\STM32CubeIDE_1.11.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:227:20: note: expected 'char *' but argument is of type 'const cu8 *' {aka 'const char *'}
+  227 | char *  itoa (int, char *, int);
+      |                    ^~~~~~
+arm-none-eabi-gcc -o "LCD_ARM_TESTING.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\LCD_ARM_TESTING\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LCD_ARM_TESTING.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LCD_ARM_TESTING.elf
+ 
+arm-none-eabi-size   LCD_ARM_TESTING.elf 
+arm-none-eabi-objdump -h -S  LCD_ARM_TESTING.elf  > "LCD_ARM_TESTING.list"
+arm-none-eabi-objcopy  -O ihex  LCD_ARM_TESTING.elf  "LCD_ARM_TESTING.hex"
+   text	   data	    bss	    dec	    hex	filename
+   1680	      8	   1576	   3264	    cc0	LCD_ARM_TESTING.elf
+Finished building: default.size.stdout
+ 
+Finished building: LCD_ARM_TESTING.hex
+Finished building: LCD_ARM_TESTING.list
+ 
+ 
+21:36:12 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.d" -MT"Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/HAL/LCD_DRIVER/LCD_PROGRAM.o"
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c: In function 'LCD_voidIntgerToString':
+../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:205:28: warning: passing argument 2 of 'itoa' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  205 |         itoa(copy_u32Data, buffer, 10);
+      |                            ^~~~~~
+In file included from ../Inc/HAL/LCD_DRIVER/LCD_INTERFACE.h:21,
+                 from ../Inc/HAL/LCD_DRIVER/LCD_PROGRAM.c:17:
+C:\ST_ARM_IDE\STM32CubeIDE_1.11.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:227:20: note: expected 'char *' but argument is of type 'const cu8 *' {aka 'const char *'}
+  227 | char *  itoa (int, char *, int);
+      |                    ^~~~~~
+arm-none-eabi-gcc -o "LCD_ARM_TESTING.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\LCD_ARM_TESTING\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LCD_ARM_TESTING.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LCD_ARM_TESTING.elf
+ 
+arm-none-eabi-size   LCD_ARM_TESTING.elf 
+arm-none-eabi-objdump -h -S  LCD_ARM_TESTING.elf  > "LCD_ARM_TESTING.list"
+arm-none-eabi-objcopy  -O ihex  LCD_ARM_TESTING.elf  "LCD_ARM_TESTING.hex"
+   text	   data	    bss	    dec	    hex	filename
+   1680	      8	   1576	   3264	    cc0	LCD_ARM_TESTING.elf
+Finished building: default.size.stdout
+ 
+Finished building: LCD_ARM_TESTING.hex
+Finished building: LCD_ARM_TESTING.list
+ 
+ 

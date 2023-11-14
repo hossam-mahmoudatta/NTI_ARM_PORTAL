@@ -24,7 +24,7 @@ void APP_voidSystemInitialization(void)
 {
 	RCC_voidInitialization();
 	RCC_voidPeripheralClockEnable(2,2);
-	GPIO_voidSetPinDirection(PIN_0, PORT_A, OUTSPEED_10MHZ_PUSHPULL);
+	GPIO_voidSetPinDirection(PIN_0, PORT_A, PIN_OUTPUT_MODE);
 	SYSTICK_voidInitialization();
 }
 

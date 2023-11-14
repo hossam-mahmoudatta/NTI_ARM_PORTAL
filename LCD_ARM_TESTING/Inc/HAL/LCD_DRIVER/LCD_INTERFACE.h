@@ -25,7 +25,7 @@
  *******************************************************************************/
 
 // Initializes and enables the LCD Module to start functionality
-void LCD_voidInit(void);
+void LCD_voidInitialization(void);
 
 
  // Sends a command to the LCD
@@ -33,19 +33,19 @@ void LCD_voidSendCommand(u8 copy_u8Command);
 
 
  // Displays a character on the LCD
-void LCD_voidSendData(u8 copy_u8data);
+void LCD_voidSendData(u8 copy_u8Data);
 
 
 // Chooses where the cursor would stand on the LCD to type from it
-void LCD_voidSetCursor(u8 copy_u8row, u8 copy_u8_col);
+void LCD_voidSetCursor(u8 copy_u8Row, u8 copy_u8Col);
 
 
 // Displays a string on the LCD
-void LCD_voidDisplayString(cu8 *str);
+void LCD_voidDisplayString(cu8 *copy_cu8Str);
 
 
 // LCD only understands ASCII, so this converts Int to a string
-void LCD_voidIntgerToString(u32 copy_u32data);
+void LCD_voidIntgerToString(u32 copy_u32Data);
 
 
 // Clears the LCD from any garbage

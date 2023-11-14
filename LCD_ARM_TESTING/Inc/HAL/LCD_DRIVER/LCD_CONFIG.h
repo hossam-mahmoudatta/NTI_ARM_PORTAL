@@ -19,6 +19,8 @@
 
 #include "../../MCAL/GPIO_DRIVER/GPIO_INTERFACE.h"
 #include "../../MCAL/SYSTICK_DRIVER/SYSTICK_INTERFACE.h"
+#include "../../LIB/STD_FUNCTIONS.h"
+
 
 /*******************************************************************************
  *                                							Macro Definitions                                  		   		   *
@@ -47,6 +49,7 @@
 #define LCD_2LINES_FOUR_BIT_INIT1   	0x33
 #define LCD_2LINES_FOUR_BIT_INIT2		0x32
 #define LCD_2LINES_5x7_DOTS				0x28
+#define LCD_TWO_LINE_EIGHT_BIT			0x38
 #define LCD_ENTRY_MODE						0x06
 #define LCD_CURSOR_BLINKING          	0x0F
 #define LCD_CURSOR_OFF          			0x0C
@@ -61,8 +64,6 @@
 #define LINE1											1
 #define LINE2											2
 #define LINE3											3
-
-#define LCD_TWO_LINE_EIGHT_BIT			0x38
 
 #define LCD_MAXROW_SIZE        			2
 #define LCD_MAXCOL_SIZE        			16
