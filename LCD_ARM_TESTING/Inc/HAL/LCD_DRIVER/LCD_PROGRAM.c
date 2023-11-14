@@ -23,16 +23,17 @@
 // Initializes and enables the LCD Module to start functionality
 void LCD_voidInit(void) {
 	// Initialize RS Pin
-	GPIO_voidSetPinDirection(LCD_INIT_PORT, LCD_RS, PIN_OUTPUT);
+	GPIO_voidSetPinDirection(LCD_INIT_PORT, LCD_RS, PIN_OUTPUT_MODE);
 
 	// Initialize Enable Pin
-	GPIO_voidSetPinDirection(LCD_INIT_PORT, LCD_ENABLE, PIN_OUTPUT);
+	GPIO_voidSetPinDirection(LCD_INIT_PORT, LCD_ENABLE, PIN_OUTPUT_MODE);
 
 	// LCD Power On Internal Delay is 15 mS
 	_delay_ms(20);
 
 	// Setup the port and pins for the data pins inside the LCD
 	if (LCD_BIT_MODE == LCD_8_BIT) {
+		GPIO_voidSetPinDirection(PIN_0, PORT_A, OUTSPEED_10MHZ_PUSHPULL);
 		GPIO_voidSetPortDirection(LCD_DATA_PORT, PORT_OUTPUT);
 		LCD_voidSendCommand(LCD_TWO_LINE_EIGHT_BIT);
 	}

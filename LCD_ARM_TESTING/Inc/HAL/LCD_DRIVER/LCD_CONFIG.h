@@ -39,8 +39,8 @@
 #define LCD_DATAPIN_D7						PIN_3
 
 #define LCD_INIT_PORT							PORT_A
-#define LCD_RS										PIN_3
-#define LCD_ENABLE								PIN_2
+#define LCD_RS										PIN_0
+#define LCD_ENABLE								PIN_1
 
 #define LCD_CLEAR_DISPLAY					0x01
 #define LCD_2LINES_FOUR_BIT				0x02
