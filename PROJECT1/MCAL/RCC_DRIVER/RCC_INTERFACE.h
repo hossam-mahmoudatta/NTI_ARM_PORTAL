@@ -25,8 +25,11 @@
 // Initializes the RCC Module with the necessary Configurations
 void RCC_voidInitialization_SYSTYPE(void);
 
-// Chooses the clok type and enables it
-void RCC_voidEnableClock(u8 copy_BusID, u8 copy_PeripheralID);
+// Chooses the clock type and enables it
+void RCC_voidPeripheralClockEnable(u8 copy_u8BusID, u8 copy_u8PeripheralID);
+
+// Chooses the clock type and disables it
+void RCC_voidPeripheralClockDisable(u8 copy_u8BusID, u8 copy_u8PeripheralID);
 
 
 

@@ -24,87 +24,84 @@
 void RCC_voidInitialization_SYSTYPE(void)
 {
 #if	RCC_CLOCKTYPE == RCC_HSI
+	RCC_CR_REG->HSION = HSION_STATE;
+	RCC_CR_REG->HSITRIM = 0b10000; 		// Default Value @ 16
+	RCC_CFGR_REG->SW = CFGR_SW_HSI;
 
 #elif	RCC_CLOCKTYPE == RCC_HSE_CRYSTAL
+	RCC_CR_REG->HSEON = HSEON_STATE;
+	RCC_CR_REG->HSEBYP = HSEBYP_DISABLE;
+	RCC_CFGR_REG->SW = CFGR_SW_HSE;
 
 #elif	RCC_CLOCKTYPE == RCC_HSE_RC
+	RCC_CR_REG->HSEON = HSEON_STATE;
+	RCC_CR_REG->HSEBYP = HSEBYP_ENABLE;
+	RCC_CFGR_REG->SW = CFGR_SW_HSE;
 
 #elif	RCC_CLOCKTYPE == RCC_PLL
+	RCC_CR_REG->PLLON = PLL_STATE;
+	RCC_CFGR_REG->SW = CFGR_SW_PLL;
+	RCC_CFGR_REG->PLLSRC		= 	PLLSRC_SELECT;
+	RCC_CFGR_REG->PLLXTPRE	= 	PLLXPTRE_SELECT;
+	RCC_CFGR_REG->PLLMUL		= 	CFGR_PLLMUL_FACTOR;
 
+#else
+		#error("CLOCK TYPE UNDEFINED!")
 #endif
 
+	// Other Initializations
+	RCC_CR_REG->CSSON 			=	CSSON_STATE;
+	RCC_CFGR_REG->HPRE 			= 	CFGR_HPRE_PRESCALER;
+	RCC_CFGR_REG->PPRE1 		=	CFGR_PPRE1_PRESCALER;
+	RCC_CFGR_REG->PPRE2			= 	CFGR_PPRE2_PRESCALER;
+	RCC_CFGR_REG->MCO			= 	CFGR_MSO_CLK;
 }
 
-// Chooses the clok type and enables it
-void RCC_voidEnableClock(u8 copy_BusID, u8 copy_PeripheralID);
-
-
-void RCC_voidInitSysClock(void)
+// Chooses the clock type and enables it
+void RCC_voidPeripheralClockEnable(u8 copy_u8BusID, u8 copy_u8PeripheralID)
 {
-	#if     RCC_CLOCK_TYPE == RCC_HSE_CRYSTAL
-		RCC_CR   = 0x00010000; /* Enable HSE with no bypass */
-		RCC_CFGR = 0x00000001;
-		
-	#elif   RCC_CLOCK_TYPE == RCC_HSE_RC
-		RCC_CR   = 0x00050000; /* Enable HSE with bypass */
-		RCC_CFGR = 0x00000001;
-		
-	#elif   RCC_CLOCK_TYPE == RCC_HSI
-		RCC_CR   = 0x00000081; /* Enable HSI + Trimming = 0 */
-		RCC_CFGR = 0x00000000;
-	
-	#elif   RCC_CLOCK_TYPE == RCC_PLL
-		#if   RCC_PLL_INPUT == RCC_PLL_IN_HSI_DIV_2
-		
-		#elif RCC_PLL_INPUT == RCC_PLL_IN_HSE_DIV_2
-	
-		#elif RCC_PLL_INPUT == RCC_PLL_IN_HSE
-		
-		#endif
-	
-	#else
-		#error("You chosed Wrong Clock type")
-	#endif
-}
-
-
-
-void RCC_voidEnableClock(u8 Copy_u8BusId, u8 Copy_u8PerId)
-{
-	if (Copy_u8PerId <= 31)
+	if (copy_u8PeripheralID <= 31)
 	{
-		switch (Copy_u8BusId)
+		switch (copy_u8BusID)
 		{
-			case RCC_AHB  : SET_BIT(RCC_AHBENR  ,Copy_u8PerId);   break;
-			case RCC_APB1 : SET_BIT(RCC_APB1ENR ,Copy_u8PerId);   break;
-			case RCC_APB2 : SET_BIT(RCC_APB2ENR ,Copy_u8PerId);   break;
+			case RCC_AHBENR_REG:
+				RCC_AHBENR_REG->copy_u8PeripheralID = PERIPHERAL_ENABLE;
+				break;
+			case RCC_APB1ENR_REG :
+				RCC_APB1ENR_REG->copy_u8PeripheralID = PERIPHERAL_ENABLE;
+				break;
+			case RCC_APB2ENR_REG :
+				RCC_APB2ENR_REG->copy_u8PeripheralID = PERIPHERAL_ENABLE;
+				break;
 		}
 	}
-	
 	else
 	{
-		/* Return Error */
+		#error("Clock Entered is Unavailable!")
 	}
-
 }
 
-
-void RCC_voidDisableClock(u8 Copy_u8BusId, u8 Copy_u8PerId)
+// Chooses the clock type and disables it
+void RCC_voidPeripheralClockDisable(u8 copy_u8BusID, u8 copy_u8PeripheralID)
 {
-	if (Copy_u8PerId <= 31)
+	if (copy_u8PeripheralID <= 31)
 	{
-		switch (Copy_u8BusId)
+		switch (copy_u8BusID)
 		{
-			case RCC_AHB  : CLR_BIT(RCC_AHBENR  ,Copy_u8PerId);   break;
-			case RCC_APB1 : CLR_BIT(RCC_APB1ENR ,Copy_u8PerId);   break;
-			case RCC_APB2 : CLR_BIT(RCC_APB2ENR ,Copy_u8PerId);   break;
+			case RCC_AHBENR_REG:
+				RCC_AHBENR_REG->copy_u8PeripheralID = PERIPHERAL_DISABLE;
+				break;
+			case RCC_APB1ENR_REG :
+				RCC_APB1ENR_REG->copy_u8PeripheralID = PERIPHERAL_DISABLE;
+				break;
+			case RCC_APB2ENR_REG :
+				RCC_APB2ENR_REG->copy_u8PeripheralID = PERIPHERAL_DISABLE;
+				break;
 		}
 	}
-	
 	else
 	{
-		/* Return Error */
+		#error("Clock Entered is Unavailable!")
 	}
-
 }
 

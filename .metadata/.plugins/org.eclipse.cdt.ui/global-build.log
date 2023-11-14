@@ -42,3 +42,31 @@ compilation terminated.
 make: *** [MCAL/RCC_DRIVER/subdir.mk:19: MCAL/RCC_DRIVER/RCC_PROGRAM.o] Error 1
 make: *** Waiting for unfinished jobs....
 "make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:23:57 **** Clean-only build of configuration Debug for project TASK01_GPIO_LED ****
+make -j8 clean 
+rm -rf ./Startup/startup_stm32f103c6tx.d ./Startup/startup_stm32f103c6tx.o
+rm -rf ./Src/GPIO_PROGRAM.cyclo ./Src/GPIO_PROGRAM.d ./Src/GPIO_PROGRAM.o ./Src/GPIO_PROGRAM.su ./Src/RCC_PROGRAM.cyclo ./Src/RCC_PROGRAM.d ./Src/RCC_PROGRAM.o ./Src/RCC_PROGRAM.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf TASK01_GPIO_LED.elf TASK01_GPIO_LED.list TASK01_GPIO_LED.map default.size.stdout
+ 
+13:23:58 **** Build of configuration Debug for project TASK01_GPIO_LED ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc "../Src/GPIO_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/GPIO_PROGRAM.d" -MT"Src/GPIO_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/GPIO_PROGRAM.o"
+arm-none-eabi-gcc "../Src/RCC_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/RCC_PROGRAM.d" -MT"Src/RCC_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/RCC_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+../Src/main.c: In function 'main':
+../Src/main.c:29:9: warning: implicit declaration of function 'RCC_voidInitialization_SYSTYPE' [-Wimplicit-function-declaration]
+   29 |         RCC_voidInitialization_SYSTYPE();
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:31:9: warning: implicit declaration of function 'RCC_voidPeripheralClockEnable' [-Wimplicit-function-declaration]
+   31 |         RCC_voidPeripheralClockEnable(RCC_APB2, 3);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:31:39: error: 'RCC_APB2' undeclared (first use in this function)
+   31 |         RCC_voidPeripheralClockEnable(RCC_APB2, 3);
+      |                                       ^~~~~~~~
+../Src/main.c:31:39: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
