@@ -24,6 +24,7 @@
 #include "../Inc/MCAL/RCC_DRIVER/RCC_INTERFACE.h"
 #include "../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_INTERFACE.h"
 #include "../Inc/MCAL/GPIO_DRIVER/GPIO_INTERFACE.h"
+#include "../Inc/LIB/STD_FUNCTIONS.h"
 
 /*******************************************************************************
  *                              						HAL Libraries						          	           	*

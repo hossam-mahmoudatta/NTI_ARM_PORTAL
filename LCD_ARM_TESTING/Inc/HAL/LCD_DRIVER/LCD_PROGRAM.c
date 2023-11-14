@@ -33,16 +33,16 @@ void LCD_voidInitialization(void) {
 
 	// Setup the port and pins for the data pins inside the LCD
 #if (LCD_BIT_MODE == LCD_8_BIT)
-		for(u8 PINx = 0 ; PINx < LCD_8_BIT ; PINx++)
+		for(u8 PINx = 3 ; PINx < 10 ; PINx++)
 		{
 			GPIO_voidSetPinDirection(PINx, LCD_DATA_PORT, PIN_OUTPUT_MODE);
 		}
 		LCD_voidSendCommand(LCD_TWO_LINE_EIGHT_BIT);
 #else
-		for(u8 PINx = 0 ; PINx < LCD_4_BIT ; PINx++)
-		{
-			GPIO_voidSetPinDirection(PINx, LCD_DATA_PORT, PIN_OUTPUT_MODE);
-		}
+		GPIO_voidSetPinDirection(LCD_DATAPIN_D4, LCD_DATA_PORT, PIN_OUTPUT_MODE);
+		GPIO_voidSetPinDirection(LCD_DATAPIN_D5, LCD_DATA_PORT, PIN_OUTPUT_MODE);
+		GPIO_voidSetPinDirection(LCD_DATAPIN_D6, LCD_DATA_PORT, PIN_OUTPUT_MODE);
+		GPIO_voidSetPinDirection(LCD_DATAPIN_D7, LCD_DATA_PORT, PIN_OUTPUT_MODE);
 
 		LCD_voidSendCommand(LCD_2LINES_FOUR_BIT_INIT1);
 		LCD_voidSendCommand(LCD_2LINES_FOUR_BIT_INIT2);
@@ -71,7 +71,7 @@ void LCD_voidSendCommand(u8 copy_u8Command) {
 	for(u8 BITx = 0 ; BITx < LCD_8_BIT ; BITx++)
 	{
 		// Write the command bit by bit on the LCD Data Port
-		GPIO_voidSetPinValue(BITx, LCD_DATA_PORT, GET_BIT(copy_u8Command, BITx));
+		GPIO_voidSetPinValue((BITx + 3), LCD_DATA_PORT, GET_BIT(copy_u8Command, BITx));
 	}
 	delay(2);
 
@@ -80,11 +80,10 @@ void LCD_voidSendCommand(u8 copy_u8Command) {
 	delay(2);
 #else
 	// Inserts the command in the assigned PORT to be sent to the LCD
-	for(u8 BITx = 0 ; BITx < LCD_4_BIT ; BITx++)
-	{
-		// Write the command bit by bit on the LCD Data Port FROM the 4th Bit -> 7th Bit
-		GPIO_voidSetPinValue(BITx, LCD_DATA_PORT, GET_BIT(copy_u8Command, (BITx + 4)));
-	}
+	GPIO_voidSetPinValue(LCD_DATAPIN_D4, LCD_DATA_PORT, GET_BIT(copy_u8Command, 4));
+	GPIO_voidSetPinValue(LCD_DATAPIN_D5, LCD_DATA_PORT, GET_BIT(copy_u8Command, 5));
+	GPIO_voidSetPinValue(LCD_DATAPIN_D6, LCD_DATA_PORT, GET_BIT(copy_u8Command, 6));
+	GPIO_voidSetPinValue(LCD_DATAPIN_D7, LCD_DATA_PORT, GET_BIT(copy_u8Command, 7));
 	delay(1);
 
 	// Set Enable Pin to '0'
@@ -94,11 +93,10 @@ void LCD_voidSendCommand(u8 copy_u8Command) {
 	GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, GPIO_ODR_HIGH);
 	delay(1);
 
-	for(u8 BITx = 0 ; BITx < LCD_4_BIT ; BITx++)
-	{
-		// Write the command bit by bit on the LCD Data Port FROM the 0th Bit -> 3th Bit
-		GPIO_voidSetPinValue(BITx, LCD_DATA_PORT, GET_BIT(copy_u8Command, BITx));
-	}
+	GPIO_voidSetPinValue(LCD_DATAPIN_D4, LCD_DATA_PORT, GET_BIT(copy_u8Command, 0));
+	GPIO_voidSetPinValue(LCD_DATAPIN_D5, LCD_DATA_PORT, GET_BIT(copy_u8Command, 1));
+	GPIO_voidSetPinValue(LCD_DATAPIN_D6, LCD_DATA_PORT, GET_BIT(copy_u8Command, 2));
+	GPIO_voidSetPinValue(LCD_DATAPIN_D7, LCD_DATA_PORT, GET_BIT(copy_u8Command, 3));
 	delay(1);
 
 	// Set Enable Pin to '0'
@@ -124,7 +122,7 @@ void LCD_voidSendData(u8 copy_u8Data) {
 	for(u8 BITx = 0 ; BITx < LCD_8_BIT ; BITx++)
 	{
 		// Write the command bit by bit on the LCD Data Port
-		GPIO_voidSetPinValue(BITx, LCD_DATA_PORT, GET_BIT(copy_u8Data, BITx));
+		GPIO_voidSetPinValue((BITx + 3), LCD_DATA_PORT, GET_BIT(copy_u8Data, BITx));
 	}
 	delay(2);
 
@@ -133,11 +131,10 @@ void LCD_voidSendData(u8 copy_u8Data) {
 	delay(2);
 #else
 	// Inserts the command in the assigned PORT to be sent to the LCD
-	for(u8 BITx = 0 ; BITx < LCD_4_BIT ; BITx++)
-	{
-		// Write the command bit by bit on the LCD Data Port FROM the 4th Bit -> 7th Bit
-		GPIO_voidSetPinValue(BITx, LCD_DATA_PORT, GET_BIT(copy_u8Data, (BITx + 4)));
-	}
+	GPIO_voidSetPinValue(LCD_DATAPIN_D4, LCD_DATA_PORT, GET_BIT(copy_u8Data, 4));
+	GPIO_voidSetPinValue(LCD_DATAPIN_D5, LCD_DATA_PORT, GET_BIT(copy_u8Data, 5));
+	GPIO_voidSetPinValue(LCD_DATAPIN_D6, LCD_DATA_PORT, GET_BIT(copy_u8Data, 6));
+	GPIO_voidSetPinValue(LCD_DATAPIN_D7, LCD_DATA_PORT, GET_BIT(copy_u8Data, 7));
 	delay(1);
 
 	// Set Enable Pin to '0'
@@ -147,11 +144,11 @@ void LCD_voidSendData(u8 copy_u8Data) {
 	GPIO_voidSetPinValue(LCD_INIT_PORT, LCD_ENABLE, GPIO_ODR_HIGH);
 	delay(1);
 
-	for(u8 BITx = 0 ; BITx < LCD_4_BIT ; BITx++)
-	{
-		// Write the command bit by bit on the LCD Data Port FROM the 0th Bit -> 3th Bit
-		GPIO_voidSetPinValue(BITx, LCD_DATA_PORT, GET_BIT(copy_u8Data, BITx));
-	}
+	// Write the command bit by bit on the LCD Data Port FROM the 0th Bit -> 3th Bit
+	GPIO_voidSetPinValue(LCD_DATAPIN_D4, LCD_DATA_PORT, GET_BIT(copy_u8Data, 0));
+	GPIO_voidSetPinValue(LCD_DATAPIN_D5, LCD_DATA_PORT, GET_BIT(copy_u8Data, 1));
+	GPIO_voidSetPinValue(LCD_DATAPIN_D6, LCD_DATA_PORT, GET_BIT(copy_u8Data, 2));
+	GPIO_voidSetPinValue(LCD_DATAPIN_D7, LCD_DATA_PORT, GET_BIT(copy_u8Data, 3));
 	delay(1);
 
 	// Set Enable Pin to '0'

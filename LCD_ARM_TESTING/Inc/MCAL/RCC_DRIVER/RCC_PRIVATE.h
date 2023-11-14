@@ -58,8 +58,6 @@ typedef struct {
 } RCC_CFGR;
 #define RCC_CFGR_REG    	((volatile RCC_CFGR*) 0x40021004)			// RCC CLOCK CONFIG REGISTER
 
-
-
 // Not Yet Declared, just defined registers
 #define RCC_CIR_REG        			*((volatile u32*) 0x40021008)			// RCC Clock interrupt register
 #define RCC_APB2RSTR_REG   	*((volatile u32*) 0x4002100C)			// RCC APB2 peripheral reset register
@@ -106,6 +104,14 @@ typedef struct {
 //	u16                : 10;		// Res
 //} RCC_APB2ENR;
 //#define RCC_APB2ENR_REG   	((volatile RCC_APB2ENR*) 0x40021018)			// RCC APB2 peripheral clock enable register
+
+#define APB2_IOPAEN				2		// IO PORT A clock enable
+#define APB2_IOPBEN				3		// IO PORT B clock enable
+#define APB2_IOPCEN				4		// IO PORT C clock enable
+#define APB2_IOPDEN				5		// IO PORT D clock enable
+#define APB2_IOPEEN				6		// IO PORT E clock enable
+#define APB2_IOPFEN				7		// IO PORT F clock enable
+#define APB2_IOPGEN				8		// IO PORT G clock enable
 #define RCC_APB2ENR_REG   	*((volatile u32*)0x40021018)
 
 //typedef struct {

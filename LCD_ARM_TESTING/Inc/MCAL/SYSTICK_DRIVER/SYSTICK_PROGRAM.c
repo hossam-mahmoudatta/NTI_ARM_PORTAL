@@ -115,6 +115,5 @@ void SysTick_Handler(void)
 
 	//Clear the flag by Reading it
 	GET_BIT(STK_CTRL_REG, STK_CTRL_COUNTFLAG);
-
 }
 

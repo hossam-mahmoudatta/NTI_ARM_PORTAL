@@ -23,10 +23,10 @@
  *                              						RCC Macro Definitions					               				     *
  *******************************************************************************/
 // Choosing the Clock Type		##IMPORTANT##
-#define RCC_HSI			0
+#define RCC_HSI						0
 #define RCC_HSE_CRYSTAL	1
-#define RCC_HSE_RC		2
-#define RCC_PLL			4
+#define RCC_HSE_RC				2
+#define RCC_PLL						4
 #define RCC_CLOCKTYPE		RCC_HSI
 
 #define RCC_AHB       0

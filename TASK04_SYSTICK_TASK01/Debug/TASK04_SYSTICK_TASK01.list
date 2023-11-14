@@ -902,9 +902,9 @@ int main(void)
  80005fe:	f7ff ff75 	bl	80004ec <SYSTICK_voidInitialization>
 	while(1)
 	{
-		SYSTICK_voidSetDelay_ms_ISR(1500, FuncISR);
+		SYSTICK_voidSetDelay_ms_ISR(500, FuncISR);
  8000602:	4903      	ldr	r1, [pc, #12]	; (8000610 <main+0x2c>)
- 8000604:	f240 50dc 	movw	r0, #1500	; 0x5dc
+ 8000604:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
  8000608:	f7ff ff8a 	bl	8000520 <SYSTICK_voidSetDelay_ms_ISR>
  800060c:	e7f9      	b.n	8000602 <main+0x1e>
  800060e:	bf00      	nop

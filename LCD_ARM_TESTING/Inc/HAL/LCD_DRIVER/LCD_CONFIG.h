@@ -28,7 +28,7 @@
 
 #define LCD_4_BIT								4
 #define LCD_8_BIT								8
-#define LCD_BIT_MODE						LCD_4_BIT
+#define LCD_BIT_MODE						LCD_8_BIT
 
 #if((LCD_BIT_MODE != LCD_4_BIT) && (LCD_BIT_MODE != LCD_8_BIT))
 	#error "Number of Data bits should be equal to 4 or 8"
@@ -37,8 +37,8 @@
 #define LCD_DATA_PORT						PORT_B
 #define LCD_DATAPIN_D4						PIN_0
 #define LCD_DATAPIN_D5						PIN_1
-#define LCD_DATAPIN_D6						PIN_2
-#define LCD_DATAPIN_D7						PIN_3
+#define LCD_DATAPIN_D6						PIN_3
+#define LCD_DATAPIN_D7						PIN_4
 
 #define LCD_INIT_PORT							PORT_A
 #define LCD_RS										PIN_0

@@ -50,7 +50,7 @@ int main(void)
 	SYSTICK_voidInitialization();
 	while(1)
 	{
-		SYSTICK_voidSetDelay_ms_ISR(1500, FuncISR);
+		SYSTICK_voidSetDelay_ms_ISR(500, FuncISR);
 	}
 
 }
