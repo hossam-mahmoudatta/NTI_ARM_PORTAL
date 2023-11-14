@@ -1,19 +1,47 @@
-16:17:57 **** Build of configuration Debug for project LCD_ARM_TESTING ****
+16:21:52 **** Build of configuration Debug for project LCD_ARM_TESTING ****
 make -j12 all 
 arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c8tx.d" -MT"Startup/startup_stm32f103c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c8tx.o" "../Startup/startup_stm32f103c8tx.s"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
 arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
 arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.d" -MT"Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.o"
+arm-none-eabi-gcc "../Inc/MCAL/RCC_DRIVER/RCC_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/MCAL/RCC_DRIVER/RCC_PROGRAM.d" -MT"Inc/MCAL/RCC_DRIVER/RCC_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/MCAL/RCC_DRIVER/RCC_PROGRAM.o"
+arm-none-eabi-gcc "../Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.d" -MT"Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/MCAL/GPIO_DRIVER/GPIO_PROGRAM.o"
+In file included from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PRIVATE.h:20,
+                 from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_CONFIG.h:20,
+                 from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_INTERFACE.h:20,
+                 from ../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c:17:
+../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c: In function 'SysTick_Handler':
+../Inc/MCAL/SYSTICK_DRIVER/../../LIB/BIT_MATH.h:34:49: warning: value computed is not used [-Wunused-value]
+   34 | #define GET_BIT(VAR,BIT)          ((VAR >> BIT) & 1)
+      |                                   ~~~~~~~~~~~~~~^~~~
+../Inc/MCAL/SYSTICK_DRIVER/SYSTICK_PROGRAM.c:117:9: note: in expansion of macro 'GET_BIT'
+  117 |         GET_BIT(STK_CTRL_REG, STK_CTRL_COUNTFLAG);
+      |         ^~~~~~~
 arm-none-eabi-gcc -o "LCD_ARM_TESTING.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\LCD_ARM_TESTING\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LCD_ARM_TESTING.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/main.o: in function `FuncISR':
-C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/LCD_ARM_TESTING/Debug/../Src/main.c:30: undefined reference to `GPIO_voidSetPinValue'
-C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/LCD_ARM_TESTING/Debug/../Src/main.c:34: undefined reference to `GPIO_voidSetPinValue'
-C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/main.o: in function `main':
-C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/LCD_ARM_TESTING/Debug/../Src/main.c:45: undefined reference to `RCC_voidInitialization'
-C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/LCD_ARM_TESTING/Debug/../Src/main.c:46: undefined reference to `RCC_voidPeripheralClockEnable'
-C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/LCD_ARM_TESTING/Debug/../Src/main.c:47: undefined reference to `GPIO_voidSetPinDirection'
-C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/LCD_ARM_TESTING/Debug/../Src/main.c:48: undefined reference to `SYSTICK_voidInitialization'
-C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/LCD_ARM_TESTING/Debug/../Src/main.c:51: undefined reference to `SYSTICK_voidSetDelay_ms_ISR'
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:63: LCD_ARM_TESTING.elf] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
+Finished building target: LCD_ARM_TESTING.elf
+ 
+arm-none-eabi-size   LCD_ARM_TESTING.elf 
+arm-none-eabi-objdump -h -S  LCD_ARM_TESTING.elf  > "LCD_ARM_TESTING.list"
+   text	   data	    bss	    dec	    hex	filename
+   1652	      8	   1576	   3236	    ca4	LCD_ARM_TESTING.elf
+Finished building: default.size.stdout
+ 
+Finished building: LCD_ARM_TESTING.list
+ 
+16:22:58 **** Incremental Build of configuration Debug for project LCD_ARM_TESTING ****
+make -j12 all 
+arm-none-eabi-gcc -o "LCD_ARM_TESTING.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\LCD_ARM_TESTING\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LCD_ARM_TESTING.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LCD_ARM_TESTING.elf
+ 
+arm-none-eabi-size   LCD_ARM_TESTING.elf 
+arm-none-eabi-objdump -h -S  LCD_ARM_TESTING.elf  > "LCD_ARM_TESTING.list"
+arm-none-eabi-objcopy  -O ihex  LCD_ARM_TESTING.elf  "LCD_ARM_TESTING.hex"
+   text	   data	    bss	    dec	    hex	filename
+   1652	      8	   1576	   3236	    ca4	LCD_ARM_TESTING.elf
+Finished building: default.size.stdout
+ 
+Finished building: LCD_ARM_TESTING.hex
+Finished building: LCD_ARM_TESTING.list
+ 
+ 

@@ -10,6 +10,7 @@ C_SRCS :=
 S_UPPER_SRCS := 
 O_SRCS := 
 CYCLO_FILES := 
+OBJCOPY_HEX := 
 SIZE_OUTPUT := 
 OBJDUMP_LIST := 
 SU_FILES := 
@@ -22,6 +23,9 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+Inc/MCAL/GPIO_DRIVER \
+Inc/MCAL/RCC_DRIVER \
+Inc/MCAL/SYSTICK_DRIVER \
 Src \
 Startup \
 

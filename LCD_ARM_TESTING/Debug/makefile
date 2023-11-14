@@ -11,6 +11,9 @@ RM := rm -rf
 -include sources.mk
 -include Startup/subdir.mk
 -include Src/subdir.mk
+-include Inc/MCAL/SYSTICK_DRIVER/subdir.mk
+-include Inc/MCAL/RCC_DRIVER/subdir.mk
+-include Inc/MCAL/GPIO_DRIVER/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -51,6 +54,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 LCD_ARM_TESTING.list \
 
+OBJCOPY_HEX += \
+LCD_ARM_TESTING.hex \
+
 
 # All Target
 all: main-build
@@ -74,12 +80,17 @@ LCD_ARM_TESTING.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+LCD_ARM_TESTING.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "LCD_ARM_TESTING.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) LCD_ARM_TESTING.elf LCD_ARM_TESTING.list LCD_ARM_TESTING.map default.size.stdout
+	-$(RM) LCD_ARM_TESTING.elf LCD_ARM_TESTING.hex LCD_ARM_TESTING.list LCD_ARM_TESTING.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'
