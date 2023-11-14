@@ -1,0 +1,7 @@
+"./Startup/startup_stm32f103c8tx.o"
+"./src/GPIO_PROGRAM.o"
+"./src/RCC_PROGRAM.o"
+"./src/SYSTICK_PROGRAM.o"
+"./src/main.o"
+"./src/syscalls.o"
+"./src/sysmem.o"

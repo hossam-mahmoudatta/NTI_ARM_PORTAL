@@ -1,0 +1,3 @@
+../Src/GPIO_PROGRAM.c:24:6:GPIO_voidSetPinDirection	16	static
+../Src/GPIO_PROGRAM.c:81:6:GPIO_voidSetPinValue	16	static
+../Src/GPIO_PROGRAM.c:125:4:GPIO_u8GetPinValue	24	static
