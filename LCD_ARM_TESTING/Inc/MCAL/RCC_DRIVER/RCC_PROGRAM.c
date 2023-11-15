@@ -48,7 +48,6 @@ void RCC_voidInitialization(void)
 #else
 		#error("CLOCK TYPE UNDEFINED!")
 #endif
-
 	// Other Initializations
 	RCC_CR_REG->CSSON 			=	CSSON_STATE;
 	RCC_CFGR_REG->HPRE 			= 	CFGR_HPRE_PRESCALER;
@@ -65,13 +64,13 @@ void RCC_voidPeripheralClockEnable(u8 copy_u8BusID, u8 copy_u8PeripheralID)
 		switch (copy_u8BusID)
 		{
 			case RCC_AHB  :
-				SET_BIT(RCC_AHBENR_REG  ,copy_u8PeripheralID);
+				SET_BIT(RCC_AHBENR_REG, copy_u8PeripheralID);
 				break;
 			case RCC_APB1 :
-				SET_BIT(RCC_APB1ENR_REG ,copy_u8PeripheralID);
+				SET_BIT(RCC_APB1ENR_REG, copy_u8PeripheralID);
 				break;
 			case RCC_APB2 :
-				SET_BIT(RCC_APB2ENR_REG ,copy_u8PeripheralID);
+				SET_BIT(RCC_APB2ENR_REG, copy_u8PeripheralID);
 				break;
 		}
 	}
