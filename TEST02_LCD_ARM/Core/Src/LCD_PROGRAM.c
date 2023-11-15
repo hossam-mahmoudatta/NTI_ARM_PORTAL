@@ -5,7 +5,6 @@
 /*--------------- Initialize LCD ------------------*/
 void LCD_voidInitialization(void)
 {
-	
 	HAL_Delay(30);
 	
 	PIN_LOW(D4_PORT, D4_PIN);
@@ -19,7 +18,7 @@ void LCD_voidInitialization(void)
 	
 	LCD_voidWrite(0, 0x28);
 	LCD_voidWrite(0, 0x0c);
-	LCD_voidWrite(0, 0x06);
+	//LCD_voidWrite(0, 0x06);
 	LCD_voidWrite(0, 0x01);
 }
 
@@ -134,19 +133,19 @@ void LCD_voidPuts(uint8_t copy_u8Col, uint8_t copy_u8Row, int8_t *copy_int8Strin
 	#endif
 	
 	#ifdef LCD20xN	//For LCD20x4
-	switch(x)
+	switch(copy_u8Col)
 	{
 		case 0: //Row 0
-			lcd_write(0,0x80+0x00+y);
+			LCD_voidWrite(0, 0x80 + 0x00 + copy_u8Row);
 			break;
 		case 1: //Row 1
-			lcd_write(0,0x80+0x40+y);
+			LCD_voidWrite(0, 0x80 + 0x40 + copy_u8Row);
 			break;
 		case 2: //Row 2
-			lcd_write(0,0x80+0x14+y);
+			LCD_voidWrite(0, 0x80 + 0x14 + copy_u8Row);
 			break;
 		case 3: //Row 3
-			lcd_write(0,0x80+0x54+y);
+			LCD_voidWrite(0, 0x80 + 0x54 + copy_u8Row);
 			break;
 	}
 	#endif

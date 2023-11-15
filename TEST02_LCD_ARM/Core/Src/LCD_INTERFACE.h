@@ -8,8 +8,8 @@
 
 /*Note: Comment which not use */
 
-#define LCD16xN //For lcd16x2 or lcd16x4
-//#define LCD20xN //For lcd20x4
+//#define LCD16xN //For lcd16x2 or lcd16x4
+#define LCD20xN //For lcd20x4
 
 /*------------- Define For Connection -----------------*/
 
