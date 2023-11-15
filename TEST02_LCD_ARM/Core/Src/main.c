@@ -89,9 +89,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
   LCD_voidInitialization();
   LCD_voidPuts(0, 0, "Welcome to STM32");
-  LCD_voidPuts(1, 0, "Hello Hossam");
+  LCD_voidPuts(1, 0, "Hello Hosny & Tariq");
   LCD_voidPuts(2, 0, "Hello Sherbiny");
-  LCD_voidPuts(3, 0, "Hello Hosny & Tariq");
+  LCD_voidPuts(3, 0, "Hello Hossam");
 
   /* USER CODE END 2 */
 
