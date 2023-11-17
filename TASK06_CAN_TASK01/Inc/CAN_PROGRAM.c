@@ -1,25 +1,25 @@
+ /******************************************************************************
+ *
+ * Module File: CAN PROTOCOL - CONTROLLER AREA NETWORK MODULE
+ *
+ * File Name: CAN_INTERFACE.h
+ *
+ * Description: CAN Protocol Module Driver for ARM Cortex
+ *
+ * Author: Hossam Mahmoud
+ *
+ *******************************************************************************/
+
 /*******************************************************************************
-**  FILENAME     : Can.c         			                                        **
-**                                                                            **
-**  VERSION      : 1.2.0                                                      **
-**                                                                            **
-**  DATE         : 2021-04-28                                                  **
-**                                                                            **
-**  PLATFORM     : stm32f103		                                              **
-**                                                                            **
-**  AUTHOR       : osamahijazi	                                              **
-**                                                                            ***                                                                           **
-**  DESCRIPTION  : CAN Driver source file                                     **
-**                                                                            **
-*******************************************************************************/
+ *                              					Include Libraries						                       		   *
+ *******************************************************************************/
+
+#include "CAN_INTERFACE.h"
 
 /**********************************************include******************************************/
-#include "BIT_MATH.h"
-#include "Std_Types.h"
 
-#include "CAN_Interface.h"
-#include "CAN_Private.h"
-#include "CAN_cfg.h"
+
+
 
 /*
 Description: CAN Rx message structure for pending interrupt

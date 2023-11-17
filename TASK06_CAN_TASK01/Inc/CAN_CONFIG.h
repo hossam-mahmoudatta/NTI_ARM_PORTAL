@@ -1,34 +1,31 @@
+ /******************************************************************************
+ *
+ * Module File: CAN PROTOCOL - CONTROLLER AREA NETWORK MODULE
+ *
+ * File Name: CAN_CONFIG.h
+ *
+ * Description: CAN Protocol Module Driver for ARM Cortex
+ *
+ * Author: Hossam Mahmoud
+ *
+ *******************************************************************************/
+
 /*******************************************************************************
-**  FILENAME     : Can_cfg.h              			                              **
-**                                                                            **
-**  VERSION      : 1.2.0                                                      **
-**                                                                            **
-**  DATE         : 2021-02-2                                                  **
-**                                                                            **                                                                            **
-**  PLATFORM     : stm32f103		                                              **
-**                                                                            **
-**  AUTHOR       : osamahijazi	                                              **
-                                                                              **
-**  DESCRIPTION  : CAN Driver configuration file                              **
-**                                                                            **
-*******************************************************************************/
+ *                              					Include Libraries						                       		   *
+ *******************************************************************************/
+
 #ifndef CAN_CFG_H
 #define CAN_CFG_H
 
-#include "Std_Types.h"
-#include "CAN_Interface.h"
+#include "CAN_PRIVATE.h"
 
-
-/***********************************************************************************/
-                      /*** HW Macros***/
-/***********************************************************************************/						
+/***********************************************************************************
+ * 													Types Declaration
+ ***********************************************************************************/
 
 #define MAX_CONTROLLERS_NUMBER    (2U)                  
 #define USED_CONTROLLERS_NUMBER   (1U)
 #define USED_FILTERS_NUMBERS      (2U)
-
-
-
 
 /*
 Description: CAN Init structure configuration
@@ -36,13 +33,9 @@ Description: CAN Init structure configuration
 typedef struct
 {
   uint16 CAN_Prescaler;  //describe time quantum length                             
-  
   uint8 CAN_MODE;     // describe the operation mode of can driver                                                          
-
   uint8 CAN_SJW;  // describe max number of time quantum                                    
-                                                                           
   uint8 CAN_BS1;   // describe time quantum in segment 1                                   
-                         
   uint8 CAN_BS2;   // describe time quantum in seqment 2                                  
                                                        
   FunctionalState CAN_TTCM; //enable  or disable time trigger communication mode                            
@@ -81,7 +74,5 @@ typedef struct
 } CAN_FilterInitTypeDef;
 
 
-
-
 #endif
-/**************************************************************END OF FILE*********************************************************************************************************************************************************************/
+
