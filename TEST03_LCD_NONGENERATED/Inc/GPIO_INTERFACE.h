@@ -1,6 +1,6 @@
  /******************************************************************************
  *
- * Module: GPIO (Reset & Clock Control)
+ * Module: GPIO
  *
  * File Name: GPIO_INTERFACE.h
  *

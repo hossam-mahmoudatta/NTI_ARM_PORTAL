@@ -1,10 +1,10 @@
  /******************************************************************************
  *
- * Module: RCC (Reset & Clock Control)
+ * Module: GPIO
  *
- * File Name: RCC_CONFIG.h
+ * File Name: GPIO_CONFIG.h
  *
- * Description: Header file for the RCC Driver MACRO DECLARATIONS
+ * Description: Header file for the GPIO Driver MACRO DECLARATIONS
  *
  * Author: Hossam Mahmoud
  *
