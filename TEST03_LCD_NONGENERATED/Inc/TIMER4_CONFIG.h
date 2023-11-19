@@ -55,5 +55,11 @@
 #define TIMx_CCMR1_OC2M1					13		// Output compare 1 mode
 #define TIMx_CCMR1_OC2M2					14		// Output compare 1 mode
 
+#define TIMx_PSC_VALUE						15		// Prescaler Value
+#define TIMx_ARR_VALUE						100	// Prescaler Value In Auto Reload
+
+#define TIMx_CR1_APRE_ENABLE			1			// Capture/Compare 1 output ENABLE
+#define TIMx_CR1_APRE_DISABLE			0			// Capture/Compare 1 output DISABLE
+
 
 #endif /* TIMER4_CONFIG_H_ */

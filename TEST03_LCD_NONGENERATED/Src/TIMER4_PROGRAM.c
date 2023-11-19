@@ -25,9 +25,10 @@
 void TIMER4_voidPWMInitialization(u8 copy_u8ChannelNumber)
 {
 	/* To disable timer , Enable auto Preload ARR */
-	TIMER4_PSC = 15;
-	TIMER4_CR1 = 0x0080;
-	TIMER4_ARR = 100;
+	TIMER4_REG->TIMx_PSC = TIMx_PSC_VALUE;
+	TIMER4_REG->TIMx_CR1.TIMx_CR1_ARPE =TIMx_CR1_APRE_ENABLE;
+
+	TIMER4_REG->TIMx_ARR = TIMx_ARR_VALUE;
 
 	switch(copy_u8ChannelNumber)
 	{

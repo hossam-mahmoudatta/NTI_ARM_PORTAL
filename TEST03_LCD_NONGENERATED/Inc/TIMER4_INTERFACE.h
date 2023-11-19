@@ -28,4 +28,4 @@ void TIMER4_voidPWMSetDutyCycle(u8, u32);
 void TIMER4_voidPWMStart();
 
 
-#endif /* MCAL_TIMER_TIMER_INTERFACE_H_ */
+#endif /* TIMER4_INTERFACE_H_ */
