@@ -1,0 +1,4 @@
+../Src/TIMER2_program.c:12:6:TIMER2_VoidInitInputCapture	16	static
+../Src/TIMER2_program.c:42:4:Timer2_u8InputCaptureSetCallBack	24	static
+../Src/TIMER2_program.c:58:6:Timer2_VoidSetPreload	16	static
+../Src/TIMER2_program.c:64:6:TIM2_IRQHandler	8	static

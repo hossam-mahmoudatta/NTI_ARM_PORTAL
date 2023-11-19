@@ -1,0 +1,17 @@
+../Src/MOTOR_program.c:20:6:MOTORS_Void_MotorInit	8	static
+../Src/MOTOR_program.c:83:6:MOTOR_RF_Void_MotorSetSpeed	16	static
+../Src/MOTOR_program.c:88:6:MOTOR_RF_GO_FORWARD	8	static
+../Src/MOTOR_program.c:93:6:MOTOR_RF_GO_BACKWARD	8	static
+../Src/MOTOR_program.c:99:6:MOTOR_RF_STOP	8	static
+../Src/MOTOR_program.c:113:6:MOTOR_LF_Void_MotorSetSpeed	16	static
+../Src/MOTOR_program.c:117:6:MOTOR_LF_GO_FORWARD	8	static
+../Src/MOTOR_program.c:122:6:MOTOR_LF_GO_BACKWARD	8	static
+../Src/MOTOR_program.c:129:6:MOTOR_LF_STOP	8	static
+../Src/MOTOR_program.c:141:6:MOTOR_RB_Void_MotorSetSpeed	16	static
+../Src/MOTOR_program.c:145:6:MOTOR_RB_GO_FORWARD	8	static
+../Src/MOTOR_program.c:150:6:MOTOR_RB_GO_BACKWARD	8	static
+../Src/MOTOR_program.c:154:6:MOTOR_RB_STOP	8	static
+../Src/MOTOR_program.c:164:6:MOTOR_LB_Void_MotorSetSpeed	16	static
+../Src/MOTOR_program.c:168:6:MOTOR_LB_GO_FORWARD	8	static
+../Src/MOTOR_program.c:173:6:MOTOR_LB_GO_BACKWARD	8	static
+../Src/MOTOR_program.c:178:6:MOTOR_LB_STOP	8	static

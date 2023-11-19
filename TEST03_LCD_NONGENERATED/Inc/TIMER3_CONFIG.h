@@ -1,30 +1,28 @@
  /******************************************************************************
  *
- * Module: TIMER4
+ * Module: TIMER3
  *
- * File Name: TIMER4_INTERFACE.h
+ * File Name: TIMER3_PRIVATE.h
  *
- * Description: Header file for the TIMER4 Driver Registers
+ * Description: Header file for the TIMER3 Driver Registers
  *
- * Author: Tariq, Hosny & Hossam
+ * Author: Hossam Mahmoud
  *
  *******************************************************************************/
 
 /*******************************************************************************
  *                              							Include Libraries						                       		   *
  *******************************************************************************/
-#ifndef TIMER4_INTERFACE_H_
-#define TIMER4_INTERFACE_H_
 
-#include "TIMER4_CONFIG.h"
+#ifndef TIMER3_CONFIG_H_
+#define TIMER3_CONFIG_H_
+
+#include "TIMER3_PRIVATE.h"
 
 /*******************************************************************************
- *                              				TIMER4 Function Declarations					               				     *
+ *                              						TIMER3 Macro Definitions					               				     *
  *******************************************************************************/
 
-void TIMER4_voidPWMInitialization(u8 copy_u8ChannelNumber);
-void TIMER4_voidPWMSetDutyCycle(u8, u32);
-void TIMER4_voidPWMStart();
 
 
-#endif /* MCAL_TIMER_TIMER_INTERFACE_H_ */
+#endif /* TIMER3_CONFIG_H_ */
