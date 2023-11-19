@@ -1,10 +1,10 @@
  /******************************************************************************
  *
- * Module: RCC (Reset & Clock Control)
+ * Module: TIMER10 (Reset & Clock Control)
  *
- * File Name: RCC_CONFIG.h
+ * File Name: TIMER10_CONFIG.h
  *
- * Description: Header file for the RCC Driver MACRO DECLARATIONS
+ * Description: Header file for the TIMER10 Driver MACRO DECLARATIONS
  *
  * Author: Hossam Mahmoud
  *
@@ -14,28 +14,20 @@
  *                              							Include Libraries						                       		   *
  *******************************************************************************/
 
-#ifndef SYSTICK_CONFIG_H
-#define SYSTICK_CONFIG_H
+#ifndef TIMER10_CONFIG_H
+#define TIMER10_CONFIG_H
 
-#include "SYSTICK_PRIVATE.h"
+#include "TIMER10_PRIVATE.h"
 
 /*******************************************************************************
- *                              						RCC Macro Definitions					               				     *
+ *                              						TIMER10 Macro Definitions					               				     *
  *******************************************************************************/
 // Choosing the Clock Type		##IMPORTANT##
 
-#define SYSTICK_COUNTER_DISABLE 0
-#define SYSTICK_COUNTER_ENABLE 	1
-
-#define SYSTICK_TICKINT_DISABLE 0
-#define SYSTICK_TICKINT_ENABLE 	1
-
-#define SYSTICK_CLKSOURCE_AHB8  0
-#define SYSTICK_CLKSOURCE_AHB   1
-
-#define SYSTICK_ISR_ENABLE 		1
-
-
-#define SYSTICK_TICKS     		8000
+#define TIMER10_CHANNEL_1			 	1
+#define TIMER10_CHANNEL_2			 	2
+#define TIMER10_CHANNEL_3			 	3
+#define TIMER10_CHANNEL_4			 	4
+#define TIMER10_CHANNEL_SELECT	TIMER10_CHANNEL_1
 
 #endif
