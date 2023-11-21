@@ -4,7 +4,7 @@
  *
  * File Name: LCD_CONFIG.h
  *
- * Description: Header file for the AVR LCD Driver Macro Definitions
+ * Description: Header file for the ARM LCD Driver Macro Definitions
  *
  * Author: Hossam Mahmoud
  *
@@ -76,8 +76,8 @@
 
 /*------------ Declaring Private Macro -----------------*/
 
-#define PIN_LOW(PORT, PIN)	GPIO_voidSetPinValue(PIN, PORT, LOGIC_LOW)
-#define PIN_HIGH(PORT, PIN)	GPIO_voidSetPinValue(PIN, PORT, LOGIC_HIGH)
+#define PIN_LOW(PORT, PIN)	GPIO_voidSetPinValue(PORT, PIN, LOGIC_LOW)
+#define PIN_HIGH(PORT, PIN)	GPIO_voidSetPinValue(PORT, PIN, LOGIC_HIGH)
 
 #define LCD_MAXROW_SIZE        			2
 #define LCD_MAXCOL_SIZE        			16

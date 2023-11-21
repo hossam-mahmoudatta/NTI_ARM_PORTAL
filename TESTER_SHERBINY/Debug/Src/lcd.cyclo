@@ -1,7 +1,0 @@
-../Src/lcd.c:9:6:CLCD_voidSendCommand	1
-../Src/lcd.c:41:6:CLCD_voidSendData	1
-../Src/lcd.c:75:6:CLCD_voidInit	1
-../Src/lcd.c:102:6:CLCD_voidWriteNumber	4
-../Src/lcd.c:141:6:CLCD_voidSendString	2
-../Src/lcd.c:150:6:CLCD_voidWriteSpecialCharacter	2
-../Src/lcd.c:172:6:CLCD_voidGoToXY	3

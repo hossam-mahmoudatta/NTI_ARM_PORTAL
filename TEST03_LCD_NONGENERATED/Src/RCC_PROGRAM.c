@@ -14,7 +14,7 @@
  *                              							Include Libraries						                       		   *
  *******************************************************************************/
 
-#include "RCC_INTERFACE.h"
+#include "../Inc/RCC_INTERFACE.h"
 
 /*******************************************************************************
  *                              					RCC Function Implementations									   	*
@@ -23,10 +23,15 @@
 // Initializes the RCC Module with the necessary Configurations
 void RCC_voidInitialization(void)
 {
+	u32 LOC_u32TimeOut = 0;
 #if	RCC_CLOCKTYPE == RCC_HSI
 	RCC_CR_REG->HSION = HSION_STATE;
 	RCC_CR_REG->HSITRIM = 0b10000; 		// Default Value @ 16
 	RCC_CFGR_REG->SW = CFGR_SW_HSI;
+
+	// Check for timeout for HSI Instability
+	while((RCC_CR_REG->HSIRDY == 0 ) && ( LOC_u32TimeOut < 100000 ) ){ LOC_u32TimeOut++; }
+	if( LOC_u32TimeOut >= 100000 ){ /*TimeOut*/ }
 
 #elif	RCC_CLOCKTYPE == RCC_HSE_CRYSTAL
 	RCC_CR_REG->HSEON = HSEON_STATE;

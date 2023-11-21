@@ -24,18 +24,18 @@
  *******************************************************************************/
 // Choosing the Clock Type		##IMPORTANT##
 
-#define SYSTICK_COUNTER_DISABLE 0
-#define SYSTICK_COUNTER_ENABLE 	1
+#define STK_LOAD_INITIAL					0x00FFFFFF
+#define STK_VAL_INITIAL					0
 
-#define SYSTICK_TICKINT_DISABLE 0
-#define SYSTICK_TICKINT_ENABLE 	1
+#define STK_CLKSOURCE_AHB8  	0
+#define STK_CLKSOURCE_AHB   	1
+#define CLKSOURCE_SELECT   				STK_CLKSOURCE_AHB
 
-#define SYSTICK_CLKSOURCE_AHB8  0
-#define SYSTICK_CLKSOURCE_AHB   1
+#define STK_ISR_ENABLE 		1
 
-#define SYSTICK_ISR_ENABLE 		1
-
-
-#define SYSTICK_TICKS     		8000
+#define STK_1MHZ_TICKS			1000
+#define STK_8MHZ_TICKS			8000
+#define STK_72MHZ_TICKS		72000
+#define STK_TICKS     				STK_1MHZ_TICKS
 
 #endif

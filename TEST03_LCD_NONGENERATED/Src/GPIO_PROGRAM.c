@@ -14,7 +14,7 @@
  *                              							Include Libraries						                       		   *
  *******************************************************************************/
 
-#include "GPIO_INTERFACE.h"
+#include "../Inc/GPIO_INTERFACE.h"
 
 /*******************************************************************************
  *                              					GPIO Function Implementations									   	*
@@ -29,48 +29,48 @@ void GPIO_voidSetPinDirection(u8 copy_u8PortID, u8 copy_u8PinID, u8 copy_u8Mode)
 			if(copy_u8PinID <= 7 )
 			{
 				//CR LOW
-				GPIO_A_REG->GPIOx_CRL.CRL_u32Value &= ~ ((0b1111) << (copy_u8PinID * 4));
-				GPIO_A_REG->GPIOx_CRL.CRL_u32Value |= ((copy_u8Mode) << (copy_u8PinID * 4));
+				GPIO_A_REG->GPIOx_CRL &= ~ ((0b1111) << (copy_u8PinID * 4));
+				GPIO_A_REG->GPIOx_CRL |= ((copy_u8Mode) << (copy_u8PinID * 4));
 
 			}
 			else if(copy_u8PinID <= 15)
 			{
 				// CR High
 				copy_u8PinID -= 8;
-				GPIO_A_REG->GPIOx_CRH.CRH_u32Value &= ~ ((0b1111) << (copy_u8PinID * 4));
-				GPIO_A_REG->GPIOx_CRH.CRH_u32Value |= ((copy_u8Mode) << (copy_u8PinID * 4));
+				GPIO_A_REG->GPIOx_CRH &= ~ ((0b1111) << (copy_u8PinID * 4));
+				GPIO_A_REG->GPIOx_CRH |= ((copy_u8Mode) << (copy_u8PinID * 4));
 			}
 		break;
 		case PORT_B:
 			if(copy_u8PinID <= 7 )
 			{
 				//CR LOW
-				GPIO_B_REG->GPIOx_CRL.CRL_u32Value &= ~ ((0b1111) << (copy_u8PinID * 4));
-				GPIO_B_REG->GPIOx_CRL.CRL_u32Value |= ((copy_u8Mode) << (copy_u8PinID * 4));
+				GPIO_B_REG->GPIOx_CRL &= ~ ((0b1111) << (copy_u8PinID * 4));
+				GPIO_B_REG->GPIOx_CRL |= ((copy_u8Mode) << (copy_u8PinID * 4));
 
 			}
 			else if(copy_u8PinID <= 15)
 			{
 				// CR High
 				copy_u8PinID -= 8;
-				GPIO_B_REG->GPIOx_CRH.CRH_u32Value &= ~ ((0b1111) << (copy_u8PinID * 4));
-				GPIO_B_REG->GPIOx_CRH.CRH_u32Value |= ((copy_u8Mode) << (copy_u8PinID * 4));
+				GPIO_B_REG->GPIOx_CRH &= ~ ((0b1111) << (copy_u8PinID * 4));
+				GPIO_B_REG->GPIOx_CRH |= ((copy_u8Mode) << (copy_u8PinID * 4));
 			}
 		break;
 		case PORT_C:
 			if(copy_u8PinID <= 7 )
 			{
 				//CR LOW
-				GPIO_C_REG->GPIOx_CRL.CRL_u32Value &= ~ ((0b1111) << (copy_u8PinID * 4));
-				GPIO_C_REG->GPIOx_CRL.CRL_u32Value |= ((copy_u8Mode) << (copy_u8PinID * 4));
+				GPIO_C_REG->GPIOx_CRL &= ~ ((0b1111) << (copy_u8PinID * 4));
+				GPIO_C_REG->GPIOx_CRL |= ((copy_u8Mode) << (copy_u8PinID * 4));
 
 			}
 			else if(copy_u8PinID <= 15)
 			{
 				// CR High
 				copy_u8PinID -= 8;
-				GPIO_C_REG->GPIOx_CRH.CRH_u32Value &= ~ ((0b1111) << (copy_u8PinID * 4));
-				GPIO_C_REG->GPIOx_CRH.CRH_u32Value |= ((copy_u8Mode) << (copy_u8PinID * 4));
+				GPIO_C_REG->GPIOx_CRH &= ~ ((0b1111) << (copy_u8PinID * 4));
+				GPIO_C_REG->GPIOx_CRH |= ((copy_u8Mode) << (copy_u8PinID * 4));
 			}
 		break;
 	}

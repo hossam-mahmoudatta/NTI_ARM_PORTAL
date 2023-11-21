@@ -71,7 +71,7 @@ void MOTORS_Void_MotorInit()
 	TIMER4_Void_PwmInit(TIMER4_CHANNEL1);
 	TIMER4_Void_PwmInit(TIMER4_CHANNEL2);
 
-	TIMER4_Void_PwmStart();
+	//TIMER4_Void_PwmStart();
 
 }
 

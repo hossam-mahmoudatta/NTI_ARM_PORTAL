@@ -61,8 +61,8 @@ all: main-build
 main-build: PROJECT1.elf secondary-outputs
 
 # Tool invocations
-PROJECT1.elf PROJECT1.map: $(OBJS) $(USER_OBJS) C:\Users\Administrator\Desktop\ITIDA\NTI\ PROGRAM\NTI_ARM\NTI_ARM_WORKSPACE\PROJECT1\STM32F100R4TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "PROJECT1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM\NTI_ARM_WORKSPACE\PROJECT1\STM32F100R4TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PROJECT1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+PROJECT1.elf PROJECT1.map: $(OBJS) $(USER_OBJS) C:\Users\Administrator\Desktop\ITIDA\NTI\ PROGRAM\NTI_ARM_PORTAL\PROJECT1\STM32F100R4TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "PROJECT1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\PROJECT1\STM32F100R4TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PROJECT1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

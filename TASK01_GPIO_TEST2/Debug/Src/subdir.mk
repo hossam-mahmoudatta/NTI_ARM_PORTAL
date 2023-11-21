@@ -7,6 +7,7 @@
 C_SRCS += \
 ../Src/GPIO_PROGRAM.c \
 ../Src/RCC_PROGRAM.c \
+../Src/SYSTICK_PROGRAM.c \
 ../Src/main.c \
 ../Src/syscalls.c \
 ../Src/sysmem.c 
@@ -14,6 +15,7 @@ C_SRCS += \
 OBJS += \
 ./Src/GPIO_PROGRAM.o \
 ./Src/RCC_PROGRAM.o \
+./Src/SYSTICK_PROGRAM.o \
 ./Src/main.o \
 ./Src/syscalls.o \
 ./Src/sysmem.o 
@@ -21,6 +23,7 @@ OBJS += \
 C_DEPS += \
 ./Src/GPIO_PROGRAM.d \
 ./Src/RCC_PROGRAM.d \
+./Src/SYSTICK_PROGRAM.d \
 ./Src/main.d \
 ./Src/syscalls.d \
 ./Src/sysmem.d 
@@ -33,7 +36,7 @@ Src/%.o Src/%.su Src/%.cyclo: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/GPIO_PROGRAM.cyclo ./Src/GPIO_PROGRAM.d ./Src/GPIO_PROGRAM.o ./Src/GPIO_PROGRAM.su ./Src/RCC_PROGRAM.cyclo ./Src/RCC_PROGRAM.d ./Src/RCC_PROGRAM.o ./Src/RCC_PROGRAM.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+	-$(RM) ./Src/GPIO_PROGRAM.cyclo ./Src/GPIO_PROGRAM.d ./Src/GPIO_PROGRAM.o ./Src/GPIO_PROGRAM.su ./Src/RCC_PROGRAM.cyclo ./Src/RCC_PROGRAM.d ./Src/RCC_PROGRAM.o ./Src/RCC_PROGRAM.su ./Src/SYSTICK_PROGRAM.cyclo ./Src/SYSTICK_PROGRAM.d ./Src/SYSTICK_PROGRAM.o ./Src/SYSTICK_PROGRAM.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
 
 .PHONY: clean-Src
 

@@ -110,8 +110,9 @@ typedef struct {
 #define APB2_IOPCEN				4		// IO PORT C clock enable
 #define APB2_IOPDEN				5		// IO PORT D clock enable
 #define APB2_IOPEEN				6		// IO PORT E clock enable
-#define APB2_IOPFEN				7		// IO PORT F clock enable
-#define APB2_IOPGEN				8		// IO PORT G clock enable
+#define APB2_IOPFEN				9		// IO PORT F clock enable
+#define APB2_IOPGEN				10		// IO PORT G clock enable
+#define APB2_TIM1EN				11		// IO PORT G clock enable
 #define RCC_APB2ENR_REG   	*((volatile u32*)0x40021018)
 
 //typedef struct {
@@ -145,7 +146,20 @@ typedef struct {
 //	u8 DACEN	: 1;		// DAC interface clock enable
 //	u8                : 2;		// Res
 //} RCC_APB1ENR;
-//#define RCC_APB1ENR_REG    	((volatile RCC_APB1ENR*) 0x4002101C)			// RCC APB1 peripheral clock enable register
+//#define RCC_APB1ENR_REG    	((volatile RCC_APB1ENR*) 0x4002101C)		// RCC APB1 peripheral clock enable register
+
+
+
+#define APB1_TIM2EN				0		// IO PORT A clock enable
+#define APB1_TIM3EN				1		// IO PORT B clock enable
+#define APB1_TIM4EN				2		// IO PORT C clock enable
+#define APB1_TIM5EN				3		// IO PORT D clock enable
+#define APB1_TIM6EN				4		// IO PORT E clock enable
+#define APB1_TIM7EN				5		// IO PORT F clock enable
+#define APB1_UART2EN			17		// IO PORT F clock enable
+#define APB1_UART3EN			18		// IO PORT F clock enable
+#define APB1_UART4EN			19		// IO PORT F clock enable
+#define APB1_UART5EN			20		// IO PORT F clock enable
 #define RCC_APB1ENR_REG    	*((volatile u32*)0x4002101C)
 
 

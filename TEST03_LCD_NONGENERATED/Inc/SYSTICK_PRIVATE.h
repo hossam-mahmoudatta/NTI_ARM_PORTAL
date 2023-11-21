@@ -24,12 +24,26 @@
  *                              							RCC Registers					                   				     *
  *******************************************************************************/
 
-#define STK_CTRL_ENABLE 	0
-#define STK_CTRL_TICKINT 	1
-#define STK_CTRL_CLKSOURCE 	2
-#define STK_CTRL_COUNTFLAG 	16
 
-#define STK_CTRL_REG    *((volatile u32*) 0xE000E010)			// RCC CLOCK CONTROL REGISTER
+// CTRL Registers
+typedef struct
+{
+	volatile u32 STK_CTRL_ENABLE:  			1;
+	volatile u32 STK_CTRL_TICKINT: 				1;
+	volatile u32 STK_CTRL_CLKSOURCE: 		1;
+	volatile u32                                      : 		13;
+	volatile u32 STK_CTRL_COUNTFLAG:		1;
+} STK_CTRL;
+
+typedef struct
+{
+	STK_CTRL STK_CTRL ;
+	volatile u32 STK_LOAD ;
+	volatile u32 STK_VAL  ;
+	volatile u32 STK_CALIB;
+} STK;
+#define STK_REG    ((volatile STK*) 0xE000E010)			// STK REGISTER
+
 
 #define STK_LOAD_REG    *((volatile u32*) 0xE000E014)			// RCC CLOCK CONTROL REGISTER
 
@@ -40,3 +54,8 @@
 
 
 #endif
+
+//#define STK_CTRL_ENABLE 	0
+//#define STK_CTRL_TICKINT 	1
+//#define STK_CTRL_CLKSOURCE 	2
+//#define STK_CTRL_COUNTFLAG 	16
