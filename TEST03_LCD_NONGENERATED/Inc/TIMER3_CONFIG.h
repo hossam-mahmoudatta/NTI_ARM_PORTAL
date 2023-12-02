@@ -39,19 +39,19 @@
 #define TIMx_CCMRx_OCxM_PWM1							0b110		// Output compare 1 mode
 #define TIMx_CCMRx_OCxM_PWM2							0b111		// Output compare 1 mode
 #define TIMER3_CCMRx_OC1M_MODE						TIMx_CCMRx_OCxM_PWM2		// Output compare 1 mode
-#define TIMER3_CCMRx_OC2M_MODE						TIMx_CCMRx_OCxM_PWM2		// Output compare 2 mode
-#define TIMER3_CCMRx_OC3M_MODE						TIMx_CCMRx_OCxM_PWM2		// Output compare 3 mode
-#define TIMER3_CCMRx_OC4M_MODE						TIMx_CCMRx_OCxM_PWM2		// Output compare 4 mode
+#define TIMER3_CCMRx_OC2M_MODE					TIMx_CCMRx_OCxM_PWM2		// Output compare 2 mode
+#define TIMER3_CCMRx_OC3M_MODE					TIMx_CCMRx_OCxM_PWM2		// Output compare 3 mode
+#define TIMER3_CCMRx_OC4M_MODE					TIMx_CCMRx_OCxM_PWM2		// Output compare 4 mode
 
 
 #define TIMx_CCMRx_CCxS_OUTPUT					0b00	// Capture Config as Output
 #define TIMx_CCMRx_CCxS_ICxTIx1						0b01		// Capture Config as input, ICx to TI
 #define TIMx_CCMRx_CCxS_ICxTIx2						0b10		// Capture Config as Output
 #define TIMx_CCMRx_CCxS_ICxTRC						0b11		// Capture Config as Output
-#define TIMER3_CCMRx_CC1S_MODE					TIMx_CCMRx_CCxS_ICxTIx1		// Capture Config as Output
-#define TIMER3_CCMRx_CC2S_MODE					TIMx_CCMRx_CCxS_ICxTIx1		// Capture Config as Output
-#define TIMER3_CCMRx_CC3S_MODE					TIMx_CCMRx_CCxS_ICxTIx1		// Capture Config as Output
-#define TIMER3_CCMRx_CC4S_MODE					TIMx_CCMRx_CCxS_ICxTIx1		// Capture Config as Output
+#define TIMER3_CCMRx_CC1S_MODE					TIMx_CCMRx_CCxS_ICxTIx1
+#define TIMER3_CCMRx_CC2S_MODE					TIMx_CCMRx_CCxS_ICxTIx1
+#define TIMER3_CCMRx_CC3S_MODE					TIMx_CCMRx_CCxS_ICxTIx1
+#define TIMER3_CCMRx_CC4S_MODE				TIMx_CCMRx_CCxS_ICxTIx1
 
 #define TIMER3_RISING_EDGE 									0
 #define TIMER3_FALLING_EDGE 								1

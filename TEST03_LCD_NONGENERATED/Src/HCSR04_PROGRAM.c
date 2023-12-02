@@ -44,10 +44,17 @@ u32 volatile Difference4 = 0;
 u8   volatile Is_First_Captured4 = 0;  // is the first value captured ?
 u8   volatile Distance4  = 0;
 
+u32 volatile ICU5_Value1 = 0;
+u32 volatile ICU5_Value2 = 0;
+u32 volatile Difference5 = 0;
+u8   volatile Is_First_Captured5 = 0;  // is the first value captured ?
+u8   volatile Distance5  = 0;
+
 u8 Received_distanceOne = 0;
 u8 Received_distanceTwo = 0;
 u8 Received_distanceThree = 0;
 u8 Received_distanceFour = 0;
+u8 Received_distanceFive = 0;
 
 /*******************************************************************************
  *                              		HCSR04 Function Implementations		     				     *

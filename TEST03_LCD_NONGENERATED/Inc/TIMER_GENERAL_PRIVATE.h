@@ -94,7 +94,7 @@ typedef struct
 	u32 TIMx_CCMR1_OC1FE: 	1;
 	u32 TIMx_CCMR1_OC1PE:		1;
 	u32 TIMx_CCMR1_OC1M:		3;
-	u32 TIMx_CCMR1_OC1CE:	1;
+	u32 TIMx_CCMR1_OC1CE:		1;
 	u32 TIMx_CCMR1_CC2S: 		2;
 	u32 TIMx_CCMR1_OC2FE: 	1;
 	u32 TIMx_CCMR1_OC2PE:		1;
@@ -174,12 +174,9 @@ typedef struct
 #define TIMER4_REG                          		((volatile TIMx_REGISTERS*)(TIMER4_BASE_ADDRESS))
 
 
-
-
-
-
-
 #endif /* TIMER_GENERAL_PRIVATE_H_ */
+
+
 
 
 

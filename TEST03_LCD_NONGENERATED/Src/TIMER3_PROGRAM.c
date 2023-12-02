@@ -55,6 +55,42 @@ void TIMER3_voidICUInitialization(u8 copy_u8ChannelNumber)
 			TIMER3_REG->TIMx_DIER.TIMx_DIER_CC1IE = ENABLE;
 //			SET_BIT(TIMER3_DIER,1);
 			break;
+
+		/******************** CHANNEL 2 ********************/
+		case TIMER3_CHANNEL2:
+			//CC1s channel is configured as input, IC1 is mapped on TI1
+			TIMER3_REG->TIMx_CCMR1.TIMx_CCMR1_CC2S = TIMER3_CCMRx_CC2S_MODE;
+//			SET_BIT(TIMER3_CCMR1,0);
+//			CLR_BIT(TIMER3_CCMR1,1);
+
+			// Enable capture on each channel
+			TIMER3_REG->TIMx_CCER.TIMx_CCER_CC2E = ENABLE;
+			TIMER3_REG->TIMx_CCER.TIMx_CCER_CC2P = DISABLE;
+//			SET_BIT(TIMER3_CCER,0);
+//			CLR_BIT(TIMER3_CCER,1);
+
+			// Enable capture interrupt on each channel
+			TIMER3_REG->TIMx_DIER.TIMx_DIER_CC2IE = ENABLE;
+//			SET_BIT(TIMER3_DIER,1);
+			break;
+
+		/******************** CHANNEL 3 ********************/
+		case TIMER3_CHANNEL3:
+			//CC1s channel is configured as input, IC1 is mapped on TI1
+			TIMER3_REG->TIMx_CCMR2.TIMx_CCMR2_CC3S = TIMER3_CCMRx_CC3S_MODE;
+	//			SET_BIT(TIMER3_CCMR1,0);
+	//			CLR_BIT(TIMER3_CCMR1,1);
+
+			// Enable capture on each channel
+			TIMER3_REG->TIMx_CCER.TIMx_CCER_CC3E = ENABLE;
+			TIMER3_REG->TIMx_CCER.TIMx_CCER_CC3P = DISABLE;
+	//			SET_BIT(TIMER3_CCER,0);
+	//			CLR_BIT(TIMER3_CCER,1);
+
+			// Enable capture interrupt on each channel
+			TIMER3_REG->TIMx_DIER.TIMx_DIER_CC3IE = ENABLE;
+	//			SET_BIT(TIMER3_DIER,1);
+			break;
 	}
 	// Enable Timer 3
 	TIMER3_REG->TIMx_CR1.TIMx_CR1_CEN = ENABLE;
@@ -98,6 +134,10 @@ void 	TIMER3_voidEnableInterrupt(u8 copy_u8ChannelNumber)
 			TIMER3_REG->TIMx_DIER.TIMx_DIER_CC2IE = ENABLE;
 //			SET_BIT(TIMER2_DIER,2);
 			break;
+		case TIMER3_CHANNEL3:
+			TIMER3_REG->TIMx_DIER.TIMx_DIER_CC3IE = ENABLE;
+//			SET_BIT(TIMER2_DIER,2);
+			break;
 	}
 }
 
@@ -114,6 +154,10 @@ void 	TIMER3_voidDisableInterrupt(u8 copy_u8ChannelNumber)
 		case TIMER3_CHANNEL2:
 			TIMER3_REG->TIMx_DIER.TIMx_DIER_CC2IE = DISABLE;
 //			SET_BIT(TIMER2_DIER,2);
+			break;
+		case TIMER3_CHANNEL3:
+			TIMER3_REG->TIMx_DIER.TIMx_DIER_CC3IE = DISABLE;
+//			SET_BIT(TIMER2_DIER,3);
 			break;
 	}
 }
@@ -135,22 +179,30 @@ void 	TIMER3_voidChangePolarity(u8 copy_u8ChannelNumber, u8 copy_u8Edge)
 				TIMER3_REG->TIMx_CCER.TIMx_CCER_CC2P = DISABLE;
 //				CLR_BIT(TIMER2_CCER,5);
 				break;
+			case TIMER3_CHANNEL3:
+				TIMER3_REG->TIMx_CCER.TIMx_CCER_CC3P = DISABLE;
+//				CLR_BIT(TIMER2_CCER,5);
+				break;
 			}
 			break;
 
-			case TIMER3_FALLING_EDGE:
-				switch(copy_u8ChannelNumber)
-				{
-				case TIMER3_CHANNEL1:
-					TIMER3_REG->TIMx_CCER.TIMx_CCER_CC1P = ENABLE;
+		case TIMER3_FALLING_EDGE:
+			switch(copy_u8ChannelNumber)
+			{
+			case TIMER3_CHANNEL1:
+				TIMER3_REG->TIMx_CCER.TIMx_CCER_CC1P = ENABLE;
 //					SET_BIT(TIMER2_CCER,1);
-					break;
-				case TIMER3_CHANNEL2:
-					TIMER3_REG->TIMx_CCER.TIMx_CCER_CC2P = ENABLE;
-//					SET_BIT(TIMER2_CCER,5);
-					break;
-				}
 				break;
+			case TIMER3_CHANNEL2:
+				TIMER3_REG->TIMx_CCER.TIMx_CCER_CC2P = ENABLE;
+//					SET_BIT(TIMER2_CCER,5);
+				break;
+			case TIMER3_CHANNEL3:
+				TIMER3_REG->TIMx_CCER.TIMx_CCER_CC3P = ENABLE;
+//					SET_BIT(TIMER2_CCER,5);
+				break;
+			}
+			break;
 	}
 }
 
@@ -158,7 +210,7 @@ void 	TIMER3_voidChangePolarity(u8 copy_u8ChannelNumber, u8 copy_u8Edge)
 
 u32  	TIMER3_u32GetICUValue(u8 copy_u8ChannelNumber)
 {
-	u32 u32Value1, u32Value2, returnValue;
+	u32 u32Value1, u32Value2, u32Value3, returnValue;
 	switch(copy_u8ChannelNumber)
 	{
 		case TIMER3_CHANNEL1:
@@ -169,6 +221,11 @@ u32  	TIMER3_u32GetICUValue(u8 copy_u8ChannelNumber)
 		case TIMER3_CHANNEL2:
 			u32Value2 = TIMER3_REG->TIMx_CCR2;
 			returnValue = u32Value2;
+//			u32Value2 = TIMER2_CCR2;
+			break;
+		case TIMER3_CHANNEL3:
+			u32Value2 = TIMER3_REG->TIMx_CCR3;
+			returnValue = u32Value3;
 //			u32Value2 = TIMER2_CCR2;
 			break;
 	}

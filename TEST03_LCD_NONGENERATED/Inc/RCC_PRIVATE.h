@@ -112,7 +112,9 @@ typedef struct {
 #define APB2_IOPEEN				6		// IO PORT E clock enable
 #define APB2_IOPFEN				9		// IO PORT F clock enable
 #define APB2_IOPGEN				10		// IO PORT G clock enable
-#define APB2_TIM1EN				11		// IO PORT G clock enable
+#define APB2_TIM1EN				11		// TIMER 1 clock enable
+#define APB2_USART1EN		14		// USART 1 clock enable
+
 #define RCC_APB2ENR_REG   	*((volatile u32*)0x40021018)
 
 //typedef struct {

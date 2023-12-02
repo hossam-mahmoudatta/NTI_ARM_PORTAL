@@ -59,7 +59,7 @@ void TIMER2_voidICUInitialization(u8 copy_u8ChannelNumber)
 		/******************** CHANNEL 2 ********************/
 		case TIMER2_CHANNEL2:
 			//CC2 channel is configured as input, IC2 is mapped on TI2
-			TIMER2_REG->TIMx_CCMR1.TIMx_CCMR1_CC1S = TIMER2_CCMRx_CC1S_MODE;
+			TIMER2_REG->TIMx_CCMR1.TIMx_CCMR1_CC2S = TIMER2_CCMRx_CC1S_MODE;
 //			SET_BIT(TIMER2_CCMR1,8);
 //			CLR_BIT(TIMER2_CCMR1,9);
 
@@ -75,6 +75,8 @@ void TIMER2_voidICUInitialization(u8 copy_u8ChannelNumber)
 //			SET_BIT(TIMER2_DIER,2);
 			break;
 	}
+
+
 
 	// Enable Timer 2
 	TIMER2_REG->TIMx_CR1.TIMx_CR1_CEN = ENABLE;
