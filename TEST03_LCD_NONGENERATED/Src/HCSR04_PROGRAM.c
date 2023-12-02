@@ -108,6 +108,13 @@ void HCSR04_voidTriggerFour(void)
 	GPIO_voidSetPinValue(HCSR04_S4_TRIGGER, LOGIC_LOW);  // pull the TRIG pin low
 }
 
+void HCSR04_voidTriggerFive(void)
+{
+	GPIO_voidSetPinValue(HCSR04_S5_TRIGGER, LOGIC_HIGH);	// pull the TRIG pin HIGH
+	_delay_us(10);  // wait for 10 us
+	GPIO_voidSetPinValue(HCSR04_S5_TRIGGER, LOGIC_LOW);  // pull the TRIG pin low
+}
+
 
 
 u8 HCSR04_u8ReadOne(void)
@@ -154,7 +161,7 @@ u8 HCSR04_u8ReadThree(void)
 
 u8 HCSR04_u8ReadFour(void)
 {
-	TIMER2_voidSetPreload(0);
+	TIMER3_voidSetPreload(0);
 	HCSR04_voidTriggerFour();
 
 	while(Is_First_Captured4 < 2);
@@ -163,6 +170,19 @@ u8 HCSR04_u8ReadFour(void)
 	Is_First_Captured4 = 0;
 	TIMER3_voidEnableInterrupt(TIMER3_CHANNEL2);
 	return Distance4;
+}
+
+u8 HCSR04_u8ReadFive(void)
+{
+	TIMER3_voidSetPreload(0);
+	HCSR04_voidTriggerFive();
+
+	while(Is_First_Captured5 < 2);
+	Difference5 = ICU5_Value2 - ICU5_Value1;
+	Distance5 = (Difference5 / 58);
+	Is_First_Captured5 = 0;
+	TIMER3_voidEnableInterrupt(TIMER3_CHANNEL3);
+	return Distance5;
 }
 
 

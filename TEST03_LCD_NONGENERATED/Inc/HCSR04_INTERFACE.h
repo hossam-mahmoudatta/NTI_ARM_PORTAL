@@ -47,10 +47,17 @@ extern u32 volatile Difference4;
 extern u8   volatile Is_First_Captured4;  // is the first value captured ?
 extern u8 volatile Distance4;
 
+extern u32 volatile ICU5_Value1;
+extern u32 volatile ICU5_Value2;
+extern u32 volatile Difference5;
+extern u8   volatile Is_First_Captured5;  // is the first value captured ?
+extern u8 volatile Distance5;
+
 extern u8 Received_distanceOne;
 extern u8 Received_distanceTwo;
 extern u8 Received_distanceThree;
 extern u8 Received_distanceFour;
+extern u8 Received_distanceFive;
 
 /*******************************************************************************
  *                              				HCSR04 Function Prototypes					               				     *
@@ -66,6 +73,8 @@ void HCSR04_voidTriggerThree(void);
 
 void HCSR04_voidTriggerFour(void);
 
+void HCSR04_voidTriggerFive(void);
+
 u8 HCSR04_u8ReadOne(void);
 
 u8 HCSR04_u8ReadTwo(void);
@@ -73,6 +82,8 @@ u8 HCSR04_u8ReadTwo(void);
 u8 HCSR04_u8ReadThree(void);
 
 u8 HCSR04_u8ReadFour(void);
+
+u8 HCSR04_u8ReadFive(void);
 
 
 #endif /* HCSR04_INTERFACE_H_ */
