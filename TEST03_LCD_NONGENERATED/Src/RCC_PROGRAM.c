@@ -38,6 +38,10 @@ void RCC_voidInitialization(void)
 	RCC_CR_REG->HSEBYP = HSEBYP_DISABLE;
 	RCC_CFGR_REG->SW = CFGR_SW_HSE;
 
+	// Check for timeout for HSI Instability
+	while((RCC_CR_REG->HSERDY == 0 ) && ( LOC_u32TimeOut < 100000 ) ){ LOC_u32TimeOut++; }
+	if( LOC_u32TimeOut >= 100000 ){ /*TimeOut*/ }
+
 #elif	RCC_CLOCKTYPE == RCC_HSE_RC
 	RCC_CR_REG->HSEON = HSEON_STATE;
 	RCC_CR_REG->HSEBYP = HSEBYP_ENABLE;
@@ -55,10 +59,10 @@ void RCC_voidInitialization(void)
 #endif
 	// Other Initializations
 	RCC_CR_REG->CSSON 			=	CSSON_STATE;
-	RCC_CFGR_REG->HPRE 			= 	CFGR_HPRE_PRESCALER;
-	RCC_CFGR_REG->PPRE1 		=	CFGR_PPRE1_PRESCALER;
-	RCC_CFGR_REG->PPRE2			= 	CFGR_PPRE2_PRESCALER;
-	RCC_CFGR_REG->MCO			= 	CFGR_MSO_CLK;
+//	RCC_CFGR_REG->HPRE 			= 	CFGR_HPRE_PRESCALER;
+//	RCC_CFGR_REG->PPRE1 		=	CFGR_PPRE1_PRESCALER;
+//	RCC_CFGR_REG->PPRE2			= 	CFGR_PPRE2_PRESCALER;
+//	RCC_CFGR_REG->MCO			= 	CFGR_MSO_CLK;
 }
 
 // Chooses the clock type and enables it
