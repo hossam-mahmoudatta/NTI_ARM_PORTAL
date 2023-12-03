@@ -14,7 +14,7 @@
  *                              							Include Libraries						                       		   *
  *******************************************************************************/
 
-#include "../Inc/GPIO_INTERFACE.h"
+#include "GPIO_INTERFACE.h"
 
 /*******************************************************************************
  *                              					GPIO Function Implementations									   	*

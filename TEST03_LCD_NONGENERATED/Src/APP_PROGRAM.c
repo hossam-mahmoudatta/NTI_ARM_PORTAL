@@ -77,7 +77,104 @@ void APP_voidSystemInitialization(void)
 
 void APP_voidCollisionAvoidance(void)
 {
+	GPIO_voidSetPinValue(PORT_A, PIN_5, LOGIC_HIGH);
+	MOTOR_voidFR_MotorSetSpeed(75);
+	MOTOR_voidFL_MotorSetSpeed(75);
 
+	Received_distanceThree = HCSR04_u8ReadThree();
+	_delay_ms(100);
+	Received_distanceFour = HCSR04_u8ReadFour();
+	_delay_ms(100);
+
+	if((Received_distanceThree > 20) && (Received_distanceFour > 20))
+	{
+		Received_distanceFour = HCSR04_u8ReadFour();
+		_delay_ms(100);
+
+		while(Received_distanceFour > 20)
+		{
+			Received_distanceFour = HCSR04_u8ReadFour();
+			_delay_ms(100);
+			MOTOR_voidFR_FWD();
+			MOTOR_voidFL_FWD();
+		}
+
+		MOTOR_voidFR_STOP();
+		MOTOR_voidFL_STOP();
+		_delay_ms(200);
+
+		MOTOR_voidFR_BWD();
+		MOTOR_voidFL_BWD();
+		_delay_ms(400);
+
+		MOTOR_voidFR_STOP();
+		MOTOR_voidFL_STOP();
+
+		//move LF backward
+		MOTOR_voidFL_BWD();
+		_delay_ms(1000);
+		MOTOR_voidFL_STOP();
+
+		MOTOR_voidFL_MotorSetSpeed(110);
+
+		Received_distanceTwo = HCSR04_u8ReadTwo();
+		_delay_ms(100);
+
+		if(Received_distanceTwo > 2)
+		{
+			while(Received_distanceTwo > 20)
+			{
+				Received_distanceTwo = HCSR04_u8ReadTwo();
+				_delay_ms(100);
+
+				MOTOR_voidFR_BWD();
+				MOTOR_voidFL_BWD();
+			}
+
+			MOTOR_voidFR_STOP();
+			MOTOR_voidFL_STOP();
+		}
+
+
+		// p>>B ?
+		MOTOR_voidFL_MotorSetSpeed(100);
+		MOTOR_voidFL_FWD();
+		MOTOR_voidFR_BWD();
+		_delay_ms(500);
+
+		MOTOR_voidFR_STOP();
+		MOTOR_voidFL_STOP();
+
+		_delay_ms(1000);
+
+		MOTOR_voidFR_MotorSetSpeed(55);
+		MOTOR_voidFL_MotorSetSpeed(65);
+		Received_distanceOne = HCSR04_u8ReadOne();
+		_delay_ms(100);
+
+		if(Received_distanceOne > 7)
+		{
+			while(Received_distanceOne > 7)
+			{
+				Received_distanceOne = HCSR04_u8ReadOne();
+				_delay_ms(100);
+
+				MOTOR_voidFR_FWD();
+				MOTOR_voidFL_FWD();
+
+			}
+			MOTOR_voidFR_STOP();
+			MOTOR_voidFL_STOP();
+		}
+		while(1);
+	}
+	else
+	{
+		MOTOR_voidFR_MotorSetSpeed(75);
+		MOTOR_voidFL_MotorSetSpeed(75);
+		MOTOR_voidFR_FWD();
+		MOTOR_voidFL_FWD();
+	}
 }
 
 
@@ -187,7 +284,10 @@ void APP_voidAutoParking(void)
 void APP_voidRCCar(void)
 {
 	GPIO_voidSetPinValue(PORT_B, PIN_11, LOGIC_HIGH);
+	MOTOR_voidFR_MotorSetSpeed(75);
+	MOTOR_voidFL_MotorSetSpeed(75);
 	u8 LOC_u8NewData = 0;
+
 	// Receive new data from Bluetooth
 	LOC_u8NewData = USART1_u8ReceiveCharSynchronous();
 	_delay_ms(100);

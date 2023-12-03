@@ -65,14 +65,19 @@ extern u8 Received_distanceFive;
 
 void HCSR04_voidInitialization(void);
 
+// Front
 void HCSR04_voidTriggerOne(void);
 
+// Back
 void HCSR04_voidTriggerTwo(void);
 
+// Front Right
 void HCSR04_voidTriggerThree(void);
 
+// Rear Right
 void HCSR04_voidTriggerFour(void);
 
+// Front Left
 void HCSR04_voidTriggerFive(void);
 
 u8 HCSR04_u8ReadOne(void);

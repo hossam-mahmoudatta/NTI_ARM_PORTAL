@@ -27,17 +27,17 @@
  *                              						HCSR04 Macro Definitions					               				     *
  *******************************************************************************/
 
-#define HCSR04_S1_TRIGGER		PORT_B, PIN_12
-#define HCSR04_S2_TRIGGER		PORT_B, PIN_13
-#define HCSR04_S3_TRIGGER		PORT_B, PIN_14
+#define HCSR04_S1_TRIGGER		PORT_B, PIN_5
+#define HCSR04_S2_TRIGGER		PORT_A, PIN_2
+#define HCSR04_S3_TRIGGER		PORT_B, PIN_1
 #define HCSR04_S4_TRIGGER	PORT_B, PIN_15
-#define HCSR04_S5_TRIGGER		PORT_A, PIN_8
+#define HCSR04_S5_TRIGGER		PORT_A, PIN_3
 
 #define HCSR04_S1_ECHO			PORT_A, PIN_0
 #define HCSR04_S2_ECHO			PORT_A, PIN_1
 #define HCSR04_S3_ECHO			PORT_A, PIN_6
 #define HCSR04_S4_ECHO			PORT_A, PIN_7
-#define HCSR04_S5_ECHO			PORT_A, PIN_8
+#define HCSR04_S5_ECHO			PORT_B, PIN_0
 
 
 #endif /* TIMER2_CONFIG_H_ */
