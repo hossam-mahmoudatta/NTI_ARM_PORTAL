@@ -41,6 +41,8 @@ typedef struct {
 } RCC_CR;
 #define RCC_CR_REG      ((volatile RCC_CR*) 0x40021000)			// RCC CLOCK CONTROL REGISTER
 
+#define RCC_CR_REG      ((volatile RCC_CR*) 0x40021000)			// RCC CLOCK CONTROL REGISTER
+
 typedef struct {
 	u8 SW: 			2;		// System clock switch
 	u8 SWS: 			2;		// System clock switch status

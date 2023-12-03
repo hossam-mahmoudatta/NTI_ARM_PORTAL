@@ -27,7 +27,7 @@
 #define RCC_HSE_CRYSTAL	1
 #define RCC_HSE_RC				2
 #define RCC_PLL						4
-#define RCC_CLOCKTYPE		RCC_HSI
+#define RCC_CLOCKTYPE		RCC_HSE_CRYSTAL
 
 #define RCC_AHB       0
 #define RCC_APB1      1
