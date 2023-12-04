@@ -130,21 +130,22 @@ void Timer2_VoidChangePolarityOnEachChannle(u8 Copy_ChannleNumber,u8 Copy_Edge)
 }
 u32  Timer2_VoidGetCapturedValue(u8 Copy_ChannleNumber)
 {
-	u32 Value1,Value2;
+	u32 Value1,Value2, returnValue;
 	switch(Copy_ChannleNumber)
 	{
-	case Channle1:
-		 Value1=TIMER2_CCR1;
-		return Value1;
-		break;
-	case Channle2:
-		Value2=TIMER2_CCR2;
-		return Value2;
-		break;
-
+		case Channle1:
+			Value1=TIMER2_CCR1;
+			returnValue = Value1;
+			break;
+		case Channle2:
+			Value2=TIMER2_CCR2;
+			returnValue = Value2;
+			break;
 	}
-
+	return returnValue;
 }
+
+
 /*Timer2 ISR*/
 void TIM2_IRQHandler(void)
 {

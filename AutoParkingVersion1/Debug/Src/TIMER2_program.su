@@ -4,5 +4,5 @@
 ../Src/TIMER2_program.c:75:6:Timer2_VoidEnableIntOnEachChannle	16	static
 ../Src/TIMER2_program.c:88:6:Timer2_VoidDisableIntOnEachChannle	16	static
 ../Src/TIMER2_program.c:102:6:Timer2_VoidChangePolarityOnEachChannle	16	static
-../Src/TIMER2_program.c:131:6:Timer2_VoidGetCapturedValue	24	static
-../Src/TIMER2_program.c:149:6:TIM2_IRQHandler	8	static
+../Src/TIMER2_program.c:131:6:Timer2_VoidGetCapturedValue	32	static
+../Src/TIMER2_program.c:150:6:TIM2_IRQHandler	8	static

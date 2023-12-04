@@ -446,33 +446,79 @@ void APP_voidCollisionAvoidance(void)
 
 	switch(g_u8Flag)
 	{
+	/***************************************************************************/
 		case CA_ADAS_FORWARD_STATE:
-
+			if(Received_distanceOne > 10)
+			{
+				MOTOR_RF_GO_FORWARD();
+				MOTOR_LF_GO_FORWARD();
+			}
+			else
+			{
+				MOTOR_RF_STOP();
+				MOTOR_LF_STOP();
+				_delay_ms(1500);
+				g_u8Flag = CA_ADAS_RIGHT_STATE;
+			}
 			break;
+		/***************************************************************************/
 		case CA_ADAS_RIGHT_STATE:
-
+			if(Received_distanceThree > 20)
+			{
+				MOTOR_RF_GO_BACKWARD();
+				MOTOR_LF_GO_FORWARD();
+				_delay_ms(400);
+				MOTOR_RF_STOP();
+				MOTOR_LF_STOP();
+				_delay_ms(1500);
+				g_u8Flag = CA_ADAS_FORWARD_STATE;
+			}
+			else
+			{
+				g_u8Flag = CA_ADAS_LEFT_STATE;
+			}
 			break;
+		/***************************************************************************/
 		case CA_ADAS_LEFT_STATE:
-
+			if(Received_distanceFive > 20)
+			{
+				MOTOR_RF_GO_FORWARD();
+				MOTOR_LF_GO_BACKWARD();
+				_delay_ms(400);
+				MOTOR_RF_STOP();
+				MOTOR_LF_STOP();
+				_delay_ms(1500);
+				g_u8Flag = CA_ADAS_FORWARD_STATE;
+			}
+			else
+			{
+				g_u8Flag = CA_ADAS_REVERSE_STATE;
+			}
 			break;
+		/***************************************************************************/
 		case CA_ADAS_REVERSE_STATE:
-
+			if(Received_distanceTwo > 20)
+			{
+				if(Received_distanceThree < 20)
+				{
+					MOTOR_RF_GO_BACKWARD();
+					MOTOR_LF_GO_BACKWARD();
+				}
+				else if(Received_distanceThree > 20)
+				{
+					MOTOR_RF_STOP();
+					MOTOR_LF_STOP();
+					_delay_ms(1500);
+					g_u8Flag = CA_ADAS_RIGHT_STATE;
+				}
+			}
+			else
+			{
+				MOTOR_RF_STOP();
+				MOTOR_LF_STOP();
+			}
 			break;
-
 	}
-	if(Received_distanceOne < 5)
-	{
-//		MOTOR_RF_STOP();
-//		MOTOR_LF_STOP();
-		MOTOR_LF_GO_BACKWARD();
-		MOTOR_RF_GO_BACKWARD();
-	}
-	else if(Received_distanceOne > 5)
-	{
-		MOTOR_RF_GO_FORWARD();
-		MOTOR_LF_GO_FORWARD();
-	}
-
 }
 
 
@@ -576,6 +622,6 @@ int main(void)
 	/* Loop forever */
 	for(;;)
 	{
-		APP_voidUltrasonicUnitTest();
+		APP_voidCollisionAvoidance();
 	}
 }
