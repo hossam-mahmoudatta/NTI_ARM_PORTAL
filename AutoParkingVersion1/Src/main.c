@@ -432,18 +432,17 @@ void APP_voidAutoParking()
 
 void APP_voidCollisionAvoidance(void)
 {
-
+	/* Reads the Distances for the responsible sensors */
 	Received_distanceOne = Ultrasonic_ReadOne();
 	_delay_ms(100);
 	Received_distanceTwo = Ultrasonic_ReadTwo();
 	_delay_ms(100);
 	Received_distanceThree = Ultrasonic_ReadThree();
 	_delay_ms(100);
-	Received_distanceFour = Ultrasonic_ReadFour();
-	_delay_ms(100);
+//	Received_distanceFour = Ultrasonic_ReadFour();
+//	_delay_ms(100);
 	Received_distanceFive = Ultrasonic_ReadFive();
 	_delay_ms(100);
-
 
 	switch(g_u8Flag)
 	{
