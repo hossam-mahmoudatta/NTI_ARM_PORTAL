@@ -35,11 +35,12 @@
 #define NULL_PTR						((void*)0x00)
 #define NULL								0
 
-#define OK 			  						0
-#define NOK 		  						1
-#define NULL_POINTER  				2
-#define TIMEOUT_STATE 			3
-#define BUSY_STATE    				4
+#define SET									1
+#define CLR									0
+
+#define ENABLE									1
+#define DISABLE									0
+
 
 typedef unsigned char					u8;          /*           0 .. 255              */
 typedef signed char           			s8;          /*        -128 .. +127             */

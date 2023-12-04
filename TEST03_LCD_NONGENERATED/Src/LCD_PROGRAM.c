@@ -1,163 +1,173 @@
+/******************************************************************************
+ *
+ * Module: LCD PROGRAM
+ *
+ * File Name: LCD_PROGRAM.c
+ *
+ * Description: Source file for the LCD Driver Function Implementations
+ *
+ * Author: Hossam Mahmoud
+ *
+ *******************************************************************************/
+
+/*******************************************************************************
+ *                              					Include Libraries						                       	*
+ *******************************************************************************/
+
 #include "LCD_INTERFACE.h"
 
-
+/*******************************************************************************
+ *                              			APP Function Implementations									 *
+ *******************************************************************************/
 
 /*--------------- Initialize LCD ------------------*/
 void LCD_voidInitialization(void)
 {
-	//HAL_Delay(30);
-	delay(30);
+	GPIO_voidSetPinDirection(LCD_CTRL_PORT, RS_PIN, OUTPUT_SPEED_10MHZ_PUSHPULL);
+	GPIO_voidSetPinDirection(LCD_CTRL_PORT, EN_PIN, OUTPUT_SPEED_10MHZ_PUSHPULL);
 
-	PIN_LOW(D4_PORT, D4_PIN);
-	PIN_HIGH(D5_PORT, D5_PIN);
-	PIN_LOW(D6_PORT, D6_PIN);
-	PIN_LOW(D7_PORT, D7_PIN);
-	PIN_LOW(RS_PORT, RS_PIN);
+	GPIO_voidSetPinDirection(LCD_DATA_PORT, D7_PIN, OUTPUT_SPEED_10MHZ_PUSHPULL);
+	GPIO_voidSetPinDirection(LCD_DATA_PORT, D6_PIN, OUTPUT_SPEED_10MHZ_PUSHPULL);
+	GPIO_voidSetPinDirection(LCD_DATA_PORT, D5_PIN, OUTPUT_SPEED_10MHZ_PUSHPULL);
+	GPIO_voidSetPinDirection(LCD_DATA_PORT, D4_PIN, OUTPUT_SPEED_10MHZ_PUSHPULL);
+
+	_delay_ms(30);
+
+	LCD_voidSendCommand(LCD_2LINES_FOUR_BIT);
+	_delay_ms(2);
+
+	LCD_voidSendCommand(LCD_2LINES_5x7_DOTS);
+	_delay_ms(2);
+
+	LCD_voidSendCommand(LCD_CURSOR_OFF);
+	_delay_ms(2);
+
+	LCD_voidSendCommand(LCD_CLEAR_DISPLAY);
+	_delay_ms(2);
 	
-	PIN_HIGH(EN_PORT, EN_PIN);
-	PIN_LOW(EN_PORT, EN_PIN);
+	LCD_voidSendCommand(LCD_ENTRY_MODE);
+	_delay_ms(2);
 	
-	LCD_voidWrite(0, 0x28);
-	LCD_voidWrite(0, 0x0c);
-	//LCD_voidWrite(0, 0x06);
-	LCD_voidWrite(0, 0x01);
+	LCD_voidSendCommand(LINE0_ADDRESS);
+	_delay_ms(2);
 }
+
 
 /*--------------- Write To LCD ---------------*/
-void LCD_voidWrite(u8 copy_u8Type, u8 copy_u8Data)
+void LCD_voidSendCommand(u8 copy_u8Command)
 {
-	//HAL_Delay(2);
-	delay(2);
-	if(copy_u8Type)
-	{
-		PIN_HIGH(RS_PORT, RS_PIN);
-	}else
-	{
-		PIN_LOW(RS_PORT, RS_PIN);
-	}
-	
-	//Send High Nibble
-	if(copy_u8Data & 0x80)
-	{
-		PIN_HIGH(D7_PORT, D7_PIN);
-	}
-	else
-	{
-		PIN_LOW(D7_PORT, D7_PIN);
-	}
-	
-	if(copy_u8Data & 0x40)
-	{
-		PIN_HIGH(D6_PORT, D6_PIN);
-	}
-	else
-	{
-		PIN_LOW(D6_PORT,D6_PIN);
-	}
-	
-	if(copy_u8Data & 0x20)
-	{
-		PIN_HIGH(D5_PORT, D5_PIN);
-	}
-	else
-	{
-		PIN_LOW(D5_PORT, D5_PIN);
-	}
-	
-	if(copy_u8Data & 0x10)
-	{
-		PIN_HIGH(D4_PORT, D4_PIN);
-	}
-	else
-	{
-		PIN_LOW(D4_PORT, D4_PIN);
-	}
-	PIN_HIGH(EN_PORT, EN_PIN);
-	PIN_LOW(EN_PORT, EN_PIN);
-	
-	//Send Low Nibble
-	if(copy_u8Data & 0x08)
-	{
-		PIN_HIGH(D7_PORT, D7_PIN);
-	}else
-	{
-		PIN_LOW(D7_PORT, D7_PIN);
-	}
-	
-	if(copy_u8Data & 0x04)
-	{
-		PIN_HIGH(D6_PORT, D6_PIN);
-	}
-	else
-	{
-		PIN_LOW(D6_PORT, D6_PIN);
-	}
-	
-	if(copy_u8Data & 0x02)
-	{
-		PIN_HIGH(D5_PORT, D5_PIN);
-	}
-	else
-	{
-		PIN_LOW(D5_PORT, D5_PIN);
-	}
-	
-	if(copy_u8Data & 0x01)
-	{
-		PIN_HIGH(D4_PORT, D4_PIN);
-	}else
-	{
-		PIN_LOW(D4_PORT, D4_PIN);
-	}
-	PIN_HIGH(EN_PORT, EN_PIN);
-	PIN_LOW(EN_PORT, EN_PIN);
+	GPIO_voidSetPinValue(LCD_CTRL_PORT, RS_PIN, LOGIC_LOW);
+
+	// Sends the COmmand
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D4_PIN, GET_BIT(copy_u8Command, 4));
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D5_PIN, GET_BIT(copy_u8Command, 5));
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D6_PIN, GET_BIT(copy_u8Command, 6));
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D7_PIN, GET_BIT(copy_u8Command, 7));
+
+	GPIO_voidSetPinValue(LCD_CTRL_PORT, EN_PIN, LOGIC_HIGH);
+	_delay_ms(2);
+	GPIO_voidSetPinValue(LCD_CTRL_PORT, EN_PIN, LOGIC_LOW);
+
+	// Sends the COmmand
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D4_PIN, GET_BIT(copy_u8Command, 0));
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D5_PIN, GET_BIT(copy_u8Command, 1));
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D6_PIN, GET_BIT(copy_u8Command, 2));
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D7_PIN, GET_BIT(copy_u8Command, 3));
+
+	GPIO_voidSetPinValue(LCD_CTRL_PORT, EN_PIN, LOGIC_HIGH);
+	_delay_ms(2);
+	GPIO_voidSetPinValue(LCD_CTRL_PORT, EN_PIN, LOGIC_LOW);
 }
 
-void LCD_voidPuts(u8 copy_u8Col, u8 copy_u8Row, cu8 *copy_cu8String)
+
+
+void LCD_voidSendData(u8 copy_u8Data)
 {
-	//Set Cursor Position
-	#ifdef LCD16xN	//For LCD16x2 or LCD16x4
-	switch(copy_u8Col)
+	GPIO_voidSetPinValue(LCD_CTRL_PORT, RS_PIN, LOGIC_HIGH);
+
+	// Sends the Data
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D4_PIN, GET_BIT(copy_u8Data, 4));
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D5_PIN, GET_BIT(copy_u8Data, 5));
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D6_PIN, GET_BIT(copy_u8Data, 6));
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D7_PIN, GET_BIT(copy_u8Data, 7));
+
+	GPIO_voidSetPinValue(LCD_CTRL_PORT, EN_PIN, LOGIC_HIGH);
+	_delay_ms(2);
+	GPIO_voidSetPinValue(LCD_CTRL_PORT, EN_PIN, LOGIC_LOW);
+
+	// Sends the COmmand
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D4_PIN, GET_BIT(copy_u8Data, 0));
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D5_PIN, GET_BIT(copy_u8Data, 1));
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D6_PIN, GET_BIT(copy_u8Data, 2));
+	GPIO_voidSetPinValue(LCD_DATA_PORT, D7_PIN, GET_BIT(copy_u8Data, 3));
+
+	GPIO_voidSetPinValue(LCD_CTRL_PORT, EN_PIN, LOGIC_HIGH);
+	_delay_ms(2);
+	GPIO_voidSetPinValue(LCD_CTRL_PORT, EN_PIN, LOGIC_LOW);
+}
+
+
+
+void LCD_voidSetCursor(u8 copy_u8Col, u8 copy_u8Row)
+{
+	u8 LOC_u8DDRAMAddress;
+	if(copy_u8Row == 0)
 	{
-		case 0: //Row 0
-			LCD_voidWrite(0, 0x80 + 0x00 + copy_u8Row);
-			break;
-		case 1: //Row 1
-			LCD_voidWrite(0, 0x80 + 0x40 + copy_u8Row);
-			break;
-		case 2: //Row 2
-			LCD_voidWrite(0, 0x80 + 0x10 + copy_u8Row);
-			break;
-		case 3: //Row 3
-			LCD_voidWrite(0, 0x80 + 0x50 + copy_u8Row);
-			break;
+		/*Check if in first line*/
+		LOC_u8DDRAMAddress = copy_u8Col;
 	}
-	#endif
-	
-	#ifdef LCD20xN	//For LCD20x4
-	switch(copy_u8Col)
+	else if(copy_u8Row == 1)
 	{
-		case 0: //Row 0
-			LCD_voidWrite(0, 0x80 + 0x00 + copy_u8Row);
-			break;
-		case 1: //Row 1
-			LCD_voidWrite(0, 0x80 + 0x40 + copy_u8Row);
-			break;
-		case 2: //Row 2
-			LCD_voidWrite(0, 0x80 + 0x14 + copy_u8Row);
-			break;
-		case 3: //Row 3
-			LCD_voidWrite(0, 0x80 + 0x54 + copy_u8Row);
-			break;
+		/*Check if in second line*/
+		LOC_u8DDRAMAddress = 0x40 + copy_u8Col;
 	}
-	#endif
-	
-	while(*copy_cu8String)
+	//Local_u8DDRAMAddress=0x40*Copy_u8YPos+Copy_u8XPos
+	/*Setbit number 7 for SetDDRAM Address command then send the command*/
+
+	LCD_voidSendCommand(LOC_u8DDRAMAddress + 128);
+}
+
+
+void LCD_voidSendString(cu8 *copy_cu8String)
+{
+	u8 LOC_u8Counter = 0;
+
+	while(copy_cu8String[LOC_u8Counter] != '\0')
 	{
-		LCD_voidWrite(1, *copy_cu8String);
-		copy_cu8String++;
+		LCD_voidSendData(copy_cu8String[LOC_u8Counter]);
+		LOC_u8Counter++;
 	}
 }
+
+
+
+void LCD_voidWriteNumber(u32 copy_u32Number)
+{
+	u8 arr[20];
+	u8 i = 0 , j;
+	if (copy_u32Number == 0)
+	{
+		LCD_voidSendData('0');
+	}
+	if (copy_u32Number < 0)
+	{
+		copy_u32Number = copy_u32Number * -1;
+		LCD_voidSendData('-');
+	}
+
+	while(copy_u32Number)
+	{
+		arr[i++] = copy_u32Number % 10 + '0';
+		copy_u32Number /= 10;
+	}
+	for (j = i ; j > 0 ; --j)
+	{
+		LCD_voidSendData(arr[j - 1]);
+	}
+}
+
+
+
 void LCD_voidClear(void)
 {
 	LCD_voidWrite(0, 0x01);

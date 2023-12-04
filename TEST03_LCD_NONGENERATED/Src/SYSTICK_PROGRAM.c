@@ -11,30 +11,39 @@
  *******************************************************************************/
 
 /*******************************************************************************
- *                              							Include Libraries						                       		   *
+ *                              						Include Libraries						                       		   *
  *******************************************************************************/
 
 #include "SYSTICK_INTERFACE.h"
 
 /*******************************************************************************
- *                              					RCC Function Implementations									   	*
+ *                              				SYSTICK Global Variables				               				     *
  *******************************************************************************/
 
-// cALLBACK Function
-static void (*CallBackPtr_SYSTICK)(void) = NULL;
+/*Global pointer to function to hold the callback function address*/
+static void (*STK_pvCallBackPtr)(void) = NULL;
 
 volatile u32 STK_SingleInterval = 0;
 volatile u32 STK_MultipleInterval = 0;
 volatile u32 STK_delayComplete = 0;
 
+/*******************************************************************************
+ *                              			SYSTICK Function Implementations									   	*
+ *******************************************************************************/
+
 // Initializes the RCC Module with the necessary Configurations
-void SYSTICK_voidInitialization(void)
+void STK_voidInitialization(void)
 {
 	// CHOOSING THE CLK SOURCE FOR THE SYSTICK
-	SET_BIT(STK_CTRL_REG, STK_CTRL_CLKSOURCE);
+	STK_REG->STK_CTRL.STK_CTRL_CLKSOURCE = CLKSOURCE_SELECT;
+	STK_REG->STK_LOAD	= STK_LOAD_INITIAL;
+	STK_REG->STK_VAL		= STK_VAL_INITIAL;
 
-#if (SYSTICK_ISR_ENABLE)
-	SET_BIT(STK_CTRL_REG, STK_CTRL_TICKINT);
+	// Disable Timer
+	STK_REG->STK_CTRL.STK_CTRL_ENABLE = DISABLE;
+
+#if (STK_ISR_ENABLE)
+	STK_REG->STK_CTRL.STK_CTRL_TICKINT = ENABLE;
 #endif
 	STK_delayComplete = 0;
 }
@@ -42,52 +51,55 @@ void SYSTICK_voidInitialization(void)
 
 
 // Chooses the clock type and enables it
-void SYSTICK_voidSetDelay_ms(u32 copy_u32Delay)
+void STK_voidSetDelay_ms(u32 copy_u32Delay)
 {
 	u32 ClockTicks = 0;
 
 	// Calculate the number of ticks for the given delay
-	ClockTicks = copy_u32Delay * 250;
+	ClockTicks = copy_u32Delay * STK_TICKS;
 
 	// Load the number of ticks into the SysTick LOAD register
-	STK_LOAD_REG = ClockTicks - 1;
+	// STK_LOAD = (CPU_FREQ / INTERRUPT FREQ) - 1
+	STK_REG->STK_LOAD = ClockTicks - 1;
 
 	// Clear the SysTick current value
-	STK_VAL_REG = 0;
+	STK_REG->STK_VAL		= STK_VAL_INITIAL;
 
-	SET_BIT(STK_CTRL_REG, STK_CTRL_ENABLE);
+	// Enables the Counter
+	STK_REG->STK_CTRL.STK_CTRL_ENABLE = ENABLE;
 
 	// Wait until the COUNTFLAG bit in the SysTick CTRL register is set
-	while (GET_BIT(STK_CTRL_REG, STK_CTRL_COUNTFLAG) == 0) {
-		// Wait for the COUNTFLAG to become 1
-	}
-	// Disable Timer
-	CLR_BIT(STK_CTRL_REG, STK_CTRL_ENABLE);
-	STK_LOAD_REG = 0;
-	STK_VAL_REG = 0;
+	while(STK_REG->STK_CTRL.STK_CTRL_COUNTFLAG == 0);
+	// Wait for the COUNTFLAG to become 1
 
+	// Disable Timer
+	STK_REG->STK_CTRL.STK_CTRL_ENABLE = DISABLE;
+	STK_REG->STK_LOAD = CLR;
+	STK_REG->STK_VAL = STK_VAL_INITIAL;
 }
 
 
+
 // Chooses the clock type and enables it
-void SYSTICK_voidSetDelay_ms_ISR(u32 copy_u32Delay, void(*Copy_voidPTF)(void))
+void STK_voidSetDelay_ms_ISR(u32 copy_u32Delay, void(*Copy_voidPTF)(void))
 {
 	if(Copy_voidPTF != NULL_PTR)
 	{
 		u32 ClockTicks = 0;
 
 		// Calculate the number of ticks for the given delay
-		ClockTicks = copy_u32Delay * SYSTICK_TICKS;
+		ClockTicks = copy_u32Delay * STK_TICKS;
 
 		// Load the number of ticks into the SysTick LOAD register
-		STK_LOAD_REG = ClockTicks - 1;
+		STK_REG->STK_LOAD = ClockTicks - 1;
 
 		// Clear the SysTick current value
-		STK_VAL_REG = 0;
+		STK_REG->STK_VAL		= STK_VAL_INITIAL;
 
-		CallBackPtr_SYSTICK = Copy_voidPTF;
-		//SYSTICK_CallBackFunction_msDelay(Copy_voidPTF);
-		SET_BIT(STK_CTRL_REG, STK_CTRL_ENABLE);
+		STK_pvCallBackPtr = Copy_voidPTF;
+
+		// Enables the Counter
+		STK_REG->STK_CTRL.STK_CTRL_ENABLE = ENABLE;
 	}
 	else
 	{
@@ -96,23 +108,37 @@ void SYSTICK_voidSetDelay_ms_ISR(u32 copy_u32Delay, void(*Copy_voidPTF)(void))
 }
 
 
-void SYSTICK_CallBackFunction_msDelay(void (*Ptr_STK)(void))
+
+void STK_voidEnableInterrupt(void)
 {
-	CallBackPtr_SYSTICK = Ptr_STK;
+	STK_REG->STK_CTRL.STK_CTRL_TICKINT = ENABLE;
+}
+
+
+void STK_voidDisableInterrupt(void)
+{
+	STK_REG->STK_CTRL.STK_CTRL_TICKINT = DISABLE;
 }
 
 
 
-// the Systick ISR function
-// Should be written like this
+// Callback Function that will be passed to the ISR
+void STK_CallBackFunction(void (*Ptr_STK)(void))
+{
+	STK_pvCallBackPtr = Ptr_STK;
+}
+
+
+
+// The ISR Handler for the SYSTICK
 void SysTick_Handler(void)
 {
-	if(CallBackPtr_SYSTICK != NULL)
+	if(STK_pvCallBackPtr != NULL)
 	{
-		CallBackPtr_SYSTICK();
+		STK_pvCallBackPtr();
 	}
-
 	//Clear the flag by Reading it
-	GET_BIT(STK_CTRL_REG, STK_CTRL_COUNTFLAG);
+	STK_REG->STK_CTRL.STK_CTRL_COUNTFLAG;
+//	GET_BIT(STK_CTRL_REG, STK_CTRL_COUNTFLAG);
 }
 

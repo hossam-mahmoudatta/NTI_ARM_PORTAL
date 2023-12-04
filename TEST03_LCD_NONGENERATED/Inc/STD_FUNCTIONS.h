@@ -18,12 +18,13 @@
 #define STD_FUNCTIONS_H
 
 #include "SYSTICK_INTERFACE.h"
+#include "DELAY_INTERFACE.h"
 
 /*******************************************************************************
  *                              						Types  Declarations	                         					  *
  *******************************************************************************/
 
-#define delay(d)		SYSTICK_voidSetDelay_ms(d)
+#define delay(d)		_delay_ms(d)
 
 #endif
 

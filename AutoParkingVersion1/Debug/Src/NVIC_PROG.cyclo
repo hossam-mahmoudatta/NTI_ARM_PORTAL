@@ -1,0 +1,6 @@
+../Src/NVIC_PROG.c:9:6:MNVIC_VidEnablePeripheral	1
+../Src/NVIC_PROG.c:15:6:MNVIC_VidDisablePeripheral	1
+../Src/NVIC_PROG.c:22:6:MNVIC_VidSetPending	1
+../Src/NVIC_PROG.c:29:6:MNVIC_VidClearPending	1
+../Src/NVIC_PROG.c:36:6:MNVIC_u8GetActive	1
+../Src/NVIC_PROG.c:44:6:MNVIC_VidSetPriority	9

@@ -1,0 +1,8 @@
+../Src/TIMER3_program.c:12:6:TIMER3_VoidInitInputCapture	5
+../Src/TIMER3_program.c:75:4:Timer3_u8InputCaptureSetCallBack	2
+../Src/TIMER3_program.c:91:6:Timer3_VoidSetPreload	1
+../Src/TIMER3_program.c:97:6:Timer3_VoidEnableIntOnEachChannle	5
+../Src/TIMER3_program.c:115:6:Timer3_VoidDisableIntOnEachChannle	5
+../Src/TIMER3_program.c:134:6:Timer3_VoidChangePolarityOnEachChannle	11
+../Src/TIMER3_program.c:177:6:Timer3_VoidGetCapturedValue	5
+../Src/TIMER3_program.c:203:6:TIM3_IRQHandler	2

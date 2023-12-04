@@ -1,26 +1,41 @@
-#ifndef		__LCDTXT_H
-#define		__LCDTXT_H
+ /******************************************************************************
+ *
+ * Module: LCD Display
+ *
+ * File Name: LCD_INTERFACE.h
+ *
+ * Description: Header file for the ARM LCD Driver Function Prototypes
+ *
+ * Author: Hossam Mahmoud
+ *
+ *******************************************************************************/
 
-#include "LCD_CONFIG.h"
+/*******************************************************************************
+ *                              							Include Libraries						                       		   *
+ *******************************************************************************/
 
+#ifndef		LCD_INTERFACE_H_
+#define		LCD_INTERFACE_H_
 
-/*------------- Define LCD Use -----------------*/
+#include 		"LCD_CONFIG.h"
 
-/*Note: Comment which not use */
-
-//#define LCD16xN //For lcd16x2 or lcd16x4
-#define LCD20xN //For lcd20x4
-
-/*------------- Define For Connection -----------------*/
-
-
-
-/*------------ Declaring Function Prototype -------------*/
+/*******************************************************************************
+ *                                						Function Prototypes												 *
+ *******************************************************************************/
 
 void LCD_voidInitialization(void);
-void LCD_voidWrite(u8 copy_u8Type, u8 copy_u8Data);
-void LCD_voidPuts(u8 copy_u8Col, u8 copy_u8Row, cu8 *copy_cu8String);
+
+void LCD_voidSendData(u8 copy_u8Data);
+
+void LCD_voidSendCommand(u8 copy_u8Command);
+
+void LCD_voidSetCursor(u8 copy_u8Col, u8 copy_u8Row);
+
+void LCD_voidSendString(cu8 *copy_cu8String);
+
+void LCD_voidWriteNumber(u32 copy_u32Number);
+
 void LCD_voidClear(void);
 
-#endif
+#endif /* LCD_INTERFACE_H_ */
 

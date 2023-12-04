@@ -4,7 +4,7 @@
  *
  * File Name: TIMER4_INTERFACE.h
  *
- * Description: Header file for the TIMER4 Driver Registers
+ * Description: Header file for the TIMER4 Driver Function Declarations
  *
  * Author: Tariq, Hosny & Hossam
  *
@@ -20,11 +20,11 @@
 #include "TIMER4_CONFIG.h"
 
 /*******************************************************************************
- *                              				TIMER4 Function Declarations					               				     *
+ *                              				TIMER4 Function Prototypes					               				     *
  *******************************************************************************/
 
 void TIMER4_voidPWMInitialization(u8 copy_u8ChannelNumber);
-void TIMER4_voidPWMSetDutyCycle(u8, u32);
+void TIMER4_voidPWMSetDutyCycle(u8 copy_u8ChannelNumber, u32 copy_u32DutyCycle);
 void TIMER4_voidPWMStart();
 
 

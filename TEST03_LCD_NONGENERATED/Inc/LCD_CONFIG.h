@@ -4,7 +4,7 @@
  *
  * File Name: LCD_CONFIG.h
  *
- * Description: Header file for the AVR LCD Driver Macro Definitions
+ * Description: Header file for the ARM LCD Driver Macro Definitions
  *
  * Author: Hossam Mahmoud
  *
@@ -30,28 +30,22 @@
 #define LCD_8_BIT								8
 #define LCD_BIT_MODE						LCD_4_BIT
 
+//#define LCD16xN 	//For lcd16x2 or lcd16x4
+#define LCD20xN 		//For lcd20x4
+
 #if((LCD_BIT_MODE != LCD_4_BIT) && (LCD_BIT_MODE != LCD_8_BIT))
 	#error "Number of Data bits should be equal to 4 or 8"
 #endif
 
-#define RS_PORT		PORT_A
-#define RS_PIN			PIN_12
+#define LCD_CTRL_PORT	PORT_A
+#define RS_PIN					PIN_8
+#define EN_PIN					PIN_9
 
-#define EN_PORT		PORT_A
-#define EN_PIN			PIN_15
-
-#define D7_PORT		PORT_B
-#define D7_PIN		PIN_12
-
-#define D6_PORT		PORT_B
-#define D6_PIN		PIN_13
-
-#define D5_PORT		PORT_B
-#define D5_PIN		PIN_14
-
-#define D4_PORT		PORT_B
-#define D4_PIN		PIN_15
-
+#define LCD_DATA_PORT		PORT_B
+#define D4_PIN						PIN_12
+#define D5_PIN						PIN_13
+#define D6_PIN						PIN_14
+#define D7_PIN						PIN_15
 
 #define LCD_CLEAR_DISPLAY					0x01
 #define LCD_2LINES_FOUR_BIT				0x02
@@ -76,8 +70,8 @@
 
 /*------------ Declaring Private Macro -----------------*/
 
-#define PIN_LOW(PORT, PIN)	GPIO_voidSetPinValue(PIN, PORT, LOGIC_LOW)
-#define PIN_HIGH(PORT, PIN)	GPIO_voidSetPinValue(PIN, PORT, LOGIC_HIGH)
+#define PIN_LOW(PORT, PIN)	GPIO_voidSetPinValue(PORT, PIN, LOGIC_LOW)
+#define PIN_HIGH(PORT, PIN)	GPIO_voidSetPinValue(PORT, PIN, LOGIC_HIGH)
 
 #define LCD_MAXROW_SIZE        			2
 #define LCD_MAXCOL_SIZE        			16

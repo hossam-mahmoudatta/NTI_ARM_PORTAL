@@ -1,25 +1,37 @@
+ /******************************************************************************
+ *
+ * Module: TIMER2
+ *
+ * File Name: TIMER2_INTERFACE.h
+ *
+ * Description: Header file for the TIMER2 Driver Function Prototypes
+ *
+ * Author: Hossam Mahmoud
+ *
+ *******************************************************************************/
+
+/*******************************************************************************
+ *                              							Include Libraries						                       		   *
+ *******************************************************************************/
 
 #ifndef TIMER2_INTERFACE_H_
 #define TIMER2_INTERFACE_H_
 
+#include "TIMER2_CONFIG.h"
 
-#define Channle1		0
-#define Channle2		1
+/*******************************************************************************
+ *                              				TIMER2 Function Prototypes					               				     *
+ *******************************************************************************/
 
-#define TIMER2_RISING_EDGE 0
-#define TIMER2_FALLING_EDGE 1
-void TIMER2_VoidInitInputCapture(u8 Copy_ChannleNumber);
-u8 Timer2_u8InputCaptureSetCallBack(void (*Copy_pvCallBackFunc)(void));
-void Timer2_VoidSetPreload(u8 Copy_u8Preload);
+void 	TIMER2_voidICUInitialization(u8 copy_u8ChannelNumber);
+u8 	TIMER2_u8ICUSetCallBack(void (*copy_pvCallBackFunc)(void));
+void 	TIMER2_voidSetPreload(u8 copy_u8Preload);
 
-void Timer2_VoidEnableIntOnEachChannle(u8 Copy_ChannleNumber);
-void Timer2_VoidDisableIntOnEachChannle(u8 Copy_ChannleNumber);
+void 	TIMER2_voidEnableInterrupt(u8 copy_u8ChannelNumber);
+void 	TIMER2_voidDisableInterrupt(u8 copy_u8ChannelNumber);
 
-void Timer2_VoidChangePolarityOnEachChannle(u8 Copy_ChannleNumber,u8 Copy_Edge);
-u32  Timer2_VoidGetCapturedValue(u8 Copy_ChannleNumber);
+void 	TIMER2_voidChangePolarity(u8 copy_u8ChannelNumber, u8 copy_u8Edge);
+u32  	TIMER2_u32GetICUValue(u8 copy_u8ChannelNumber);
+
+
 #endif /* TIMER2_INTERFACE_H_ */
-
-
-
-
-
