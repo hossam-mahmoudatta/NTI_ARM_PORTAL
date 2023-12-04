@@ -1,4 +1,0 @@
-../Src/TIMER3_program.c:12:6:TIMER3_VoidInitInputCapture	16	static
-../Src/TIMER3_program.c:40:4:Timer3_u8InputCaptureSetCallBack	24	static
-../Src/TIMER3_program.c:56:6:Timer3_VoidSetPreload	16	static
-../Src/TIMER3_program.c:62:6:TIM3_IRQHandler	8	static

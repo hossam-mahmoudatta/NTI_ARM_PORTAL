@@ -1,5 +1,6 @@
 "./Src/GPIO_PROGRAM.o"
 "./Src/RCC_PROGRAM.o"
+"./Src/SYSTICK_PROGRAM.o"
 "./Src/main.o"
 "./Src/syscalls.o"
 "./Src/sysmem.o"
