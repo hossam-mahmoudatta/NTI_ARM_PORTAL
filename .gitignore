@@ -17,3 +17,6 @@ AutoParkingVersion1/.settings/language.settings.xml
 .metadata/.log
 *.json
 *.resources
+*.properties
+*.log
+*.prefs

@@ -143,3 +143,144 @@ arm-none-eabi-size   TEST06_BLINKNING_SHERBINY.elf
    2596	      8	   1584	   4188	   105c	TEST06_BLINKNING_SHERBINY.elf
 Finished building: default.size.stdout
  
+01:07:33 **** Clean-only build of configuration Debug for project AutoParkingVersion1 ****
+make -j12 clean 
+rm -rf ./Startup/startup_stm32f103c8tx.d ./Startup/startup_stm32f103c8tx.o
+rm -rf ./Src/DELAY_PROG.cyclo ./Src/DELAY_PROG.d ./Src/DELAY_PROG.o ./Src/DELAY_PROG.su ./Src/GPIO.cyclo ./Src/GPIO.d ./Src/GPIO.o ./Src/GPIO.su ./Src/MOTOR_program.cyclo ./Src/MOTOR_program.d ./Src/MOTOR_program.o ./Src/MOTOR_program.su ./Src/NVIC_PROG.cyclo ./Src/NVIC_PROG.d ./Src/NVIC_PROG.o ./Src/NVIC_PROG.su ./Src/RCC_PROG.cyclo ./Src/RCC_PROG.d ./Src/RCC_PROG.o ./Src/RCC_PROG.su ./Src/SYSTICK_PROG.cyclo ./Src/SYSTICK_PROG.d ./Src/SYSTICK_PROG.o ./Src/SYSTICK_PROG.su ./Src/TIMER2_program.cyclo ./Src/TIMER2_program.d ./Src/TIMER2_program.o ./Src/TIMER2_program.su ./Src/TIMER3_program.cyclo ./Src/TIMER3_program.d ./Src/TIMER3_program.o ./Src/TIMER3_program.su ./Src/TIMER_program.cyclo ./Src/TIMER_program.d ./Src/TIMER_program.o ./Src/TIMER_program.su ./Src/USART_PROG.cyclo ./Src/USART_PROG.d ./Src/USART_PROG.o ./Src/USART_PROG.su ./Src/lcd.cyclo ./Src/lcd.d ./Src/lcd.o ./Src/lcd.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/ultrasonic.cyclo ./Src/ultrasonic.d ./Src/ultrasonic.o ./Src/ultrasonic.su
+rm -rf AutoParkingVersion1.elf AutoParkingVersion1.list AutoParkingVersion1.map default.size.stdout
+ 
+01:07:33 **** Build of configuration Debug for project AutoParkingVersion1 ****
+make -j12 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c8tx.d" -MT"Startup/startup_stm32f103c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c8tx.o" "../Startup/startup_stm32f103c8tx.s"
+arm-none-eabi-gcc "../Src/DELAY_PROG.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/DELAY_PROG.d" -MT"Src/DELAY_PROG.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/DELAY_PROG.o"
+arm-none-eabi-gcc "../Src/GPIO.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/GPIO.d" -MT"Src/GPIO.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/GPIO.o"
+arm-none-eabi-gcc "../Src/MOTOR_program.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/MOTOR_program.d" -MT"Src/MOTOR_program.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/MOTOR_program.o"
+arm-none-eabi-gcc "../Src/NVIC_PROG.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/NVIC_PROG.d" -MT"Src/NVIC_PROG.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/NVIC_PROG.o"
+arm-none-eabi-gcc "../Src/RCC_PROG.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/RCC_PROG.d" -MT"Src/RCC_PROG.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/RCC_PROG.o"
+arm-none-eabi-gcc "../Src/SYSTICK_PROG.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/SYSTICK_PROG.d" -MT"Src/SYSTICK_PROG.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/SYSTICK_PROG.o"
+arm-none-eabi-gcc "../Src/TIMER2_program.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TIMER2_program.d" -MT"Src/TIMER2_program.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TIMER2_program.o"
+arm-none-eabi-gcc "../Src/TIMER3_program.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TIMER3_program.d" -MT"Src/TIMER3_program.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TIMER3_program.o"
+arm-none-eabi-gcc "../Src/TIMER_program.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TIMER_program.d" -MT"Src/TIMER_program.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TIMER_program.o"
+arm-none-eabi-gcc "../Src/USART_PROG.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/USART_PROG.d" -MT"Src/USART_PROG.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/USART_PROG.o"
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/TIMER2_program.c: In function 'Timer2_VoidGetCapturedValue':
+../Src/TIMER2_program.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+  147 | }
+      | ^
+../Src/TIMER3_program.c: In function 'Timer3_VoidGetCapturedValue':
+../Src/TIMER3_program.c:199:1: warning: control reaches end of non-void function [-Wreturn-type]
+  199 | }
+      | ^
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/ultrasonic.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/ultrasonic.d" -MT"Src/ultrasonic.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/ultrasonic.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size  AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5432	      8	   1648	   7088	   1bb0	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+01:08:54 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/TIMER2_program.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TIMER2_program.d" -MT"Src/TIMER2_program.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TIMER2_program.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size  AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5440	      8	   1648	   7096	   1bb8	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+01:09:17 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/TIMER2_program.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TIMER2_program.d" -MT"Src/TIMER2_program.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TIMER2_program.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size  AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5440	      8	   1648	   7096	   1bb8	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+01:10:55 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j12 all 
+arm-none-eabi-size  AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5440	      8	   1648	   7096	   1bb8	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+01:11:21 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size  AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6272	     12	   1660	   7944	   1f08	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+01:11:24 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j12 all 
+arm-none-eabi-size  AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6272	     12	   1660	   7944	   1f08	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+01:14:10 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j12 all 
+arm-none-eabi-size  AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6272	     12	   1660	   7944	   1f08	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+01:19:24 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size  AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6280	     12	   1660	   7952	   1f10	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+01:22:19 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size  AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6304	     12	   1660	   7976	   1f28	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+01:22:35 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j12 all 
+arm-none-eabi-size  AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6304	     12	   1660	   7976	   1f28	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
