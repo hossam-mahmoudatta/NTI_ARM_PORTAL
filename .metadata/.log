@@ -4844,3 +4844,6 @@ Caused by: org.eclipse.ecf.internal.ssl.ECFCertificateException: Valid cert chai
 	at java.base/sun.security.ssl.AbstractTrustManagerWrapper.checkServerTrusted(SSLContextImpl.java:1441)
 	at java.base/sun.security.ssl.CertificateMessage$T12CertificateConsumer.checkServerCerts(CertificateMessage.java:638)
 	... 35 more
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-12-05 00:22:02.079
+!MESSAGE Indexed 'AutoParkingVersion1' (14 sources, 83 headers) in 1.01 sec: 2,438 declarations; 5,064 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.027%)
