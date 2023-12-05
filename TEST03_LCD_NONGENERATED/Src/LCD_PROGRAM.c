@@ -170,7 +170,7 @@ void LCD_voidWriteNumber(u32 copy_u32Number)
 
 void LCD_voidClear(void)
 {
-	LCD_voidWrite(0, 0x01);
+	LCD_voidSendCommand(0x01);
 }
 
 

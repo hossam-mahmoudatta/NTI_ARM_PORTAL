@@ -25,23 +25,22 @@
  *******************************************************************************/
 
 typedef struct {
-	u8 HSION: 		1;		// Internal high-speed clock enable
+	u8 HSION: 	1;		// Internal high-speed clock enable
 	u8 HSIRDY: 	1;		// Internal high-speed clock ready flag
 	u8              : 	1;		// Res
 	u8 HSITRIM: 	5;		// Internal high-speed clock trimming
-	u8 HSICAL: 	8; 	// Internal high-speed clock calibration
-	u8 HSEON: 		1;		// HSE clock enable
+	u8 HSICAL: 	8;		// Internal high-speed clock calibration
+	u8 HSEON: 	1;		// HSE clock enable
 	u8 HSERDY: 	1;		// External high-speed clock ready flag
 	u8 HSEBYP: 	1;		// External high-speed clock bypass
-	u8 CSSON: 		1;		// Clock security system enable
-	u8              :		4;		// Res
-	u8 PLLON:		1;		// PLL enable
+	u8 CSSON: 	1;		// Clock security system enable
+	u8              :	4;		// Res
+	u8 PLLON:	1;		// PLL enable
 	u8 PLLRDY: 	1;		// PLL Clock Ready Flag
 	u8              : 	6;		// Waveform Generation Mode
 } RCC_CR;
 #define RCC_CR_REG      ((volatile RCC_CR*) 0x40021000)			// RCC CLOCK CONTROL REGISTER
 
-#define RCC_REG      ((volatile RCC_CR*) 0x40021000)			// RCC CLOCK CONTROL REGISTER
 
 typedef struct {
 	u8 SW: 			2;		// System clock switch
@@ -64,6 +63,125 @@ typedef struct {
 #define RCC_CIR_REG        			*((volatile u32*) 0x40021008)			// RCC Clock interrupt register
 #define RCC_APB2RSTR_REG   	*((volatile u32*) 0x4002100C)			// RCC APB2 peripheral reset register
 #define RCC_APB1RSTR_REG   	*((volatile u32*) 0x40021010)			// RCC APB1 peripheral reset register
+#define RCC_AHBENR_REG     		*((volatile u32*)0x40021014)
+
+
+#define APB2_IOPAEN				2		// IO PORT A clock enable
+#define APB2_IOPBEN				3		// IO PORT B clock enable
+#define APB2_IOPCEN				4		// IO PORT C clock enable
+#define APB2_IOPDEN				5		// IO PORT D clock enable
+#define APB2_IOPEEN				6		// IO PORT E clock enable
+#define APB2_IOPFEN				9		// IO PORT F clock enable
+#define APB2_IOPGEN				10		// IO PORT G clock enable
+#define APB2_TIM1EN				11		// TIMER 1 clock enable
+#define APB2_USART1EN		14		// USART 1 clock enable
+#define RCC_APB2ENR_REG   	*((volatile u32*)0x40021018)
+
+
+#define APB1_TIM2EN				0		// IO PORT A clock enable
+#define APB1_TIM3EN				1		// IO PORT B clock enable
+#define APB1_TIM4EN				2		// IO PORT C clock enable
+#define APB1_TIM5EN				3		// IO PORT D clock enable
+#define APB1_TIM6EN				4		// IO PORT E clock enable
+#define APB1_TIM7EN				5		// IO PORT F clock enable
+#define APB1_UART2EN			17		// IO PORT F clock enable
+#define APB1_UART3EN			18		// IO PORT F clock enable
+#define APB1_UART4EN			19		// IO PORT F clock enable
+#define APB1_UART5EN			20		// IO PORT F clock enable
+#define RCC_APB1ENR_REG    	*((volatile u32*)0x4002101C)
+
+#define RCC_BDCR_REG       		*((volatile u32*)0x40021020)			// RCC Backup domain control register
+#define RCC_CSR_REG       		*((volatile u32*)0x40021024)			// RCC Control/status register
+
+/*******************************************************************************
+ *                              					RCC Configurations					                   				     *
+ *******************************************************************************/
+
+// Choosing the Clock Type		##IMPORTANT##
+#define RCC_HSI						0
+#define RCC_HSE_CRYSTAL	1
+#define RCC_HSE_RC				2
+#define RCC_PLL						4
+
+// Defining Buses
+#define RCC_AHB       0
+#define RCC_APB1      1
+#define RCC_APB2      2
+
+// Declaring the System Clock Switch
+#define CFGR_SW_HSI 		0b00
+#define CFGR_SW_HSE 		0b01
+#define CFGR_SW_PLL 		0b10
+
+// Declaring the System Clock Switch
+#define CFGR_SWS_HSI 		0b00
+#define CFGR_SWS_HSE 		0b01
+#define CFGR_SWS_PLL 		0b10
+
+// Declaring the AHB Prescaler
+#define CFGR_HPRE_DIV0  	0b0000
+#define CFGR_HPRE_DIV2		0b1000
+#define CFGR_HPRE_DIV4 		0b1001
+#define CFGR_HPRE_DIV8 		0b1010
+#define CFGR_HPRE_DIV16 	0b1011
+#define CFGR_HPRE_DIV64 	0b1100
+#define CFGR_HPRE_DIV128 	0b1101
+#define CFGR_HPRE_DIV256 	0b1110
+#define CFGR_HPRE_DIV512 	0b1111
+
+// Declaring the APB1 Prescaler
+#define CFGR_PPRE1_DIV0 	0b000
+#define CFGR_PPRE1_DIV2		0b100
+#define CFGR_PPRE1_DIV4		0b101
+#define CFGR_PPRE1_DIV8		0b110
+#define CFGR_PPRE1_DIV16		0b111
+
+// Declaring the APB2 Prescaler
+#define CFGR_PPRE2_DIV0 	0b000
+#define CFGR_PPRE2_DIV2		0b100
+#define CFGR_PPRE2_DIV4	0b101
+#define CFGR_PPRE2_DIV8		0b110
+#define CFGR_PPRE2_DIV16	0b111
+
+// Declaring the PLL CLOCK SOURCE
+#define PLLSRC_HSI 	0
+#define PLLSRC_HSE	1
+
+// Declaring the HSE Divider for PLL Entry
+#define PLLXPTRE_HSE_NOTDIV 	0
+#define PLLXPTRE_HSE_DIV			1
+
+//	PLL Multiplication Factor
+#define CFGR_PLLMULx2		0b0000
+#define CFGR_PLLMULx3 		0b0001
+#define CFGR_PLLMULx4		0b0010
+#define CFGR_PLLMULx5		0b0011
+#define CFGR_PLLMULx6		0b0100
+#define CFGR_PLLMULx7		0b0101
+#define CFGR_PLLMULx8		0b0110
+#define CFGR_PLLMULx9		0b0111
+#define CFGR_PLLMULx10		0b1000
+#define CFGR_PLLMULx11		0b1001
+#define CFGR_PLLMULx12		0b1010
+#define CFGR_PLLMULx13		0b1011
+#define CFGR_PLLMULx14		0b1100
+#define CFGR_PLLMULx15		0b1101
+#define CFGR_PLLMULx16		0b1110
+
+// MCO (Microcontroller Clock Output)
+#define CFGR_MCO_NOCLK		0b000
+#define CFGR_MCO_SYSCLK		0b100
+#define CFGR_MCO_HSICLK		0b101
+#define CFGR_MCO_HSECLK		0b110
+#define CFGR_MCO_PLLCLK		0b111
+
+#endif
+
+
+
+
+
+
 
 //typedef struct {
 //	u8 DMA1EN	: 1;		// DMA1 clock enable
@@ -80,7 +198,7 @@ typedef struct {
 //	u32 				: 21;		// Res
 //} RCC_AHBENR;
 //#define RCC_AHBENR_REG     	((volatile RCC_AHBENR*) 0x40021014)			// RCC AHB peripheral clock enable register
-#define RCC_AHBENR_REG     	*((volatile u32*)0x40021014)
+
 
 //typedef struct {
 //	u8 AFIOEN	: 1;		// Alternate function IO clock enable
@@ -107,17 +225,6 @@ typedef struct {
 //} RCC_APB2ENR;
 //#define RCC_APB2ENR_REG   	((volatile RCC_APB2ENR*) 0x40021018)			// RCC APB2 peripheral clock enable register
 
-#define APB2_IOPAEN				2		// IO PORT A clock enable
-#define APB2_IOPBEN				3		// IO PORT B clock enable
-#define APB2_IOPCEN				4		// IO PORT C clock enable
-#define APB2_IOPDEN				5		// IO PORT D clock enable
-#define APB2_IOPEEN				6		// IO PORT E clock enable
-#define APB2_IOPFEN				9		// IO PORT F clock enable
-#define APB2_IOPGEN				10		// IO PORT G clock enable
-#define APB2_TIM1EN				11		// TIMER 1 clock enable
-#define APB2_USART1EN		14		// USART 1 clock enable
-
-#define RCC_APB2ENR_REG   	*((volatile u32*)0x40021018)
 
 //typedef struct {
 //	u8 TIM2EN	: 1;		// TIM 2 clock enable
@@ -152,25 +259,3 @@ typedef struct {
 //} RCC_APB1ENR;
 //#define RCC_APB1ENR_REG    	((volatile RCC_APB1ENR*) 0x4002101C)		// RCC APB1 peripheral clock enable register
 
-
-
-#define APB1_TIM2EN				0		// IO PORT A clock enable
-#define APB1_TIM3EN				1		// IO PORT B clock enable
-#define APB1_TIM4EN				2		// IO PORT C clock enable
-#define APB1_TIM5EN				3		// IO PORT D clock enable
-#define APB1_TIM6EN				4		// IO PORT E clock enable
-#define APB1_TIM7EN				5		// IO PORT F clock enable
-#define APB1_UART2EN			17		// IO PORT F clock enable
-#define APB1_UART3EN			18		// IO PORT F clock enable
-#define APB1_UART4EN			19		// IO PORT F clock enable
-#define APB1_UART5EN			20		// IO PORT F clock enable
-#define RCC_APB1ENR_REG    	*((volatile u32*)0x4002101C)
-
-
-#define RCC_BDCR_REG       		*((volatile u32*)0x40021020)			// RCC Backup domain control register
-#define RCC_CSR_REG       		*((volatile u32*)0x40021024)			// RCC Control/status register
-
-
-
-
-#endif
