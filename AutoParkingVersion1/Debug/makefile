@@ -59,8 +59,8 @@ all: main-build
 main-build: AutoParkingVersion1.elf secondary-outputs
 
 # Tool invocations
-AutoParkingVersion1.elf AutoParkingVersion1.map: $(OBJS) $(USER_OBJS) C:\Users\Administrator\Desktop\ITIDA\NTI\ PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+AutoParkingVersion1.elf AutoParkingVersion1.map: $(OBJS) $(USER_OBJS) C:\Users\hossa\Desktop\ITIDA\NTI\ PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

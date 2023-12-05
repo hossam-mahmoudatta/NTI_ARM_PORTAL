@@ -1838,3 +1838,731 @@ arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf
    7120	     12	   1668	   8800	   2260	TEST03_LCD_NONGENERATED.elf
 Finished building: default.size.stdout
  
+10:31:28 **** Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6304	     12	   1660	   7976	   1f28	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+10:39:19 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6304	     12	   1660	   7976	   1f28	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+10:40:17 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6304	     12	   1660	   7976	   1f28	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+10:41:25 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6304	     12	   1660	   7976	   1f28	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+10:44:05 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6304	     12	   1660	   7976	   1f28	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+10:44:45 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6304	     12	   1660	   7976	   1f28	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+10:50:33 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6304	     12	   1660	   7976	   1f28	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+10:50:37 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6304	     12	   1660	   7976	   1f28	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+11:02:15 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6324	     12	   1660	   7996	   1f3c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+11:02:18 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6324	     12	   1660	   7996	   1f3c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+11:02:42 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6324	     12	   1660	   7996	   1f3c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+11:07:46 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6324	     12	   1660	   7996	   1f3c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+11:07:59 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6324	     12	   1660	   7996	   1f3c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+11:51:51 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'APP_voidRemoteControl':
+../Src/main.c:553:9: error: 'LOC_u8NewData' undeclared (first use in this function)
+  553 |         LOC_u8NewData = MUSART1_u8RecCharSynch();
+      |         ^~~~~~~~~~~~~
+../Src/main.c:553:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c: At top level:
+../Src/main.c:605:1: error: expected identifier or '(' before '}' token
+  605 | }
+      | ^
+make: *** [Src/subdir.mk:61: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:52:40 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:606:1: error: expected identifier or '(' before '}' token
+  606 | }
+      | ^
+make: *** [Src/subdir.mk:61: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:52:49 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7180	     12	   1668	   8860	   229c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+11:53:24 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7180	     12	   1668	   8860	   229c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+12:11:42 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7216	     12	   1668	   8896	   22c0	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+12:14:43 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7216	     12	   1668	   8896	   22c0	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+12:17:37 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7256	     12	   1668	   8936	   22e8	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+12:18:55 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7268	     12	   1668	   8948	   22f4	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+12:20:21 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7276	     12	   1668	   8956	   22fc	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+12:20:45 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7276	     12	   1668	   8956	   22fc	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+12:29:15 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7276	     12	   1668	   8956	   22fc	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+12:29:46 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7276	     12	   1668	   8956	   22fc	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+12:41:13 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7292	     12	   1668	   8972	   230c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+12:41:32 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7292	     12	   1668	   8972	   230c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+12:49:23 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7304	     12	   1668	   8984	   2318	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+12:49:50 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7304	     12	   1668	   8984	   2318	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+12:49:53 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7304	     12	   1668	   8984	   2318	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+13:21:36 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7304	     12	   1668	   8984	   2318	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+13:39:18 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7304	     12	   1668	   8984	   2318	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+13:41:28 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7268	     12	   1668	   8948	   22f4	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+13:42:43 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7256	     12	   1668	   8936	   22e8	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+13:43:19 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7256	     12	   1668	   8936	   22e8	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+13:54:47 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7256	     12	   1668	   8936	   22e8	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+13:55:09 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7256	     12	   1668	   8936	   22e8	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+14:08:19 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7280	     12	   1668	   8960	   2300	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+14:08:45 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7280	     12	   1668	   8960	   2300	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+14:09:32 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7280	     12	   1668	   8960	   2300	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+14:16:28 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7280	     12	   1668	   8960	   2300	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+14:52:11 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7280	     12	   1668	   8960	   2300	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+14:52:34 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7280	     12	   1668	   8960	   2300	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+14:52:37 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7280	     12	   1668	   8960	   2300	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+14:53:45 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7280	     12	   1668	   8960	   2300	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+14:59:18 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7280	     12	   1668	   8960	   2300	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+14:59:21 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7280	     12	   1668	   8960	   2300	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+14:59:23 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7280	     12	   1668	   8960	   2300	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+15:01:45 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7280	     12	   1668	   8960	   2300	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+15:01:50 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7280	     12	   1668	   8960	   2300	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+15:02:58 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7280	     12	   1668	   8960	   2300	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+15:07:56 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7256	     12	   1668	   8936	   22e8	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+15:08:21 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7256	     12	   1668	   8936	   22e8	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+15:14:15 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7272	     12	   1668	   8952	   22f8	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+15:16:25 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7272	     12	   1668	   8952	   22f8	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+15:16:39 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7272	     12	   1668	   8952	   22f8	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+15:22:31 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7308	     12	   1668	   8988	   231c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+15:23:05 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7308	     12	   1668	   8988	   231c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+15:23:09 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7308	     12	   1668	   8988	   231c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+15:23:24 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7308	     12	   1668	   8988	   231c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+15:23:38 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7308	     12	   1668	   8988	   231c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+15:30:22 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7308	     12	   1668	   8988	   231c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+15:34:48 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7308	     12	   1668	   8988	   231c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+15:34:54 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7308	     12	   1668	   8988	   231c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+15:44:23 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7308	     12	   1668	   8988	   231c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+15:45:15 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7308	     12	   1668	   8988	   231c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+15:45:49 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7308	     12	   1668	   8988	   231c	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+15:48:11 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7316	     12	   1668	   8996	   2324	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+15:56:26 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "AutoParkingVersion1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\hossa\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\AutoParkingVersion1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoParkingVersion1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AutoParkingVersion1.elf
+ 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+arm-none-eabi-objdump -h -S  AutoParkingVersion1.elf  > "AutoParkingVersion1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7316	     12	   1668	   8996	   2324	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoParkingVersion1.list
+ 
+15:56:52 **** Incremental Build of configuration Debug for project AutoParkingVersion1 ****
+make -j8 all 
+arm-none-eabi-size   AutoParkingVersion1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7316	     12	   1668	   8996	   2324	AutoParkingVersion1.elf
+Finished building: default.size.stdout
+ 

@@ -19,11 +19,13 @@
 #define CA_ADAS_FORWARD_STATE 	1
 #define CA_ADAS_RIGHT_STATE 			2
 #define CA_ADAS_LEFT_STATE 			3
-#define CA_ADAS_REVERSE_STATE 		4
+#define CA_ADAS_REVERSE_STATE 	4
+u8 	g_u8Flag = CA_ADAS_FORWARD_STATE;
 
-u8 g_u8Flag = CA_ADAS_FORWARD_STATE;
-
-
+#define CAR_OPERATION_AUTOPARKING 	1
+#define CAR_OPERATION_COLLISIONAVOID	2
+#define CAR_OPERATION_RCCAR		3
+u8 g_u8OperationMode = CAR_OPERATION_AUTOPARKING;
 
 
 u32 volatile IC1_Val1 = 0;
@@ -337,7 +339,7 @@ void APP_voidAutoParking()
 	_delay_ms(100);
 	Received_distanceFour=Ultrasonic_ReadFour();
 	_delay_ms(100);
-	if(Received_distanceThree>20  && Received_distanceFour>20 )
+	if(Received_distanceThree > 20  && Received_distanceFour>20 )
 	{
 		Received_distanceFour=Ultrasonic_ReadFour();
 		_delay_ms(100);
@@ -360,13 +362,14 @@ void APP_voidAutoParking()
 
 		//move LF backward
 		MOTOR_LF_GO_BACKWARD();
-		_delay_ms(1000);
+		_delay_ms(400);
 		MOTOR_LF_STOP();
 
 
 
 
-		MOTOR_LF_Void_MotorSetSpeed(110);
+		MOTOR_LF_Void_MotorSetSpeed(70);
+		MOTOR_RF_Void_MotorSetSpeed(70);
 		//			MOTOR_RF_GO_BACKWARD();
 		//			MOTOR_LF_GO_BACKWARD();
 		//			_delay_ms(1000);
@@ -374,7 +377,7 @@ void APP_voidAutoParking()
 		//			MOTOR_LF_STOP();
 		Received_distanceTwo=Ultrasonic_ReadTwo();
 		_delay_ms(100);
-		if(Received_distanceTwo>2)
+		if(Received_distanceTwo>4)
 		{
 			while(Received_distanceTwo>20)
 			{
@@ -390,10 +393,10 @@ void APP_voidAutoParking()
 		}
 
 		// p>>B
-		MOTOR_LF_Void_MotorSetSpeed(100);
+		MOTOR_LF_Void_MotorSetSpeed(90);
 		MOTOR_LF_GO_FORWARD();
 		MOTOR_RF_GO_BACKWARD();
-		_delay_ms(500);
+		_delay_ms(400);
 		MOTOR_RF_STOP();
 		MOTOR_LF_STOP();
 
@@ -439,8 +442,6 @@ void APP_voidCollisionAvoidance(void)
 	_delay_ms(100);
 	Received_distanceThree = Ultrasonic_ReadThree();
 	_delay_ms(100);
-//	Received_distanceFour = Ultrasonic_ReadFour();
-//	_delay_ms(100);
 	Received_distanceFive = Ultrasonic_ReadFive();
 	_delay_ms(100);
 
@@ -448,29 +449,32 @@ void APP_voidCollisionAvoidance(void)
 	{
 	/***************************************************************************/
 		case CA_ADAS_FORWARD_STATE:
-			if(Received_distanceOne > 10)
+			while(Received_distanceOne > 20 && Received_distanceThree > 10 && Received_distanceFive > 10)
 			{
 				MOTOR_RF_GO_FORWARD();
 				MOTOR_LF_GO_FORWARD();
+				Received_distanceOne = Ultrasonic_ReadOne();
+				_delay_ms(100);
+				Received_distanceThree = Ultrasonic_ReadThree();
+				_delay_ms(100);
+				Received_distanceFive = Ultrasonic_ReadFive();
+				_delay_ms(100);
 			}
-			else
-			{
-				MOTOR_RF_STOP();
-				MOTOR_LF_STOP();
-				_delay_ms(1500);
-				g_u8Flag = CA_ADAS_RIGHT_STATE;
-			}
+			MOTOR_RF_STOP();
+			MOTOR_LF_STOP();
+			_delay_ms(1000);
+			g_u8Flag = CA_ADAS_RIGHT_STATE;
 			break;
 		/***************************************************************************/
 		case CA_ADAS_RIGHT_STATE:
-			if(Received_distanceThree > 20)
+			if(Received_distanceThree > 35)
 			{
 				MOTOR_RF_GO_BACKWARD();
 				MOTOR_LF_GO_FORWARD();
-				_delay_ms(400);
+				_delay_ms(700);
 				MOTOR_RF_STOP();
 				MOTOR_LF_STOP();
-				_delay_ms(1500);
+				_delay_ms(1000);
 				g_u8Flag = CA_ADAS_FORWARD_STATE;
 			}
 			else
@@ -480,14 +484,14 @@ void APP_voidCollisionAvoidance(void)
 			break;
 		/***************************************************************************/
 		case CA_ADAS_LEFT_STATE:
-			if(Received_distanceFive > 20)
+			if(Received_distanceFive > 35)
 			{
 				MOTOR_RF_GO_FORWARD();
 				MOTOR_LF_GO_BACKWARD();
-				_delay_ms(400);
+				_delay_ms(700);
 				MOTOR_RF_STOP();
 				MOTOR_LF_STOP();
-				_delay_ms(1500);
+				_delay_ms(1000);
 				g_u8Flag = CA_ADAS_FORWARD_STATE;
 			}
 			else
@@ -499,17 +503,32 @@ void APP_voidCollisionAvoidance(void)
 		case CA_ADAS_REVERSE_STATE:
 			if(Received_distanceTwo > 20)
 			{
-				if(Received_distanceThree < 20)
+				while(Received_distanceThree < 20 && Received_distanceFive < 20)
 				{
 					MOTOR_RF_GO_BACKWARD();
 					MOTOR_LF_GO_BACKWARD();
+					//_delay_ms(1000);
+
+					Received_distanceThree = Ultrasonic_ReadThree();
+					_delay_ms(100);
+					Received_distanceFive = Ultrasonic_ReadFive();
+					_delay_ms(100);
+//					Received_distanceTwo = Ultrasonic_ReadTwo();
+//					_delay_ms(100);
 				}
-				else if(Received_distanceThree > 20)
+				if(Received_distanceThree > 20)
 				{
 					MOTOR_RF_STOP();
 					MOTOR_LF_STOP();
-					_delay_ms(1500);
+					_delay_ms(700);
 					g_u8Flag = CA_ADAS_RIGHT_STATE;
+				}
+				else if(Received_distanceFive > 20)
+				{
+					MOTOR_RF_STOP();
+					MOTOR_LF_STOP();
+					_delay_ms(700);
+					g_u8Flag = CA_ADAS_LEFT_STATE;
 				}
 			}
 			else
@@ -548,9 +567,68 @@ void APP_voidUltrasonicUnitTest(void)
 
 }
 
+
+/********************************************************************************/
+void APP_voidRemoteControl(void)
+{
+	// Receive new data from Bluetooth
+	u8 LOC_u8NewData;
+	LOC_u8NewData = MUSART1_u8RecCharSynch();
+	_delay_ms(100);
+
+	// Motor control based on received data
+	switch (LOC_u8NewData) {
+	case '1':
+		// Move forward
+		MOTOR_RF_GO_FORWARD();
+		MOTOR_LF_GO_FORWARD();
+		_delay_ms(250);
+		// Stop after a short delay
+		MOTOR_RF_STOP();
+		MOTOR_LF_STOP();
+		break;
+
+	case '2':
+		// Turn right
+		MOTOR_RF_GO_FORWARD();
+		MOTOR_LF_STOP();
+		_delay_ms(250);
+		// Stop after a short delay
+		MOTOR_RF_STOP();
+		MOTOR_LF_STOP();
+		break;
+
+	case '3':
+		// Turn left
+		MOTOR_LF_GO_FORWARD();
+		MOTOR_RF_STOP();
+		_delay_ms(250);
+		// Stop after a short delay
+		MOTOR_RF_STOP();
+		MOTOR_LF_STOP();
+		break;
+
+	case '4':
+		// Move backward
+		MOTOR_RF_GO_BACKWARD();
+		MOTOR_LF_GO_BACKWARD();
+		_delay_ms(250);
+		// Stop after a short delay
+		MOTOR_RF_STOP();
+		MOTOR_LF_STOP();
+		break;
+
+	default:
+		// Stop if the received command is not recognized
+		MOTOR_RF_STOP();
+		MOTOR_LF_STOP();
+		break;
+	}
+}
+
+
 int main(void)
 {
-
 	MRCC_VidInit();
 	MRCC_VidEnablePeripheralClock(APB1_BUS, TIM2_RCC);
 	MRCC_VidEnablePeripheralClock(APB1_BUS, TIM3_RCC);
@@ -558,7 +636,7 @@ int main(void)
 	MRCC_VidEnablePeripheralClock(APB2_BUS, GPIOB_RCC);
 	MRCC_VidEnablePeripheralClock(APB1_BUS, TIM4_RCC);
 
-	/*Enable Interupt for each timer*/
+	/*Enable Interrupt for each timer*/
 	MNVIC_VidEnablePeripheral(TIM2_C);
 	MNVIC_VidEnablePeripheral(TIM3_C);
 	//timer2
@@ -594,34 +672,37 @@ int main(void)
 	TIMER3_VoidInitInputCapture(Channle2);
 	TIMER3_VoidInitInputCapture(Channle4);
 
-
 	MOTORS_Void_MotorInit();
-
-	//
-	//	MRCC_VidEnablePeripheralClock ( APB2_BUS , USART1_RCC) ;
-	//
-	//	MGPIO_VidSetPinDirection      ( GPIOA , PIN9  , OUTPUT_SPEED_2MHZ_AFPP ) ;
-	//	MGPIO_VidSetPinDirection      ( GPIOA , PIN10 , INPUT_FLOATING         ) ;
-
-
-	//	MGPIO_VidSetPinDirection(GPIOA, PIN7, OUTPUT_SPEED_2MHZ_PP);
-
-
-
 
 	MUSART_VidInit();
 
+	MRCC_VidEnablePeripheralClock ( APB2_BUS , USART1_RCC) ;
+	MGPIO_VidSetPinDirection      ( GPIOA , PIN9  , OUTPUT_SPEED_2MHZ_AFPP ) ;
+	MGPIO_VidSetPinDirection      ( GPIOA , PIN10 , INPUT_FLOATING         ) ;
 
-	MOTOR_RF_Void_MotorSetSpeed(100);
-	MOTOR_LF_Void_MotorSetSpeed(100);
-	//	CLCD_voidInit();
 
-//	MOTOR_RF_Void_MotorSetSpeed(75);
-//	MOTOR_LF_Void_MotorSetSpeed(75);
+	MOTOR_RF_Void_MotorSetSpeed(90);
+	MOTOR_LF_Void_MotorSetSpeed(90);
 
 	/* Loop forever */
 	for(;;)
 	{
-		APP_voidCollisionAvoidance();
+		switch(g_u8OperationMode)
+		{
+			case CAR_OPERATION_COLLISIONAVOID:		// Collision Avoidance Mode
+				APP_voidCollisionAvoidance();
+				break;
+
+			case CAR_OPERATION_AUTOPARKING:		// Auto-Parking Mode
+				APP_voidAutoParking();
+				break;
+
+			case CAR_OPERATION_RCCAR:		// RC Car Mode
+				APP_voidRemoteControl();
+				break;
+
+			default:
+				break;
+		}
 	}
 }
