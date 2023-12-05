@@ -592,3 +592,884 @@ Finished building: TEST03_LCD_NONGENERATED.list
 Finished building: TEST03_LCD_NONGENERATED.bin
  
  
+04:04:42 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/DELAY_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/DELAY_PROGRAM.d" -MT"Src/DELAY_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/DELAY_PROGRAM.o"
+arm-none-eabi-gcc "../Src/HCSR04_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/HCSR04_PROGRAM.d" -MT"Src/HCSR04_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/HCSR04_PROGRAM.o"
+arm-none-eabi-gcc "../Src/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/LCD_PROGRAM.d" -MT"Src/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/LCD_PROGRAM.o"
+arm-none-eabi-gcc "../Src/MOTOR_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/MOTOR_PROGRAM.d" -MT"Src/MOTOR_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/MOTOR_PROGRAM.o"
+arm-none-eabi-gcc "../Src/SYSTICK_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/SYSTICK_PROGRAM.d" -MT"Src/SYSTICK_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/SYSTICK_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6600	      8	   1664	   8272	   2050	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+ 
+04:13:38 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/DELAY_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/DELAY_PROGRAM.d" -MT"Src/DELAY_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/DELAY_PROGRAM.o"
+arm-none-eabi-gcc "../Src/HCSR04_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/HCSR04_PROGRAM.d" -MT"Src/HCSR04_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/HCSR04_PROGRAM.o"
+arm-none-eabi-gcc "../Src/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/LCD_PROGRAM.d" -MT"Src/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/LCD_PROGRAM.o"
+arm-none-eabi-gcc "../Src/SYSTICK_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/SYSTICK_PROGRAM.d" -MT"Src/SYSTICK_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/SYSTICK_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6600	      8	   1664	   8272	   2050	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+ 
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+04:19:15 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/HCSR04_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/HCSR04_PROGRAM.d" -MT"Src/HCSR04_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/HCSR04_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6600	      8	   1664	   8272	   2050	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+ 
+04:20:20 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/HCSR04_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/HCSR04_PROGRAM.d" -MT"Src/HCSR04_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/HCSR04_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Front'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Front
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Front'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Front
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Front'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Front
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Front'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Front
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6600	      8	   1664	   8272	   2050	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+ 
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+04:21:03 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/HCSR04_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/HCSR04_PROGRAM.d" -MT"Src/HCSR04_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/HCSR04_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6600	      8	   1664	   8272	   2050	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+ 
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+04:22:42 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/HCSR04_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/HCSR04_PROGRAM.d" -MT"Src/HCSR04_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/HCSR04_PROGRAM.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/APP_PROGRAM.o: in function `APP_voidCollisionAvoidance':
+C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:84: undefined reference to `HCSR04_u8ReadThree'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:86: undefined reference to `HCSR04_u8ReadFour'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:91: undefined reference to `HCSR04_u8ReadFour'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:96: undefined reference to `HCSR04_u8ReadFour'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:120: undefined reference to `HCSR04_u8ReadTwo'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:127: undefined reference to `HCSR04_u8ReadTwo'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:152: undefined reference to `HCSR04_u8ReadOne'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:159: undefined reference to `HCSR04_u8ReadOne'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/APP_PROGRAM.o: in function `APP_voidAutoParking':
+C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:187: undefined reference to `HCSR04_u8ReadThree'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:189: undefined reference to `HCSR04_u8ReadFour'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:194: undefined reference to `HCSR04_u8ReadFour'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:199: undefined reference to `HCSR04_u8ReadFour'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:223: undefined reference to `HCSR04_u8ReadTwo'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:230: undefined reference to `HCSR04_u8ReadTwo'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:255: undefined reference to `HCSR04_u8ReadOne'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:262: undefined reference to `HCSR04_u8ReadOne'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:69: TEST03_LCD_NONGENERATED.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:24:09 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/HCSR04_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/HCSR04_PROGRAM.d" -MT"Src/HCSR04_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/HCSR04_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:84:9: error: 'Received_distanceThree' undeclared (first use in this function)
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:84:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:86:9: error: 'Received_distanceFour' undeclared (first use in this function)
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:120:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:152:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:187:9: error: 'Received_distanceThree' undeclared (first use in this function)
+  187 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:189:9: error: 'Received_distanceFour' undeclared (first use in this function)
+  189 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:223:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  223 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:255:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  255 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:24:44 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/HCSR04_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/HCSR04_PROGRAM.d" -MT"Src/HCSR04_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/HCSR04_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:84:9: error: 'Received_distanceThree' undeclared (first use in this function)
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:84:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:86:9: error: 'Received_distanceFour' undeclared (first use in this function)
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:120:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:152:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:187:9: error: 'Received_distanceThree' undeclared (first use in this function)
+  187 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:189:9: error: 'Received_distanceFour' undeclared (first use in this function)
+  189 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:223:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  223 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:255:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  255 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:26:05 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/HCSR04_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/HCSR04_PROGRAM.d" -MT"Src/HCSR04_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/HCSR04_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:84:9: error: 'Received_distanceThree' undeclared (first use in this function)
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:84:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:86:9: error: 'Received_distanceFour' undeclared (first use in this function)
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:120:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:152:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:187:9: error: 'Received_distanceThree' undeclared (first use in this function)
+  187 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:189:9: error: 'Received_distanceFour' undeclared (first use in this function)
+  189 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:223:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  223 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:255:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  255 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:28:14 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/TIMER3_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TIMER3_PROGRAM.d" -MT"Src/TIMER3_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TIMER3_PROGRAM.o"
+../Src/TIMER3_PROGRAM.c: In function 'TIMER3_voidEnableInterrupt':
+../Src/TIMER3_PROGRAM.c:141:17: error: duplicate case value
+  141 |                 case TIMER3_CHANNEL3:
+      |                 ^~~~
+../Src/TIMER3_PROGRAM.c:137:17: note: previously used here
+  137 |                 case TIMER3_CHANNEL3:
+      |                 ^~~~
+../Src/TIMER3_PROGRAM.c: In function 'TIMER3_voidDisableInterrupt':
+../Src/TIMER3_PROGRAM.c:166:17: error: duplicate case value
+  166 |                 case TIMER3_CHANNEL3:
+      |                 ^~~~
+../Src/TIMER3_PROGRAM.c:162:17: note: previously used here
+  162 |                 case TIMER3_CHANNEL3:
+      |                 ^~~~
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:84:9: error: 'Received_distanceThree' undeclared (first use in this function)
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:84:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:86:9: error: 'Received_distanceFour' undeclared (first use in this function)
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:120:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:152:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:187:9: error: 'Received_distanceThree' undeclared (first use in this function)
+  187 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:189:9: error: 'Received_distanceFour' undeclared (first use in this function)
+  189 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:64: Src/TIMER3_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/APP_PROGRAM.c:223:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  223 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:255:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  255 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:28:23 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/TIMER3_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TIMER3_PROGRAM.d" -MT"Src/TIMER3_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TIMER3_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/TIMER3_PROGRAM.c: In function 'TIMER3_u32GetICUValue':
+../Src/APP_PROGRAM.c:84:9: error: 'Received_distanceThree' undeclared (first use in this function)
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:84:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/TIMER3_PROGRAM.c:236:37: warning: 'u32Value3' may be used uninitialized [-Wmaybe-uninitialized]
+  236 |                         returnValue = u32Value3;
+      |                         ~~~~~~~~~~~~^~~~~~~~~~~
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:86:9: error: 'Received_distanceFour' undeclared (first use in this function)
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:120:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:152:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:187:9: error: 'Received_distanceThree' undeclared (first use in this function)
+  187 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:189:9: error: 'Received_distanceFour' undeclared (first use in this function)
+  189 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:223:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  223 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:255:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  255 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:28:55 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/TIMER3_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TIMER3_PROGRAM.d" -MT"Src/TIMER3_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TIMER3_PROGRAM.o"
+../Src/TIMER3_PROGRAM.c: In function 'TIMER3_u32GetICUValue':
+../Src/TIMER3_PROGRAM.c:240:37: warning: 'u32Value3' may be used uninitialized [-Wmaybe-uninitialized]
+  240 |                         returnValue = u32Value3;
+      |                         ~~~~~~~~~~~~^~~~~~~~~~~
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:84:9: error: 'Received_distanceThree' undeclared (first use in this function)
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:84:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:86:9: error: 'Received_distanceFour' undeclared (first use in this function)
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:120:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:152:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:187:9: error: 'Received_distanceThree' undeclared (first use in this function)
+  187 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:189:9: error: 'Received_distanceFour' undeclared (first use in this function)
+  189 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:223:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  223 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:255:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  255 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:29:57 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/TIMER3_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TIMER3_PROGRAM.d" -MT"Src/TIMER3_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TIMER3_PROGRAM.o"
+../Src/TIMER3_PROGRAM.c: In function 'TIMER3_u32GetICUValue':
+../Src/TIMER3_PROGRAM.c:244:37: warning: 'u32Value3' may be used uninitialized [-Wmaybe-uninitialized]
+  244 |                         returnValue = u32Value3;
+      |                         ~~~~~~~~~~~~^~~~~~~~~~~
+../Src/TIMER3_PROGRAM.c:249:37: warning: 'u32Value4' may be used uninitialized [-Wmaybe-uninitialized]
+  249 |                         returnValue = u32Value4;
+      |                         ~~~~~~~~~~~~^~~~~~~~~~~
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:84:9: error: 'Received_distanceThree' undeclared (first use in this function)
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:84:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:86:9: error: 'Received_distanceFour' undeclared (first use in this function)
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:120:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:152:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:187:9: error: 'Received_distanceThree' undeclared (first use in this function)
+  187 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:189:9: error: 'Received_distanceFour' undeclared (first use in this function)
+  189 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:223:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  223 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:255:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  255 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:31:14 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/TIMER3_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TIMER3_PROGRAM.d" -MT"Src/TIMER3_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TIMER3_PROGRAM.o"
+../Src/TIMER3_PROGRAM.c: In function 'TIMER3_u32GetICUValue':
+../Src/TIMER3_PROGRAM.c:262:37: warning: 'u32Value3' may be used uninitialized [-Wmaybe-uninitialized]
+  262 |                         returnValue = u32Value3;
+      |                         ~~~~~~~~~~~~^~~~~~~~~~~
+../Src/TIMER3_PROGRAM.c:267:37: warning: 'u32Value4' may be used uninitialized [-Wmaybe-uninitialized]
+  267 |                         returnValue = u32Value4;
+      |                         ~~~~~~~~~~~~^~~~~~~~~~~
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:84:9: error: 'Received_distanceThree' undeclared (first use in this function)
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:84:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:86:9: error: 'Received_distanceFour' undeclared (first use in this function)
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:120:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:152:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:187:9: error: 'Received_distanceThree' undeclared (first use in this function)
+  187 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:189:9: error: 'Received_distanceFour' undeclared (first use in this function)
+  189 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:223:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  223 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:255:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  255 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:31:29 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/TIMER3_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TIMER3_PROGRAM.d" -MT"Src/TIMER3_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TIMER3_PROGRAM.o"
+../Src/TIMER3_PROGRAM.c: In function 'TIMER3_u32GetICUValue':
+../Src/TIMER3_PROGRAM.c:262:37: warning: 'u32Value3' may be used uninitialized [-Wmaybe-uninitialized]
+  262 |                         returnValue = u32Value3;
+      |                         ~~~~~~~~~~~~^~~~~~~~~~~
+../Src/TIMER3_PROGRAM.c:267:37: warning: 'u32Value4' may be used uninitialized [-Wmaybe-uninitialized]
+  267 |                         returnValue = u32Value4;
+      |                         ~~~~~~~~~~~~^~~~~~~~~~~
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:84:9: error: 'Received_distanceThree' undeclared (first use in this function)
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:84:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:86:9: error: 'Received_distanceFour' undeclared (first use in this function)
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:120:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:152:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:187:9: error: 'Received_distanceThree' undeclared (first use in this function)
+  187 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:189:9: error: 'Received_distanceFour' undeclared (first use in this function)
+  189 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:223:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  223 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:255:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  255 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:32:34 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:84:9: error: 'Received_distanceThree' undeclared (first use in this function)
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:84:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:86:9: error: 'Received_distanceFour' undeclared (first use in this function)
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:120:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:152:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:187:9: error: 'Received_distanceThree' undeclared (first use in this function)
+  187 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:189:9: error: 'Received_distanceFour' undeclared (first use in this function)
+  189 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:223:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  223 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:255:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  255 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:33:42 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:84:9: error: 'Received_distanceThree' undeclared (first use in this function)
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:84:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:86:9: error: 'Received_distanceFour' undeclared (first use in this function)
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:120:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:152:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:187:9: error: 'Received_distanceThree' undeclared (first use in this function)
+  187 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:189:9: error: 'Received_distanceFour' undeclared (first use in this function)
+  189 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:223:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  223 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:255:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  255 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c: In function 'APP_voidUltrasonicUnitTest':
+../Src/APP_PROGRAM.c:352:31: warning: implicit declaration of function 'Ultrasonic_ReadFour' [-Wimplicit-function-declaration]
+  352 |         LOC_u16ReadDistance = Ultrasonic_ReadFour();
+      |                               ^~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:358:17: warning: implicit declaration of function 'MOTOR_LF_STOP'; did you mean 'MOTOR_voidFL_STOP'? [-Wimplicit-function-declaration]
+  358 |                 MOTOR_LF_STOP();
+      |                 ^~~~~~~~~~~~~
+      |                 MOTOR_voidFL_STOP
+../Src/APP_PROGRAM.c:361:17: warning: implicit declaration of function 'MOTOR_RF_GO_FORWARD' [-Wimplicit-function-declaration]
+  361 |                 MOTOR_RF_GO_FORWARD();
+      |                 ^~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:366:17: warning: implicit declaration of function 'MOTOR_LF_GO_FORWARD' [-Wimplicit-function-declaration]
+  366 |                 MOTOR_LF_GO_FORWARD();
+      |                 ^~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:367:17: warning: implicit declaration of function 'MOTOR_RF_STOP'; did you mean 'MOTOR_voidRL_STOP'? [-Wimplicit-function-declaration]
+  367 |                 MOTOR_RF_STOP();
+      |                 ^~~~~~~~~~~~~
+      |                 MOTOR_voidRL_STOP
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:35:23 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:84:9: error: 'Received_distanceThree' undeclared (first use in this function)
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:84:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:86:9: error: 'Received_distanceFour' undeclared (first use in this function)
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:120:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:152:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:187:9: error: 'Received_distanceThree' undeclared (first use in this function)
+  187 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:189:9: error: 'Received_distanceFour' undeclared (first use in this function)
+  189 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:223:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  223 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:255:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  255 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:37:04 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:84:9: error: 'Received_distanceThree' undeclared (first use in this function)
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:84:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:86:9: error: 'Received_distanceFour' undeclared (first use in this function)
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:120:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:152:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:197:23: error: 'Received_distanceFour' undeclared (first use in this function)
+  197 |                 while(Received_distanceFour > 20)
+      |                       ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:223:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  223 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:255:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  255 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
