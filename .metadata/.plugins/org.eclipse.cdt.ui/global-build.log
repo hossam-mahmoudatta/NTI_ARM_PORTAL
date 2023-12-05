@@ -298,3 +298,231 @@ Finished building: default.size.stdout
  
 Finished building: AutoParkingVersion1.list
  
+03:13:34 **** Clean-only build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 clean 
+rm -rf ./Startup/startup_stm32f103c8tx.d ./Startup/startup_stm32f103c8tx.o
+rm -rf ./Src/APP_PROGRAM.cyclo ./Src/APP_PROGRAM.d ./Src/APP_PROGRAM.o ./Src/APP_PROGRAM.su ./Src/DELAY_PROGRAM.cyclo ./Src/DELAY_PROGRAM.d ./Src/DELAY_PROGRAM.o ./Src/DELAY_PROGRAM.su ./Src/GPIO_PROGRAM.cyclo ./Src/GPIO_PROGRAM.d ./Src/GPIO_PROGRAM.o ./Src/GPIO_PROGRAM.su ./Src/HCSR04_PROGRAM.cyclo ./Src/HCSR04_PROGRAM.d ./Src/HCSR04_PROGRAM.o ./Src/HCSR04_PROGRAM.su ./Src/LCD_PROGRAM.cyclo ./Src/LCD_PROGRAM.d ./Src/LCD_PROGRAM.o ./Src/LCD_PROGRAM.su ./Src/MOTOR_PROGRAM.cyclo ./Src/MOTOR_PROGRAM.d ./Src/MOTOR_PROGRAM.o ./Src/MOTOR_PROGRAM.su ./Src/NVIC_PROGRAM.cyclo ./Src/NVIC_PROGRAM.d ./Src/NVIC_PROGRAM.o ./Src/NVIC_PROGRAM.su ./Src/RCC_PROGRAM.cyclo ./Src/RCC_PROGRAM.d ./Src/RCC_PROGRAM.o ./Src/RCC_PROGRAM.su ./Src/SYSTICK_PROGRAM.cyclo ./Src/SYSTICK_PROGRAM.d ./Src/SYSTICK_PROGRAM.o ./Src/SYSTICK_PROGRAM.su ./Src/TIMER2_PROGRAM.cyclo ./Src/TIMER2_PROGRAM.d ./Src/TIMER2_PROGRAM.o ./Src/TIMER2_PROGRAM.su ./Src/TIMER3_PROGRAM.cyclo ./Src/TIMER3_PROGRAM.d ./Src/TIMER3_PROGRAM.o ./Src/TIMER3_PROGRAM.su ./Src/TIMER4_PROGRAM.cyclo ./Src/TIMER4_PROGRAM.d ./Src/TIMER4_PROGRAM.o ./Src/TIMER4_PROGRAM.su ./Src/USART_PROGRAM.cyclo ./Src/USART_PROGRAM.d ./Src/USART_PROGRAM.o ./Src/USART_PROGRAM.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf TEST03_LCD_NONGENERATED.bin TEST03_LCD_NONGENERATED.elf TEST03_LCD_NONGENERATED.hex TEST03_LCD_NONGENERATED.list TEST03_LCD_NONGENERATED.map default.size.stdout
+ 
+03:13:34 **** Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c8tx.d" -MT"Startup/startup_stm32f103c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c8tx.o" "../Startup/startup_stm32f103c8tx.s"
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/DELAY_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/DELAY_PROGRAM.d" -MT"Src/DELAY_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/DELAY_PROGRAM.o"
+arm-none-eabi-gcc "../Src/GPIO_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/GPIO_PROGRAM.d" -MT"Src/GPIO_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/GPIO_PROGRAM.o"
+arm-none-eabi-gcc "../Src/HCSR04_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/HCSR04_PROGRAM.d" -MT"Src/HCSR04_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/HCSR04_PROGRAM.o"
+arm-none-eabi-gcc "../Src/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/LCD_PROGRAM.d" -MT"Src/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/LCD_PROGRAM.o"
+arm-none-eabi-gcc "../Src/MOTOR_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/MOTOR_PROGRAM.d" -MT"Src/MOTOR_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/MOTOR_PROGRAM.o"
+arm-none-eabi-gcc "../Src/NVIC_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/NVIC_PROGRAM.d" -MT"Src/NVIC_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/NVIC_PROGRAM.o"
+arm-none-eabi-gcc "../Src/RCC_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/RCC_PROGRAM.d" -MT"Src/RCC_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/RCC_PROGRAM.o"
+arm-none-eabi-gcc "../Src/SYSTICK_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/SYSTICK_PROGRAM.d" -MT"Src/SYSTICK_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/SYSTICK_PROGRAM.o"
+arm-none-eabi-gcc "../Src/TIMER2_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TIMER2_PROGRAM.d" -MT"Src/TIMER2_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TIMER2_PROGRAM.o"
+arm-none-eabi-gcc "../Src/TIMER3_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TIMER3_PROGRAM.d" -MT"Src/TIMER3_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TIMER3_PROGRAM.o"
+arm-none-eabi-gcc "../Src/TIMER4_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TIMER4_PROGRAM.d" -MT"Src/TIMER4_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TIMER4_PROGRAM.o"
+../Src/LCD_PROGRAM.c: In function 'LCD_voidClear':
+../Src/LCD_PROGRAM.c:173:9: warning: implicit declaration of function 'LCD_voidWrite' [-Wimplicit-function-declaration]
+  173 |         LCD_voidWrite(0, 0x01);
+      |         ^~~~~~~~~~~~~
+arm-none-eabi-gcc "../Src/USART_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/USART_PROGRAM.d" -MT"Src/USART_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/USART_PROGRAM.o"
+../Src/TIMER3_PROGRAM.c: In function 'TIMER3_u32GetICUValue':
+../Src/TIMER3_PROGRAM.c:228:37: warning: 'u32Value3' may be used uninitialized [-Wmaybe-uninitialized]
+  228 |                         returnValue = u32Value3;
+      |                         ~~~~~~~~~~~~^~~~~~~~~~~
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6672	      8	   1664	   8344	   2098	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+ 
+03:14:15 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/LCD_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/LCD_PROGRAM.d" -MT"Src/LCD_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/LCD_PROGRAM.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6672	      8	   1664	   8344	   2098	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+ 
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+03:14:23 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6672	      8	   1664	   8344	   2098	TEST03_LCD_NONGENERATED.elf
+Finished building: default.size.stdout
+ 
+03:18:35 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/RCC_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/RCC_PROGRAM.d" -MT"Src/RCC_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/RCC_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6672	      8	   1664	   8344	   2098	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+Finished building: default.size.stdout
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+ 
+03:20:27 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/RCC_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/RCC_PROGRAM.d" -MT"Src/RCC_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/RCC_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6672	      8	   1664	   8344	   2098	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+ 
+03:24:49 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/RCC_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/RCC_PROGRAM.d" -MT"Src/RCC_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/RCC_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/RCC_PROGRAM.c: In function 'RCC_voidInitialization':
+../Src/RCC_PROGRAM.c:39:30: error: 'HSEBYP_DISABLE' undeclared (first use in this function)
+   39 |         RCC_CR_REG->HSEBYP = HSEBYP_DISABLE;    // Ext High Speed Clk not Bypassed
+      |                              ^~~~~~~~~~~~~~
+../Src/RCC_PROGRAM.c:39:30: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:64: Src/RCC_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+03:25:32 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/RCC_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/RCC_PROGRAM.d" -MT"Src/RCC_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/RCC_PROGRAM.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6672	      8	   1664	   8344	   2098	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+ 
+03:32:51 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/RCC_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/RCC_PROGRAM.d" -MT"Src/RCC_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/RCC_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6672	      8	   1664	   8344	   2098	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+ 
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+03:35:39 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/RCC_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/RCC_PROGRAM.d" -MT"Src/RCC_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/RCC_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/RCC_PROGRAM.c: In function 'RCC_voidPeripheralClockDisable':
+../Src/RCC_PROGRAM.c:116:18: error: #error ("Clock Entered is Unavailable!")
+  116 |                 #error("Clock Entered is Unavailable!")
+      |                  ^~~~~
+make: *** [Src/subdir.mk:64: Src/RCC_PROGRAM.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+03:35:48 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/RCC_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/RCC_PROGRAM.d" -MT"Src/RCC_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/RCC_PROGRAM.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6672	      8	   1664	   8344	   2098	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+ 
+03:36:46 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/RCC_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/RCC_PROGRAM.d" -MT"Src/RCC_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/RCC_PROGRAM.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6672	      8	   1664	   8344	   2098	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+ 
