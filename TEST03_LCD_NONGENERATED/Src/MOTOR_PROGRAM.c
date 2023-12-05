@@ -28,37 +28,75 @@
 
 void MOTOR_voidInitialization()
 {
-	/**************** RF MOTOR PINS ****************************/
-	GPIO_voidSetPinDirection(MOTOR_FR_IN1, OUTPUT_SPEED_10MHZ_PUSHPULL);
-	GPIO_voidSetPinDirection(MOTOR_FR_IN2, OUTPUT_SPEED_10MHZ_PUSHPULL);
-	// L298 ENABLE-PIN as Alternating Push Pull
-	GPIO_voidSetPinDirection(MOTOR_FR_ENABLE, OUTPUT_SPEED_10MHZ_AFPUSHPULL);
+	/********************************************************************************/
+	#if (MOTOR_DRIVE_MODE == MOTOR_ALL_DRIVE)
+		/************** TIMERS INITIALIZATION ***********************/
+		/* To Initiate TIMER4 PWM Channels 1, 2, 3, & 4 */
+		TIMER4_voidPWMInitialization(TIMER4_CHANNEL1);
+		TIMER4_voidPWMInitialization(TIMER4_CHANNEL2);
+		TIMER4_voidPWMInitialization(TIMER4_CHANNEL3);
+		TIMER4_voidPWMInitialization(TIMER4_CHANNEL4);
+		/**************** RF MOTOR PINS ****************************/
+		GPIO_voidSetPinDirection(MOTOR_FR_IN1, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		GPIO_voidSetPinDirection(MOTOR_FR_IN2, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		// L298 ENABLE-PIN as Alternating Push Pull
+		GPIO_voidSetPinDirection(MOTOR_FR_ENABLE, OUTPUT_SPEED_10MHZ_AFPUSHPULL);
 
-	/**************** FL MOTOR PINS ****************************/
-	GPIO_voidSetPinDirection(MOTOR_FL_IN1, OUTPUT_SPEED_10MHZ_PUSHPULL);
-	GPIO_voidSetPinDirection(MOTOR_FL_IN2, OUTPUT_SPEED_10MHZ_PUSHPULL);
-	// L298 ENABLE-PIN as Alternating Push Pull
-	GPIO_voidSetPinDirection(MOTOR_FL_ENABLE, OUTPUT_SPEED_10MHZ_AFPUSHPULL);
+		/**************** FL MOTOR PINS ****************************/
+		GPIO_voidSetPinDirection(MOTOR_FL_IN1, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		GPIO_voidSetPinDirection(MOTOR_FL_IN2, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		// L298 ENABLE-PIN as Alternating Push Pull
+		GPIO_voidSetPinDirection(MOTOR_FL_ENABLE, OUTPUT_SPEED_10MHZ_AFPUSHPULL);
 
-	/**************** RB MOTOR PINS ****************************/
-	GPIO_voidSetPinDirection(MOTOR_RR_IN1, OUTPUT_SPEED_10MHZ_PUSHPULL);
-	GPIO_voidSetPinDirection(MOTOR_RR_IN2, OUTPUT_SPEED_10MHZ_PUSHPULL);
-	// L298 ENABLE-PIN as Alternating Push Pull
-	GPIO_voidSetPinDirection(MOTOR_RR_ENABLE, OUTPUT_SPEED_10MHZ_AFPUSHPULL);
+		/**************** RB MOTOR PINS ****************************/
+		GPIO_voidSetPinDirection(MOTOR_RR_IN1, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		GPIO_voidSetPinDirection(MOTOR_RR_IN2, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		// L298 ENABLE-PIN as Alternating Push Pull
+		GPIO_voidSetPinDirection(MOTOR_RR_ENABLE, OUTPUT_SPEED_10MHZ_AFPUSHPULL);
 
-	/**************** LB MOTOR PINS ****************************/
-	GPIO_voidSetPinDirection(MOTOR_RL_IN1, OUTPUT_SPEED_10MHZ_PUSHPULL);
-	GPIO_voidSetPinDirection(MOTOR_RL_IN2, OUTPUT_SPEED_10MHZ_PUSHPULL);
-	// L298 ENABLE-PIN as Alternating Push Pull
-	GPIO_voidSetPinDirection(MOTOR_RL_ENABLE, OUTPUT_SPEED_10MHZ_AFPUSHPULL);
+		/**************** LB MOTOR PINS ****************************/
+		GPIO_voidSetPinDirection(MOTOR_RL_IN1, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		GPIO_voidSetPinDirection(MOTOR_RL_IN2, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		// L298 ENABLE-PIN as Alternating Push Pull
+		GPIO_voidSetPinDirection(MOTOR_RL_ENABLE, OUTPUT_SPEED_10MHZ_AFPUSHPULL);
+	/********************************************************************************/
+	#elif (MOTOR_DRIVE_MODE == MOTOR_FRONT_DRIVE)
+		/************** TIMERS INITIALIZATION ***********************/
+		/* To Initiate TIMER4 PWM Channels 1, 2, 3, & 4 */
+		TIMER4_voidPWMInitialization(TIMER4_CHANNEL1);
+		TIMER4_voidPWMInitialization(TIMER4_CHANNEL2);
 
-	/************** TIMERS INITIALIZATION ***********************/
+		/**************** RF MOTOR PINS ****************************/
+		GPIO_voidSetPinDirection(MOTOR_FR_IN1, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		GPIO_voidSetPinDirection(MOTOR_FR_IN2, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		// L298 ENABLE-PIN as Alternating Push Pull
+		GPIO_voidSetPinDirection(MOTOR_FR_ENABLE, OUTPUT_SPEED_10MHZ_AFPUSHPULL);
 
-	/* To Initiate TIMER4 PWM Channels 1, 2, 3, & 4 */
-	TIMER4_voidPWMInitialization(TIMER4_CHANNEL1);
-	TIMER4_voidPWMInitialization(TIMER4_CHANNEL2);
-	TIMER4_voidPWMInitialization(TIMER4_CHANNEL3);
-	TIMER4_voidPWMInitialization(TIMER4_CHANNEL4);
+		/**************** FL MOTOR PINS ****************************/
+		GPIO_voidSetPinDirection(MOTOR_FL_IN1, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		GPIO_voidSetPinDirection(MOTOR_FL_IN2, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		// L298 ENABLE-PIN as Alternating Push Pull
+		GPIO_voidSetPinDirection(MOTOR_FL_ENABLE, OUTPUT_SPEED_10MHZ_AFPUSHPULL);
+	/********************************************************************************/
+	#elif (MOTOR_DRIVE_MODE == MOTOR_REAR_DRIVE)
+		/************** TIMERS INITIALIZATION ***********************/
+		/* To Initiate TIMER4 PWM Channels 1, 2, 3, & 4 */
+		TIMER4_voidPWMInitialization(TIMER4_CHANNEL3);
+		TIMER4_voidPWMInitialization(TIMER4_CHANNEL4);
+
+		/**************** RB MOTOR PINS ****************************/
+		GPIO_voidSetPinDirection(MOTOR_RR_IN1, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		GPIO_voidSetPinDirection(MOTOR_RR_IN2, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		// L298 ENABLE-PIN as Alternating Push Pull
+		GPIO_voidSetPinDirection(MOTOR_RR_ENABLE, OUTPUT_SPEED_10MHZ_AFPUSHPULL);
+
+		/**************** LB MOTOR PINS ****************************/
+		GPIO_voidSetPinDirection(MOTOR_RL_IN1, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		GPIO_voidSetPinDirection(MOTOR_RL_IN2, OUTPUT_SPEED_10MHZ_PUSHPULL);
+		// L298 ENABLE-PIN as Alternating Push Pull
+		GPIO_voidSetPinDirection(MOTOR_RL_ENABLE, OUTPUT_SPEED_10MHZ_AFPUSHPULL);
+	#endif
+	/********************************************************************************/
 }
 
 
