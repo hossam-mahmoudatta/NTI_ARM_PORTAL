@@ -50,6 +50,7 @@ void APP_voidSystemInitialization(void);
 void APP_voidCollisionAvoidance(void);
 void APP_voidAutoParking(void);
 void APP_voidRCCar(void);
+void APP_voidUltrasonicUnitTest(void);
 void APP_voidISRFunction(void);
 void TIM2_voidCallBack(void);
 void TIM3_voidCallBack(void);

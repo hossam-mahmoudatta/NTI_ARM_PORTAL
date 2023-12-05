@@ -44,7 +44,6 @@ typedef struct
 } STK;
 #define STK_REG    ((volatile STK*) 0xE000E010)			// STK REGISTER
 
-
 #define STK_LOAD_REG    *((volatile u32*) 0xE000E014)			// RCC CLOCK CONTROL REGISTER
 
 #define STK_VAL_REG    	*((volatile u32*) 0xE000E018)			// RCC CLOCK CONTROL REGISTER

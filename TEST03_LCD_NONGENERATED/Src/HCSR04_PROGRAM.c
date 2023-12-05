@@ -77,7 +77,7 @@ void HCSR04_voidInitialization(void)
 }
 
 
-void HCSR04_voidTriggerOne(void)
+void HCSR04_voidTrig_Front(void)
 {
 	GPIO_voidSetPinValue(HCSR04_S1_TRIGGER, LOGIC_HIGH);	// pull the TRIG pin HIGH
 	_delay_us(10);  // wait for 10 us
@@ -85,7 +85,7 @@ void HCSR04_voidTriggerOne(void)
 }
 
 
-void HCSR04_voidTriggerTwo(void)
+void HCSR04_voidTrig_Rear(void)
 {
 	GPIO_voidSetPinValue(HCSR04_S2_TRIGGER, LOGIC_HIGH);	// pull the TRIG pin HIGH
 	_delay_us(10);  // wait for 10 us
@@ -93,7 +93,7 @@ void HCSR04_voidTriggerTwo(void)
 }
 
 
-void HCSR04_voidTriggerThree(void)
+void HCSR04_voidTrig_FrontRight(void)
 {
 	GPIO_voidSetPinValue(HCSR04_S3_TRIGGER, LOGIC_HIGH);	// pull the TRIG pin HIGH
 	_delay_us(10);  // wait for 10 us
@@ -101,14 +101,14 @@ void HCSR04_voidTriggerThree(void)
 }
 
 
-void HCSR04_voidTriggerFour(void)
+void HCSR04_voidTrig_RearRight(void)
 {
 	GPIO_voidSetPinValue(HCSR04_S4_TRIGGER, LOGIC_HIGH);	// pull the TRIG pin HIGH
 	_delay_us(10);  // wait for 10 us
 	GPIO_voidSetPinValue(HCSR04_S4_TRIGGER, LOGIC_LOW);  // pull the TRIG pin low
 }
 
-void HCSR04_voidTriggerFive(void)
+void HCSR04_voidTrig_FrontLeft(void)
 {
 	GPIO_voidSetPinValue(HCSR04_S5_TRIGGER, LOGIC_HIGH);	// pull the TRIG pin HIGH
 	_delay_us(10);  // wait for 10 us
@@ -117,10 +117,10 @@ void HCSR04_voidTriggerFive(void)
 
 
 
-u8 HCSR04_u8ReadOne(void)
+u8 HCSR04_u8Read_Front(void)
 {
 	TIMER2_voidSetPreload(0);
-	HCSR04_voidTriggerOne();
+	HCSR04_voidTrig_Front();
 
 	while(Is_First_Captured1 < 2);
 	Difference1 = ICU1_Value2 - ICU1_Value1;
@@ -131,10 +131,10 @@ u8 HCSR04_u8ReadOne(void)
 }
 
 
-u8 HCSR04_u8ReadTwo(void)
+u8 HCSR04_u8Read_Rear(void)
 {
 	TIMER2_voidSetPreload(0);
-	HCSR04_voidTriggerTwo();
+	HCSR04_voidTrig_Rear();
 
 	while(Is_First_Captured2 < 2);
 	Difference2 = ICU2_Value2 - ICU2_Value1;
@@ -145,10 +145,10 @@ u8 HCSR04_u8ReadTwo(void)
 }
 
 
-u8 HCSR04_u8ReadThree(void)
+u8 HCSR04_u8Read_FrontRight(void)
 {
 	TIMER3_voidSetPreload(0);
-	HCSR04_voidTriggerThree();
+	HCSR04_voidTrig_FrontRight();
 
 	while(Is_First_Captured3 < 2);
 	Difference3 = ICU3_Value2 - ICU3_Value1;
@@ -159,10 +159,10 @@ u8 HCSR04_u8ReadThree(void)
 }
 
 
-u8 HCSR04_u8ReadFour(void)
+u8 HCSR04_u8Read_RearRight(void)
 {
 	TIMER3_voidSetPreload(0);
-	HCSR04_voidTriggerFour();
+	HCSR04_voidTrig_RearRight();
 
 	while(Is_First_Captured4 < 2);
 	Difference4 = ICU4_Value2 - ICU4_Value1;
@@ -172,16 +172,16 @@ u8 HCSR04_u8ReadFour(void)
 	return Distance4;
 }
 
-u8 HCSR04_u8ReadFive(void)
+u8 HCSR04_u8Read_FrontLeft(void)
 {
 	TIMER3_voidSetPreload(0);
-	HCSR04_voidTriggerFive();
+	HCSR04_voidTrig_FrontLeft();
 
 	while(Is_First_Captured5 < 2);
 	Difference5 = ICU5_Value2 - ICU5_Value1;
 	Distance5 = (Difference5 / 58);
 	Is_First_Captured5 = 0;
-	TIMER3_voidEnableInterrupt(TIMER3_CHANNEL3);
+	TIMER3_voidEnableInterrupt(TIMER3_CHANNEL4);
 	return Distance5;
 }
 

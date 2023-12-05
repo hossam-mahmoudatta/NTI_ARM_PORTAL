@@ -91,6 +91,24 @@ void TIMER3_voidICUInitialization(u8 copy_u8ChannelNumber)
 			TIMER3_REG->TIMx_DIER.TIMx_DIER_CC3IE = ENABLE;
 	//			SET_BIT(TIMER3_DIER,1);
 			break;
+
+		/******************** CHANNEL 3 ********************/
+		case TIMER3_CHANNEL4:
+			//CC1s channel is configured as input, IC1 is mapped on TI1
+			TIMER3_REG->TIMx_CCMR2.TIMx_CCMR2_CC4S = TIMER3_CCMRx_CC4S_MODE;
+	//			SET_BIT(TIMER3_CCMR1,0);
+	//			CLR_BIT(TIMER3_CCMR1,1);
+
+			// Enable capture on each channel
+			TIMER3_REG->TIMx_CCER.TIMx_CCER_CC4E = ENABLE;
+			TIMER3_REG->TIMx_CCER.TIMx_CCER_CC4P = DISABLE;
+	//			SET_BIT(TIMER3_CCER,0);
+	//			CLR_BIT(TIMER3_CCER,1);
+
+			// Enable capture interrupt on each channel
+			TIMER3_REG->TIMx_DIER.TIMx_DIER_CC4IE = ENABLE;
+	//			SET_BIT(TIMER3_DIER,1);
+			break;
 	}
 	// Enable Timer 3
 	TIMER3_REG->TIMx_CR1.TIMx_CR1_CEN = ENABLE;
@@ -138,6 +156,10 @@ void 	TIMER3_voidEnableInterrupt(u8 copy_u8ChannelNumber)
 			TIMER3_REG->TIMx_DIER.TIMx_DIER_CC3IE = ENABLE;
 //			SET_BIT(TIMER2_DIER,2);
 			break;
+		case TIMER3_CHANNEL4:
+			TIMER3_REG->TIMx_DIER.TIMx_DIER_CC4IE = ENABLE;
+//			SET_BIT(TIMER2_DIER,2);
+			break;
 	}
 }
 
@@ -157,6 +179,10 @@ void 	TIMER3_voidDisableInterrupt(u8 copy_u8ChannelNumber)
 			break;
 		case TIMER3_CHANNEL3:
 			TIMER3_REG->TIMx_DIER.TIMx_DIER_CC3IE = DISABLE;
+//			SET_BIT(TIMER2_DIER,3);
+			break;
+		case TIMER3_CHANNEL4:
+			TIMER3_REG->TIMx_DIER.TIMx_DIER_CC4IE = DISABLE;
 //			SET_BIT(TIMER2_DIER,3);
 			break;
 	}
@@ -183,6 +209,10 @@ void 	TIMER3_voidChangePolarity(u8 copy_u8ChannelNumber, u8 copy_u8Edge)
 				TIMER3_REG->TIMx_CCER.TIMx_CCER_CC3P = DISABLE;
 //				CLR_BIT(TIMER2_CCER,5);
 				break;
+			case TIMER3_CHANNEL4:
+				TIMER3_REG->TIMx_CCER.TIMx_CCER_CC4P = DISABLE;
+//				CLR_BIT(TIMER2_CCER,5);
+				break;
 			}
 			break;
 
@@ -201,6 +231,10 @@ void 	TIMER3_voidChangePolarity(u8 copy_u8ChannelNumber, u8 copy_u8Edge)
 				TIMER3_REG->TIMx_CCER.TIMx_CCER_CC3P = ENABLE;
 //					SET_BIT(TIMER2_CCER,5);
 				break;
+			case TIMER3_CHANNEL4:
+				TIMER3_REG->TIMx_CCER.TIMx_CCER_CC4P = ENABLE;
+//					SET_BIT(TIMER2_CCER,5);
+				break;
 			}
 			break;
 	}
@@ -210,7 +244,7 @@ void 	TIMER3_voidChangePolarity(u8 copy_u8ChannelNumber, u8 copy_u8Edge)
 
 u32  	TIMER3_u32GetICUValue(u8 copy_u8ChannelNumber)
 {
-	u32 u32Value1, u32Value2, u32Value3, returnValue;
+	u32 u32Value1, u32Value2, u32Value3, u32Value4, returnValue;
 	switch(copy_u8ChannelNumber)
 	{
 		case TIMER3_CHANNEL1:
@@ -226,6 +260,11 @@ u32  	TIMER3_u32GetICUValue(u8 copy_u8ChannelNumber)
 		case TIMER3_CHANNEL3:
 			u32Value2 = TIMER3_REG->TIMx_CCR3;
 			returnValue = u32Value3;
+//			u32Value2 = TIMER2_CCR2;
+			break;
+		case TIMER3_CHANNEL4:
+			u32Value2 = TIMER3_REG->TIMx_CCR4;
+			returnValue = u32Value4;
 //			u32Value2 = TIMER2_CCR2;
 			break;
 	}

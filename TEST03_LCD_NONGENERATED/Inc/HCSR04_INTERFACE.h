@@ -53,11 +53,11 @@ extern u32 volatile Difference5;
 extern u8   volatile Is_First_Captured5;  // is the first value captured ?
 extern u8 volatile Distance5;
 
-extern u8 Received_distanceOne;
-extern u8 Received_distanceTwo;
-extern u8 Received_distanceThree;
-extern u8 Received_distanceFour;
-extern u8 Received_distanceFive;
+extern u8 g_Front_SensorDistance;
+extern u8 g_Rear_SensorDistance;
+extern u8 g_FrontRight_SensorDistance;
+extern u8 g_RearRight_SensorDistance;
+extern u8 g_FrontLeft_SensorDistance;
 
 /*******************************************************************************
  *                              				HCSR04 Function Prototypes					               				     *
@@ -66,29 +66,30 @@ extern u8 Received_distanceFive;
 void HCSR04_voidInitialization(void);
 
 // Front
-void HCSR04_voidTriggerOne(void);
+void HCSR04_voidTrig_Front(void);
 
 // Back
-void HCSR04_voidTriggerTwo(void);
+void HCSR04_voidTrig_Rear(void);
 
 // Front Right
-void HCSR04_voidTriggerThree(void);
+void HCSR04_voidTrig_FrontRight(void);
 
 // Rear Right
-void HCSR04_voidTriggerFour(void);
+void HCSR04_voidTrig_RearRight(void);
 
 // Front Left
-void HCSR04_voidTriggerFive(void);
+void HCSR04_voidTrig_FrontLeft(void);
 
-u8 HCSR04_u8ReadOne(void);
 
-u8 HCSR04_u8ReadTwo(void);
+u8 HCSR04_u8Read_Front(void);
 
-u8 HCSR04_u8ReadThree(void);
+u8 HCSR04_u8Read_Rear(void);
 
-u8 HCSR04_u8ReadFour(void);
+u8 HCSR04_u8Read_FrontRight(void);
 
-u8 HCSR04_u8ReadFive(void);
+u8 HCSR04_u8Read_RearRight(void);
+
+u8 HCSR04_u8Read_FrontLeft(void);
 
 
 #endif /* HCSR04_INTERFACE_H_ */

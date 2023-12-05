@@ -59,7 +59,7 @@ void APP_voidSystemInitialization(void)
 		TIMER2_voidICUInitialization(TIMER2_CHANNEL2);
 		TIMER3_voidICUInitialization(TIMER3_CHANNEL1);
 		TIMER3_voidICUInitialization(TIMER3_CHANNEL2);
-		TIMER3_voidICUInitialization(TIMER3_CHANNEL3);
+		TIMER3_voidICUInitialization(TIMER3_CHANNEL4);
 
 		/* TESTING LED that all initializations carried successfully*/
 		GPIO_voidSetPinDirection(PORT_A, PIN_4, OUTPUT_SPEED_10MHZ_PUSHPULL);
@@ -184,19 +184,19 @@ void APP_voidAutoParking(void)
 	MOTOR_voidFR_MotorSetSpeed(75);
 	MOTOR_voidFL_MotorSetSpeed(75);
 
-	Received_distanceThree = HCSR04_u8ReadThree();
+	g_FrontRight_SensorDistance = HCSR04_u8Read_FrontRight();
 	_delay_ms(100);
-	Received_distanceFour = HCSR04_u8ReadFour();
+	g_RearRight_SensorDistance = HCSR04_u8Read_RearRight();
 	_delay_ms(100);
 
-	if((Received_distanceThree > 20) && (Received_distanceFour > 20))
+	if((g_FrontRight_SensorDistance > 20) && (g_RearRight_SensorDistance > 20))
 	{
-		Received_distanceFour = HCSR04_u8ReadFour();
+		g_RearRight_SensorDistance = HCSR04_u8Read_RearRight();
 		_delay_ms(100);
 
-		while(Received_distanceFour > 20)
+		while(g_RearRight_SensorDistance > 20)
 		{
-			Received_distanceFour = HCSR04_u8ReadFour();
+			g_RearRight_SensorDistance = HCSR04_u8Read_RearRight();
 			_delay_ms(100);
 			MOTOR_voidFR_FWD();
 			MOTOR_voidFL_FWD();
@@ -343,7 +343,27 @@ void APP_voidRCCar(void)
 	}
 }
 
+/* Unit Test for the Ultrasonic Sensor */
+void APP_voidUltrasonicUnitTest(void)
+{
+	u16 LOC_u16ReadDistance;
 
+	LOC_u16ReadDistance = HCSR04_u8Read_Front();
+	_delay_ms(100);
+
+	if(LOC_u16ReadDistance < 10)
+	{
+//		MOTOR_RF_STOP();
+		MOTOR_voidRR_FWD();
+		MOTOR_voidRL_STOP();
+	}
+	else if(LOC_u16ReadDistance > 10)
+	{
+		MOTOR_voidRR_STOP();
+		MOTOR_voidRL_FWD();
+	}
+
+}
 
 void TIM2_voidCallBack(void)
 {
