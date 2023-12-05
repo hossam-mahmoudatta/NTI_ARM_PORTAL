@@ -59,6 +59,13 @@ extern u8 g_FrontRight_SensorDistance;
 extern u8 g_RearRight_SensorDistance;
 extern u8 g_FrontLeft_SensorDistance;
 
+#define CA_ADAS_FORWARD_STATE 	1
+#define CA_ADAS_RIGHT_STATE 	2
+#define CA_ADAS_LEFT_STATE 		3
+#define CA_ADAS_REVERSE_STATE 	4
+
+extern u8 g_u8Flag;
+
 /*******************************************************************************
  *                              				HCSR04 Function Prototypes					               				     *
  *******************************************************************************/

@@ -16,6 +16,8 @@
 
 #include "../Inc/APP_INTERFACE.h"
 
+u8 g_u8Flag = CA_ADAS_FORWARD_STATE;
+
 /*******************************************************************************
  *                              			APP Function Implementations									 *
  *******************************************************************************/
@@ -81,99 +83,92 @@ void APP_voidCollisionAvoidance(void)
 	MOTOR_voidFR_MotorSetSpeed(75);
 	MOTOR_voidFL_MotorSetSpeed(75);
 
-	Received_distanceThree = HCSR04_u8ReadThree();
+	/* Reads the Distances for the responsible sensors */
+	g_Front_SensorDistance = HCSR04_u8Read_Front();
 	_delay_ms(100);
-	Received_distanceFour = HCSR04_u8ReadFour();
+	g_Rear_SensorDistance = HCSR04_u8Read_Rear();
+	_delay_ms(100);
+	g_FrontRight_SensorDistance = HCSR04_u8Read_FrontRight();
+	_delay_ms(100);
+//	g_RearRight_SensorDistance = HCSR04_u8Read_RearRight();
+//	_delay_ms(100);
+	g_FrontLeft_SensorDistance = HCSR04_u8Read_FrontLeft();
 	_delay_ms(100);
 
-	if((Received_distanceThree > 20) && (Received_distanceFour > 20))
+	switch(g_u8Flag)
 	{
-		Received_distanceFour = HCSR04_u8ReadFour();
-		_delay_ms(100);
-
-		while(Received_distanceFour > 20)
-		{
-			Received_distanceFour = HCSR04_u8ReadFour();
-			_delay_ms(100);
-			MOTOR_voidFR_FWD();
-			MOTOR_voidFL_FWD();
-		}
-
-		MOTOR_voidFR_STOP();
-		MOTOR_voidFL_STOP();
-		_delay_ms(200);
-
-		MOTOR_voidFR_BWD();
-		MOTOR_voidFL_BWD();
-		_delay_ms(400);
-
-		MOTOR_voidFR_STOP();
-		MOTOR_voidFL_STOP();
-
-		//move LF backward
-		MOTOR_voidFL_BWD();
-		_delay_ms(1000);
-		MOTOR_voidFL_STOP();
-
-		MOTOR_voidFL_MotorSetSpeed(110);
-
-		Received_distanceTwo = HCSR04_u8ReadTwo();
-		_delay_ms(100);
-
-		if(Received_distanceTwo > 2)
-		{
-			while(Received_distanceTwo > 20)
+	/***************************************************************************/
+		case CA_ADAS_FORWARD_STATE:
+			if(g_Front_SensorDistance > 10)
 			{
-				Received_distanceTwo = HCSR04_u8ReadTwo();
-				_delay_ms(100);
-
-				MOTOR_voidFR_BWD();
-				MOTOR_voidFL_BWD();
+				MOTOR_voidRR_FWD();
+				MOTOR_voidRL_FWD();
 			}
-
-			MOTOR_voidFR_STOP();
-			MOTOR_voidFL_STOP();
-		}
-
-
-		// p>>B ?
-		MOTOR_voidFL_MotorSetSpeed(100);
-		MOTOR_voidFL_FWD();
-		MOTOR_voidFR_BWD();
-		_delay_ms(500);
-
-		MOTOR_voidFR_STOP();
-		MOTOR_voidFL_STOP();
-
-		_delay_ms(1000);
-
-		MOTOR_voidFR_MotorSetSpeed(55);
-		MOTOR_voidFL_MotorSetSpeed(65);
-		Received_distanceOne = HCSR04_u8ReadOne();
-		_delay_ms(100);
-
-		if(Received_distanceOne > 7)
-		{
-			while(Received_distanceOne > 7)
+			else
 			{
-				Received_distanceOne = HCSR04_u8ReadOne();
-				_delay_ms(100);
-
-				MOTOR_voidFR_FWD();
-				MOTOR_voidFL_FWD();
-
+				MOTOR_voidRR_STOP();
+				MOTOR_voidRL_STOP();
+				_delay_ms(1500);
+				g_u8Flag = CA_ADAS_RIGHT_STATE;
 			}
-			MOTOR_voidFR_STOP();
-			MOTOR_voidFL_STOP();
-		}
-		while(1);
-	}
-	else
-	{
-		MOTOR_voidFR_MotorSetSpeed(75);
-		MOTOR_voidFL_MotorSetSpeed(75);
-		MOTOR_voidFR_FWD();
-		MOTOR_voidFL_FWD();
+			break;
+		/***************************************************************************/
+		case CA_ADAS_RIGHT_STATE:
+			if(g_FrontRight_SensorDistance > 20)
+			{
+				MOTOR_voidRR_BWD();
+				MOTOR_voidRL_FWD();
+				_delay_ms(400);
+				MOTOR_voidRR_STOP();
+				MOTOR_voidRL_STOP();
+				_delay_ms(1500);
+				g_u8Flag = CA_ADAS_FORWARD_STATE;
+			}
+			else
+			{
+				g_u8Flag = CA_ADAS_LEFT_STATE;
+			}
+			break;
+		/***************************************************************************/
+		case CA_ADAS_LEFT_STATE:
+			if(g_FrontLeft_SensorDistance > 20)
+			{
+				MOTOR_voidRR_FWD();
+				MOTOR_voidRL_BWD();
+				_delay_ms(400);
+				MOTOR_voidRR_STOP();
+				MOTOR_voidRL_STOP();
+				_delay_ms(1500);
+				g_u8Flag = CA_ADAS_FORWARD_STATE;
+			}
+			else
+			{
+				g_u8Flag = CA_ADAS_REVERSE_STATE;
+			}
+			break;
+		/***************************************************************************/
+		case CA_ADAS_REVERSE_STATE:
+			if(g_Rear_SensorDistance > 20)
+			{
+				if(g_FrontRight_SensorDistance < 20)
+				{
+					MOTOR_voidRR_BWD();
+					MOTOR_voidRL_BWD();
+				}
+				else if(g_FrontRight_SensorDistance > 20)
+				{
+					MOTOR_voidRR_STOP();
+					MOTOR_voidRL_STOP();
+					_delay_ms(1500);
+					g_u8Flag = CA_ADAS_RIGHT_STATE;
+				}
+			}
+			else
+			{
+				MOTOR_voidRR_STOP();
+				MOTOR_voidRL_STOP();
+			}
+			break;
 	}
 }
 
@@ -220,14 +215,14 @@ void APP_voidAutoParking(void)
 
 		MOTOR_voidFL_MotorSetSpeed(110);
 
-		Received_distanceTwo = HCSR04_u8ReadTwo();
+		g_Rear_SensorDistance = HCSR04_u8Read_Rear();
 		_delay_ms(100);
 
-		if(Received_distanceTwo > 2)
+		if(g_Rear_SensorDistance > 2)
 		{
-			while(Received_distanceTwo > 20)
+			while(g_Rear_SensorDistance > 20)
 			{
-				Received_distanceTwo = HCSR04_u8ReadTwo();
+				g_Rear_SensorDistance = HCSR04_u8Read_Rear();
 				_delay_ms(100);
 
 				MOTOR_voidFR_BWD();
@@ -252,14 +247,14 @@ void APP_voidAutoParking(void)
 
 		MOTOR_voidFR_MotorSetSpeed(55);
 		MOTOR_voidFL_MotorSetSpeed(65);
-		Received_distanceOne = HCSR04_u8ReadOne();
+		g_Front_SensorDistance = HCSR04_u8Read_Front();
 		_delay_ms(100);
 
-		if(Received_distanceOne > 7)
+		if(g_Front_SensorDistance > 7)
 		{
-			while(Received_distanceOne > 7)
+			while(g_Front_SensorDistance > 7)
 			{
-				Received_distanceOne = HCSR04_u8ReadOne();
+				g_Front_SensorDistance = HCSR04_u8Read_Front();
 				_delay_ms(100);
 
 				MOTOR_voidFR_FWD();
@@ -505,6 +500,31 @@ void TIM3_voidCallBack(void)
 
 			// disable capture interrupt on each channel
 			TIMER3_voidDisableInterrupt(TIMER3_CHANNEL3);
+		}
+	}
+
+	// Checks the Interrupt Flag For Channel 3
+	if(TIMER3_REG->TIMx_SR.TIMx_SR_CC4IF == 1)
+	{
+		TIMER2_REG->TIMx_SR.TIMx_SR_CC4IF = SET;
+
+		if(Is_First_Captured5 == 1)
+		{
+			ICU5_Value1 = TIMER3_u32GetICUValue(TIMER3_CHANNEL4);
+			//Is_First_Captured = 1;  // set the first captured as true
+
+			// Now change the polarity to falling edge
+			TIMER3_voidChangePolarity(TIMER3_CHANNEL4, TIMER3_FALLING_EDGE);
+		}
+		else if (Is_First_Captured4 == 2)   // if the first is already captured
+		{
+			ICU5_Value2 = TIMER3_u32GetICUValue(TIMER3_CHANNEL4);
+
+			// Now change the polarity to rising edge
+			TIMER3_voidChangePolarity(TIMER3_CHANNEL4, TIMER3_RISING_EDGE);
+
+			// disable capture interrupt on each channel
+			TIMER3_voidDisableInterrupt(TIMER3_CHANNEL4);
 		}
 	}
 }

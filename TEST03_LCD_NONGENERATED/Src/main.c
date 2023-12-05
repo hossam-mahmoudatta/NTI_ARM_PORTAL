@@ -25,7 +25,7 @@ int main(void)
 	APP_voidSystemInitialization();
 
 	u8 LOC_u8OperationMode;
-	LOC_u8OperationMode = 1;
+	LOC_u8OperationMode = 0;
 
 	/* Loop forever */
 	for(;;)

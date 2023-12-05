@@ -1473,3 +1473,368 @@ arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32
 make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
 make: *** Waiting for unfinished jobs....
 "make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:39:06 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:84:9: error: 'Received_distanceThree' undeclared (first use in this function)
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:84:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/APP_PROGRAM.c:84:34: warning: implicit declaration of function 'HCSR04_u8ReadThree'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   84 |         Received_distanceThree = HCSR04_u8ReadThree();
+      |                                  ^~~~~~~~~~~~~~~~~~
+      |                                  HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:86:9: error: 'Received_distanceFour' undeclared (first use in this function)
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:86:33: warning: implicit declaration of function 'HCSR04_u8ReadFour'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+   86 |         Received_distanceFour = HCSR04_u8ReadFour();
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:120:17: error: 'Received_distanceTwo' undeclared (first use in this function)
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:120:40: warning: implicit declaration of function 'HCSR04_u8ReadTwo'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  120 |                 Received_distanceTwo = HCSR04_u8ReadTwo();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+../Src/APP_PROGRAM.c:152:17: error: 'Received_distanceOne' undeclared (first use in this function)
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:152:40: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  152 |                 Received_distanceOne = HCSR04_u8ReadOne();
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        HCSR04_u8Read_Rear
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:40:12 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/HCSR04_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/HCSR04_PROGRAM.d" -MT"Src/HCSR04_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/HCSR04_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/HCSR04_PROGRAM.c:17:
+../Src/../Inc/HCSR04_INTERFACE.h:67:11: warning: 'g_u8Flag' initialized and declared 'extern'
+   67 | extern u8 g_u8Flag = CA_ADAS_FORWARD_STATE;
+      |           ^~~~~~~~
+In file included from ../Src/../Inc/APP_INTERFACE.h:41,
+                 from ../Src/APP_PROGRAM.c:17:
+../Src/../Inc/HCSR04_INTERFACE.h:67:11: warning: 'g_u8Flag' initialized and declared 'extern'
+   67 | extern u8 g_u8Flag = CA_ADAS_FORWARD_STATE;
+      |           ^~~~~~~~
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:169:58: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  169 |                                 g_Front_SensorDistance = HCSR04_u8ReadOne();
+      |                                                          ^~~~~~~~~~~~~~~~
+      |                                                          HCSR04_u8Read_Rear
+In file included from ../Src/../Inc/APP_INTERFACE.h:41,
+                 from ../Src/main.c:17:
+../Src/../Inc/HCSR04_INTERFACE.h:67:11: warning: 'g_u8Flag' initialized and declared 'extern'
+   67 | extern u8 g_u8Flag = CA_ADAS_FORWARD_STATE;
+      |           ^~~~~~~~
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/HCSR04_PROGRAM.o:C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/../Inc/HCSR04_INTERFACE.h:67: multiple definition of `g_u8Flag'; ./Src/APP_PROGRAM.o:C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/../Inc/HCSR04_INTERFACE.h:67: first defined here
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/main.o:C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/../Inc/HCSR04_INTERFACE.h:67: multiple definition of `g_u8Flag'; ./Src/APP_PROGRAM.o:C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/../Inc/HCSR04_INTERFACE.h:67: first defined here
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/APP_PROGRAM.o: in function `APP_voidAutoParking':
+C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:169: undefined reference to `HCSR04_u8ReadOne'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:188: undefined reference to `g_FrontRight_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:188: undefined reference to `g_RearRight_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:188: undefined reference to `g_Rear_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:188: undefined reference to `g_Front_SensorDistance'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:69: TEST03_LCD_NONGENERATED.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:40:37 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc "../Src/HCSR04_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/HCSR04_PROGRAM.d" -MT"Src/HCSR04_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/HCSR04_PROGRAM.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:169:58: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  169 |                                 g_Front_SensorDistance = HCSR04_u8ReadOne();
+      |                                                          ^~~~~~~~~~~~~~~~
+      |                                                          HCSR04_u8Read_Rear
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/APP_PROGRAM.o: in function `APP_voidAutoParking':
+C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:169: undefined reference to `HCSR04_u8ReadOne'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:188: undefined reference to `g_FrontRight_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:188: undefined reference to `g_RearRight_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:188: undefined reference to `g_Rear_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:188: undefined reference to `g_Front_SensorDistance'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:69: TEST03_LCD_NONGENERATED.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:41:20 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+../Src/APP_PROGRAM.c:19:14: error: expected identifier or '(' before '=' token
+   19 | u8 g_u8Flag; = CA_ADAS_FORWARD_STATE;
+      |              ^
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:171:58: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  171 |                                 g_Front_SensorDistance = HCSR04_u8ReadOne();
+      |                                                          ^~~~~~~~~~~~~~~~
+      |                                                          HCSR04_u8Read_Rear
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:41:29 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:171:58: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  171 |                                 g_Front_SensorDistance = HCSR04_u8ReadOne();
+      |                                                          ^~~~~~~~~~~~~~~~
+      |                                                          HCSR04_u8Read_Rear
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/APP_PROGRAM.o: in function `APP_voidAutoParking':
+C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:171: undefined reference to `HCSR04_u8ReadOne'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:190: undefined reference to `g_FrontRight_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:190: undefined reference to `g_RearRight_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:190: undefined reference to `g_Rear_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:190: undefined reference to `g_Front_SensorDistance'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:69: TEST03_LCD_NONGENERATED.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:43:30 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:102:28: error: 'Received_distanceOne' undeclared (first use in this function)
+  102 |                         if(Received_distanceOne > 10)
+      |                            ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:102:28: note: each undeclared identifier is reported only once for each function it appears in
+../Src/APP_PROGRAM.c:104:33: warning: implicit declaration of function 'MOTOR_RF_GO_FORWARD' [-Wimplicit-function-declaration]
+  104 |                                 MOTOR_RF_GO_FORWARD();
+      |                                 ^~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:105:33: warning: implicit declaration of function 'MOTOR_LF_GO_FORWARD' [-Wimplicit-function-declaration]
+  105 |                                 MOTOR_LF_GO_FORWARD();
+      |                                 ^~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:109:33: warning: implicit declaration of function 'MOTOR_RF_STOP'; did you mean 'MOTOR_voidRL_STOP'? [-Wimplicit-function-declaration]
+  109 |                                 MOTOR_RF_STOP();
+      |                                 ^~~~~~~~~~~~~
+      |                                 MOTOR_voidRL_STOP
+../Src/APP_PROGRAM.c:110:33: warning: implicit declaration of function 'MOTOR_LF_STOP'; did you mean 'MOTOR_voidFL_STOP'? [-Wimplicit-function-declaration]
+  110 |                                 MOTOR_LF_STOP();
+      |                                 ^~~~~~~~~~~~~
+      |                                 MOTOR_voidFL_STOP
+../Src/APP_PROGRAM.c:117:28: error: 'Received_distanceThree' undeclared (first use in this function)
+  117 |                         if(Received_distanceThree > 20)
+      |                            ^~~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:119:33: warning: implicit declaration of function 'MOTOR_RF_GO_BACKWARD' [-Wimplicit-function-declaration]
+  119 |                                 MOTOR_RF_GO_BACKWARD();
+      |                                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:134:28: error: 'Received_distanceFive' undeclared (first use in this function)
+  134 |                         if(Received_distanceFive > 20)
+      |                            ^~~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:137:33: warning: implicit declaration of function 'MOTOR_LF_GO_BACKWARD' [-Wimplicit-function-declaration]
+  137 |                                 MOTOR_LF_GO_BACKWARD();
+      |                                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:151:28: error: 'Received_distanceTwo' undeclared (first use in this function)
+  151 |                         if(Received_distanceTwo > 20)
+      |                            ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:257:58: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  257 |                                 g_Front_SensorDistance = HCSR04_u8ReadOne();
+      |                                                          ^~~~~~~~~~~~~~~~
+      |                                                          HCSR04_u8Read_Rear
+make: *** [Src/subdir.mk:64: Src/APP_PROGRAM.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:44:59 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:109:33: warning: implicit declaration of function 'MOTOR_RF_STOP'; did you mean 'MOTOR_voidRL_STOP'? [-Wimplicit-function-declaration]
+  109 |                                 MOTOR_RF_STOP();
+      |                                 ^~~~~~~~~~~~~
+      |                                 MOTOR_voidRL_STOP
+../Src/APP_PROGRAM.c:110:33: warning: implicit declaration of function 'MOTOR_LF_STOP'; did you mean 'MOTOR_voidFL_STOP'? [-Wimplicit-function-declaration]
+  110 |                                 MOTOR_LF_STOP();
+      |                                 ^~~~~~~~~~~~~
+      |                                 MOTOR_voidFL_STOP
+../Src/APP_PROGRAM.c:119:33: warning: implicit declaration of function 'MOTOR_RF_GO_BACKWARD' [-Wimplicit-function-declaration]
+  119 |                                 MOTOR_RF_GO_BACKWARD();
+      |                                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:120:33: warning: implicit declaration of function 'MOTOR_LF_GO_FORWARD' [-Wimplicit-function-declaration]
+  120 |                                 MOTOR_LF_GO_FORWARD();
+      |                                 ^~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:136:33: warning: implicit declaration of function 'MOTOR_RF_GO_FORWARD' [-Wimplicit-function-declaration]
+  136 |                                 MOTOR_RF_GO_FORWARD();
+      |                                 ^~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c:137:33: warning: implicit declaration of function 'MOTOR_LF_GO_BACKWARD' [-Wimplicit-function-declaration]
+  137 |                                 MOTOR_LF_GO_BACKWARD();
+      |                                 ^~~~~~~~~~~~~~~~~~~~
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:257:58: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  257 |                                 g_Front_SensorDistance = HCSR04_u8ReadOne();
+      |                                                          ^~~~~~~~~~~~~~~~
+      |                                                          HCSR04_u8Read_Rear
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/APP_PROGRAM.o: in function `APP_voidCollisionAvoidance':
+C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:109: undefined reference to `MOTOR_RF_STOP'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:110: undefined reference to `MOTOR_LF_STOP'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:119: undefined reference to `MOTOR_RF_GO_BACKWARD'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:120: undefined reference to `MOTOR_LF_GO_FORWARD'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:122: undefined reference to `MOTOR_RF_STOP'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:123: undefined reference to `MOTOR_LF_STOP'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:136: undefined reference to `MOTOR_RF_GO_FORWARD'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:137: undefined reference to `MOTOR_LF_GO_BACKWARD'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:139: undefined reference to `MOTOR_RF_STOP'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:140: undefined reference to `MOTOR_LF_STOP'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:155: undefined reference to `MOTOR_RF_GO_BACKWARD'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:156: undefined reference to `MOTOR_LF_GO_BACKWARD'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:160: undefined reference to `MOTOR_RF_STOP'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:161: undefined reference to `MOTOR_LF_STOP'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:168: undefined reference to `MOTOR_RF_STOP'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:169: undefined reference to `MOTOR_LF_STOP'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:173: undefined reference to `g_Front_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:173: undefined reference to `g_Rear_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:173: undefined reference to `g_FrontRight_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:173: undefined reference to `g_FrontLeft_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/APP_PROGRAM.o: in function `APP_voidAutoParking':
+C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:257: undefined reference to `HCSR04_u8ReadOne'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:276: undefined reference to `g_FrontRight_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:276: undefined reference to `g_RearRight_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:276: undefined reference to `g_Rear_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:276: undefined reference to `g_Front_SensorDistance'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:69: TEST03_LCD_NONGENERATED.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:46:33 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:109:33: warning: implicit declaration of function 'MOTOR_RF_STOP'; did you mean 'MOTOR_voidRL_STOP'? [-Wimplicit-function-declaration]
+  109 |                                 MOTOR_RF_STOP();
+      |                                 ^~~~~~~~~~~~~
+      |                                 MOTOR_voidRL_STOP
+../Src/APP_PROGRAM.c:110:33: warning: implicit declaration of function 'MOTOR_LF_STOP'; did you mean 'MOTOR_voidFL_STOP'? [-Wimplicit-function-declaration]
+  110 |                                 MOTOR_LF_STOP();
+      |                                 ^~~~~~~~~~~~~
+      |                                 MOTOR_voidFL_STOP
+../Src/APP_PROGRAM.c: In function 'APP_voidAutoParking':
+../Src/APP_PROGRAM.c:257:58: warning: implicit declaration of function 'HCSR04_u8ReadOne'; did you mean 'HCSR04_u8Read_Rear'? [-Wimplicit-function-declaration]
+  257 |                                 g_Front_SensorDistance = HCSR04_u8ReadOne();
+      |                                                          ^~~~~~~~~~~~~~~~
+      |                                                          HCSR04_u8Read_Rear
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/APP_PROGRAM.o: in function `APP_voidCollisionAvoidance':
+C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:109: undefined reference to `MOTOR_RF_STOP'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:110: undefined reference to `MOTOR_LF_STOP'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:173: undefined reference to `g_Front_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:173: undefined reference to `g_Rear_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:173: undefined reference to `g_FrontRight_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:173: undefined reference to `g_FrontLeft_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/APP_PROGRAM.o: in function `APP_voidAutoParking':
+C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:257: undefined reference to `HCSR04_u8ReadOne'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:276: undefined reference to `g_FrontRight_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:276: undefined reference to `g_RearRight_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:276: undefined reference to `g_Rear_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:276: undefined reference to `g_Front_SensorDistance'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:69: TEST03_LCD_NONGENERATED.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:46:46 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+../Src/APP_PROGRAM.c: In function 'APP_voidCollisionAvoidance':
+../Src/APP_PROGRAM.c:109:33: warning: implicit declaration of function 'MOTOR_RF_STOP'; did you mean 'MOTOR_voidRL_STOP'? [-Wimplicit-function-declaration]
+  109 |                                 MOTOR_RF_STOP();
+      |                                 ^~~~~~~~~~~~~
+      |                                 MOTOR_voidRL_STOP
+../Src/APP_PROGRAM.c:110:33: warning: implicit declaration of function 'MOTOR_LF_STOP'; did you mean 'MOTOR_voidFL_STOP'? [-Wimplicit-function-declaration]
+  110 |                                 MOTOR_LF_STOP();
+      |                                 ^~~~~~~~~~~~~
+      |                                 MOTOR_voidFL_STOP
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/APP_PROGRAM.o: in function `APP_voidCollisionAvoidance':
+C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:109: undefined reference to `MOTOR_RF_STOP'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:110: undefined reference to `MOTOR_LF_STOP'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:173: undefined reference to `g_Front_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:173: undefined reference to `g_Rear_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:173: undefined reference to `g_FrontRight_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:173: undefined reference to `g_FrontLeft_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/APP_PROGRAM.o: in function `APP_voidAutoParking':
+C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:276: undefined reference to `g_FrontRight_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:276: undefined reference to `g_RearRight_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:276: undefined reference to `g_Rear_SensorDistance'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:276: undefined reference to `g_Front_SensorDistance'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:69: TEST03_LCD_NONGENERATED.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:47:46 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/HCSR04_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/HCSR04_PROGRAM.d" -MT"Src/HCSR04_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/HCSR04_PROGRAM.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/APP_PROGRAM.o: in function `APP_voidCollisionAvoidance':
+C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:109: undefined reference to `MOTOR_RF_STOP'
+C:/ST_ARM_IDE/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Administrator/Desktop/ITIDA/NTI PROGRAM/NTI_ARM_PORTAL/TEST03_LCD_NONGENERATED/Debug/../Src/APP_PROGRAM.c:110: undefined reference to `MOTOR_LF_STOP'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:69: TEST03_LCD_NONGENERATED.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+04:48:09 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   7028	     12	   1668	   8708	   2204	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+ 
+04:49:56 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/APP_PROGRAM.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/APP_PROGRAM.d" -MT"Src/APP_PROGRAM.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/APP_PROGRAM.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   7120	     12	   1668	   8800	   2260	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+ 
+04:50:53 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "TEST03_LCD_NONGENERATED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\ITIDA\NTI PROGRAM\NTI_ARM_PORTAL\TEST03_LCD_NONGENERATED\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST03_LCD_NONGENERATED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST03_LCD_NONGENERATED.elf
+ 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+arm-none-eabi-objdump -h -S TEST03_LCD_NONGENERATED.elf  > "TEST03_LCD_NONGENERATED.list"
+   text	   data	    bss	    dec	    hex	filename
+   7120	     12	   1668	   8800	   2260	TEST03_LCD_NONGENERATED.elf
+arm-none-eabi-objcopy  -O ihex TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary TEST03_LCD_NONGENERATED.elf  "TEST03_LCD_NONGENERATED.bin"
+ 
+Finished building: TEST03_LCD_NONGENERATED.hex
+Finished building: TEST03_LCD_NONGENERATED.list
+Finished building: TEST03_LCD_NONGENERATED.bin
+ 
+ 
+ 
+04:51:10 **** Incremental Build of configuration Debug for project TEST03_LCD_NONGENERATED ****
+make -j12 all 
+arm-none-eabi-size  TEST03_LCD_NONGENERATED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7120	     12	   1668	   8800	   2260	TEST03_LCD_NONGENERATED.elf
+Finished building: default.size.stdout
+ 
