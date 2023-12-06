@@ -24,7 +24,7 @@
 u8 g_u8CollisionAvoidance_StateFlag = CA_ADAS_FORWARD_STATE;
 
 /* Assigns the Car Operation Mode Flag */
-u8 g_u8CarOPMode_StateFlag = CAR_OPERATION_AUTOPARKING;
+u8 g_u8CarOPMode_StateFlag = CAR_OPERATION_COLLISIONAVOID;
 
 /*******************************************************************************
  *                              			APP Function Implementations									 *
@@ -70,7 +70,7 @@ void APP_voidSystemInitialization(void)
 	MOTOR_RF_Void_MotorSetSpeed(90);
 	MOTOR_LF_Void_MotorSetSpeed(90);
 
-	g_u8CollisionAvoidance_StateFlag = CA_ADAS_FORWARD_STATE;
+
 }
 
 
@@ -377,16 +377,16 @@ void APP_voidCollisionAvoidance(void)
 	{
 	/***************************************************************************/
 		case CA_ADAS_FORWARD_STATE:
-			while(g_Front_SensorDistance > 20 && g_FrontRight_SensorDistance > 10 && g_FrontLeft_SensorDistance > 10)
+			while(g_Front_SensorDistance > 20)
 			{
 				MOTOR_RF_GO_FORWARD();
 				MOTOR_LF_GO_FORWARD();
 				g_Front_SensorDistance = HCSR04_u8Read_Front();
 				_delay_ms(100);
-				g_FrontRight_SensorDistance = HCSR04_u8Read_FrontRight();
-				_delay_ms(100);
-				g_FrontLeft_SensorDistance = HCSR04_u8Read_FrontLeft();
-				_delay_ms(100);
+//				g_FrontRight_SensorDistance = HCSR04_u8Read_FrontRight();
+//				_delay_ms(100);
+//				g_FrontLeft_SensorDistance = HCSR04_u8Read_FrontLeft();
+//				_delay_ms(100);
 			}
 			MOTOR_RF_STOP();
 			MOTOR_LF_STOP();

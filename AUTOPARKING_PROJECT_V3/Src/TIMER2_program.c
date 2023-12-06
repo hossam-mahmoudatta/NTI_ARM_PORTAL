@@ -1,4 +1,4 @@
-#include "BIT_MATH.h"
+#include "MACROS.h"
 #include "TYPES.h"
 #include "ERROR_STATUS.h"
 #include "TIMER2_interface.h"

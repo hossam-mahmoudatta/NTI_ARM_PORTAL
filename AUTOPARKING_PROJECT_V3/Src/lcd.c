@@ -2,7 +2,7 @@
 #include "TYPES.h"
 #include "lcd.h"
 #include "GPIO_INTERFACE.h"
-#include "BIT_MATH.h"
+#include "MACROS.h"
 #include "DELAY_INTERFACE.h"
 
 

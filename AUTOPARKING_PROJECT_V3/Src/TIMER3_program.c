@@ -1,4 +1,4 @@
-#include "BIT_MATH.h"
+#include "MACROS.h"
 #include "TYPES.h"
 #include "ERROR_STATUS.h"
 #include "RCC_INTERFACE.h"
@@ -176,26 +176,27 @@ void Timer3_VoidChangePolarityOnEachChannle(u8 Copy_ChannleNumber,u8 Copy_Edge)
 
 u32  Timer3_VoidGetCapturedValue(u8 Copy_ChannleNumber)
 {
-u32 Value1,Value2,Value3,Value4;
+u32 Value1,Value2,Value3,Value4, returnValue;
 	switch(Copy_ChannleNumber)
 	{
 	case Channle1:
 		Value1=TIMER3_CCR1;
-		return Value1;
+		returnValue = Value1;
 		break;
 	case Channle2:
 	    Value2=TIMER3_CCR2;
-	    return Value2;
+	    returnValue = Value2;
 		break;
 	case Channle3:
 	    Value3=TIMER3_CCR3;
-	    return Value3;
+	    returnValue = Value3;
 		break;
 	case Channle4:
 	    Value4=TIMER3_CCR4;
-	    return Value4;
+	    returnValue = Value4;
 		break;
 	}
+	return returnValue;
 }
 
 

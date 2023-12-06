@@ -23,7 +23,7 @@
 int main(void)
 {
 	APP_voidSystemInitialization();
-
+	g_u8CollisionAvoidance_StateFlag = CA_ADAS_FORWARD_STATE;
 	/* Loop forever */
 	for(;;)
 	{
