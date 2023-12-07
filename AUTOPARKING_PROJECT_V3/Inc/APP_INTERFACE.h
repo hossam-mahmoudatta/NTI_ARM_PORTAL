@@ -55,8 +55,9 @@
 extern u8 	g_u8CollisionAvoidance_StateFlag;
 
 #define CAR_OPERATION_AUTOPARKING 	1
-#define CAR_OPERATION_COLLISIONAVOID	2
-#define CAR_OPERATION_RCCAR		3
+#define CAR_OPERATION_AUTOPARKING_2 	2
+#define CAR_OPERATION_COLLISIONAVOID	3
+#define CAR_OPERATION_RCCAR		4
 extern u8 g_u8CarOPMode_StateFlag;
 
 /*******************************************************************************
@@ -66,6 +67,7 @@ extern u8 g_u8CarOPMode_StateFlag;
 void APP_voidSystemInitialization(void);
 void APP_voidCollisionAvoidance(void);
 void APP_voidAutoParking(void);
+void APP_voidAutoParking_MODE2(void);
 void APP_voidRemoteControl(void);
 void APP_voidUltrasonicUnitTest(void);
 void APP_voidISRFunction(void);

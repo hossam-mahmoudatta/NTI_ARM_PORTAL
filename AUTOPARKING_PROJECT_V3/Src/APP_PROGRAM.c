@@ -24,7 +24,7 @@
 u8 g_u8CollisionAvoidance_StateFlag = CA_ADAS_FORWARD_STATE;
 
 /* Assigns the Car Operation Mode Flag */
-u8 g_u8CarOPMode_StateFlag = CAR_OPERATION_COLLISIONAVOID;
+u8 g_u8CarOPMode_StateFlag = CAR_OPERATION_AUTOPARKING_2;
 
 /*******************************************************************************
  *                              			APP Function Implementations									 *
@@ -69,8 +69,6 @@ void APP_voidSystemInitialization(void)
 	/* Set Initial Speed for Motors */
 	MOTOR_RF_Void_MotorSetSpeed(90);
 	MOTOR_LF_Void_MotorSetSpeed(90);
-
-
 }
 
 
@@ -255,19 +253,19 @@ void APP_voidAutoParking()
 //	MOTOR_RF_STOP();
 //	MOTOR_LF_STOP();
 
-
 	g_Front_SensorDistance = HCSR04_u8Read_Front();
 	_delay_ms(100);
 	g_Rear_SensorDistance = HCSR04_u8Read_Rear();
 	_delay_ms(100);
-
-
 	g_FrontRight_SensorDistance = HCSR04_u8Read_FrontRight();
 	_delay_ms(100);
 	g_RearRight_SensorDistance = HCSR04_u8Read_RearRight();
 	_delay_ms(100);
 
-	if(g_FrontRight_SensorDistance > 20  && g_RearRight_SensorDistance > 20 )
+	MOTOR_LF_Void_MotorSetSpeed(85);
+	MOTOR_RF_Void_MotorSetSpeed(80);
+
+	if(g_FrontRight_SensorDistance > 20 && g_RearRight_SensorDistance > 20 )
 	{
 		g_RearRight_SensorDistance = HCSR04_u8Read_RearRight();
 		_delay_ms(100);
@@ -277,10 +275,12 @@ void APP_voidAutoParking()
 			_delay_ms(100);
 			MOTOR_RF_GO_FORWARD();
 			MOTOR_LF_GO_FORWARD();
-
 		}
 		MOTOR_RF_STOP();
 		MOTOR_LF_STOP();
+
+		MOTOR_LF_Void_MotorSetSpeed(115);
+		MOTOR_RF_Void_MotorSetSpeed(90);
 
 		MOTOR_RF_GO_BACKWARD();
 		MOTOR_LF_GO_BACKWARD();
@@ -288,16 +288,14 @@ void APP_voidAutoParking()
 		MOTOR_RF_STOP();
 		MOTOR_LF_STOP();
 
-		//move LF backward
+		// Turn the car for parking mode
+		MOTOR_LF_Void_MotorSetSpeed(90);
 		MOTOR_LF_GO_BACKWARD();
-		_delay_ms(400);
+		_delay_ms(850);
 		MOTOR_LF_STOP();
 
-
-
-
-		MOTOR_LF_Void_MotorSetSpeed(70);
-		MOTOR_RF_Void_MotorSetSpeed(70);
+		MOTOR_LF_Void_MotorSetSpeed(110);
+		MOTOR_RF_Void_MotorSetSpeed(90);
 		//			MOTOR_RF_GO_BACKWARD();
 		//			MOTOR_LF_GO_BACKWARD();
 		//			_delay_ms(1000);
@@ -305,9 +303,9 @@ void APP_voidAutoParking()
 		//			MOTOR_LF_STOP();
 		g_Rear_SensorDistance = HCSR04_u8Read_Rear();
 		_delay_ms(100);
-		if(g_Rear_SensorDistance>4)
+		if(g_Rear_SensorDistance > 5)
 		{
-			while(g_Rear_SensorDistance>20)
+			while(g_Rear_SensorDistance > 20)
 			{
 				g_Rear_SensorDistance = HCSR04_u8Read_Rear();
 				_delay_ms(100);
@@ -322,32 +320,159 @@ void APP_voidAutoParking()
 
 		// p>>B
 		MOTOR_LF_Void_MotorSetSpeed(90);
+		MOTOR_RF_Void_MotorSetSpeed(90);
+
 		MOTOR_LF_GO_FORWARD();
 		MOTOR_RF_GO_BACKWARD();
-		_delay_ms(400);
+		_delay_ms(250);
 		MOTOR_RF_STOP();
 		MOTOR_LF_STOP();
 
 		_delay_ms(1000);
 
-		MOTOR_RF_Void_MotorSetSpeed(55);
-		MOTOR_LF_Void_MotorSetSpeed(65);
-		g_Front_SensorDistance = HCSR04_u8Read_Front();
+		MOTOR_RF_Void_MotorSetSpeed(65);
+		MOTOR_LF_Void_MotorSetSpeed(85);
+		MOTOR_RF_GO_FORWARD();
+		MOTOR_LF_GO_FORWARD();
+		_delay_ms(1000);
+		MOTOR_RF_STOP();
+		MOTOR_LF_STOP();
+//		g_Front_SensorDistance = HCSR04_u8Read_Front();
+//		_delay_ms(100);
+//		if(g_Front_SensorDistance > 7)
+//		{
+//			while(g_Front_SensorDistance > 6)
+//			{
+//				g_Front_SensorDistance = HCSR04_u8Read_Front();
+//				_delay_ms(100);
+//				MOTOR_RF_GO_FORWARD();
+//				MOTOR_LF_GO_FORWARD();
+//			}
+//			MOTOR_RF_STOP();
+//			MOTOR_LF_STOP();
+//		}
+		while(1);
+	}
+	else
+	{
+		MOTOR_RF_Void_MotorSetSpeed(75);
+		MOTOR_LF_Void_MotorSetSpeed(75);
+		MOTOR_RF_GO_FORWARD();
+		MOTOR_LF_GO_FORWARD();
+	}
+}
+
+
+void APP_voidAutoParking_MODE2()
+{
+//	g_Rear_SensorDistance = HCSR04_u8Read_Rear();
+//	_delay_ms(100);
+//	while(Received_distanceTwo>10)
+//	{
+//		g_Rear_SensorDistance = HCSR04_u8Read_Rear();
+//		_delay_ms(100);
+//
+//		MOTOR_RF_GO_BACKWARD();
+//		MOTOR_LF_GO_BACKWARD();
+//		_delay_ms(100);
+//	}
+//	MOTOR_RF_STOP();
+//	MOTOR_LF_STOP();
+
+	g_Front_SensorDistance = HCSR04_u8Read_Front();
+	_delay_ms(100);
+	g_Rear_SensorDistance = HCSR04_u8Read_Rear();
+	_delay_ms(100);
+	g_FrontRight_SensorDistance = HCSR04_u8Read_FrontRight();
+	_delay_ms(100);
+	g_RearRight_SensorDistance = HCSR04_u8Read_RearRight();
+	_delay_ms(100);
+
+	MOTOR_LF_Void_MotorSetSpeed(115);
+	MOTOR_RF_Void_MotorSetSpeed(105);
+	MOTOR_RF_GO_FORWARD();
+	MOTOR_LF_GO_FORWARD();
+
+	if(g_FrontRight_SensorDistance > 20 && g_RearRight_SensorDistance > 20 )
+	{
+		MOTOR_RF_GO_FORWARD();
+		MOTOR_LF_GO_FORWARD();
+		_delay_ms(2500);
+		MOTOR_RF_STOP();
+		MOTOR_LF_STOP();
+
+		MOTOR_LF_Void_MotorSetSpeed(115);
+		MOTOR_RF_Void_MotorSetSpeed(90);
+
+		MOTOR_RF_GO_BACKWARD();
+		MOTOR_LF_GO_BACKWARD();
+		_delay_ms(400);
+		MOTOR_RF_STOP();
+		MOTOR_LF_STOP();
+
+		// Turn the car for parking mode
+		MOTOR_LF_Void_MotorSetSpeed(90);
+		MOTOR_LF_GO_BACKWARD();
+		_delay_ms(850);
+		MOTOR_LF_STOP();
+
+		MOTOR_LF_Void_MotorSetSpeed(110);
+		MOTOR_RF_Void_MotorSetSpeed(90);
+		//			MOTOR_RF_GO_BACKWARD();
+		//			MOTOR_LF_GO_BACKWARD();
+		//			_delay_ms(1000);
+		//			MOTOR_RF_STOP();
+		//			MOTOR_LF_STOP();
+		g_Rear_SensorDistance = HCSR04_u8Read_Rear();
 		_delay_ms(100);
-		if(g_Front_SensorDistance>7)
+		if(g_Rear_SensorDistance > 5)
 		{
-			while(g_Front_SensorDistance>7)
+			while(g_Rear_SensorDistance > 20)
 			{
-				g_Front_SensorDistance = HCSR04_u8Read_Front();
+				g_Rear_SensorDistance = HCSR04_u8Read_Rear();
 				_delay_ms(100);
-				MOTOR_RF_GO_FORWARD();
-				MOTOR_LF_GO_FORWARD();
+				MOTOR_RF_GO_BACKWARD();
+				MOTOR_LF_GO_BACKWARD();
 
 			}
 			MOTOR_RF_STOP();
 			MOTOR_LF_STOP();
 
 		}
+
+		// p>>B
+		MOTOR_LF_Void_MotorSetSpeed(90);
+		MOTOR_RF_Void_MotorSetSpeed(90);
+
+		MOTOR_LF_GO_FORWARD();
+		MOTOR_RF_GO_BACKWARD();
+		_delay_ms(250);
+		MOTOR_RF_STOP();
+		MOTOR_LF_STOP();
+
+		_delay_ms(1000);
+
+		MOTOR_RF_Void_MotorSetSpeed(65);
+		MOTOR_LF_Void_MotorSetSpeed(85);
+		MOTOR_RF_GO_FORWARD();
+		MOTOR_LF_GO_FORWARD();
+		_delay_ms(700);
+		MOTOR_RF_STOP();
+		MOTOR_LF_STOP();
+//		g_Front_SensorDistance = HCSR04_u8Read_Front();
+//		_delay_ms(100);
+//		if(g_Front_SensorDistance > 7)
+//		{
+//			while(g_Front_SensorDistance > 6)
+//			{
+//				g_Front_SensorDistance = HCSR04_u8Read_Front();
+//				_delay_ms(100);
+//				MOTOR_RF_GO_FORWARD();
+//				MOTOR_LF_GO_FORWARD();
+//			}
+//			MOTOR_RF_STOP();
+//			MOTOR_LF_STOP();
+//		}
 		while(1);
 	}
 	else

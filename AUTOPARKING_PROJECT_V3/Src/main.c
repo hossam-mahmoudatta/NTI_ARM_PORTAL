@@ -37,6 +37,10 @@ int main(void)
 				APP_voidAutoParking();
 				break;
 
+			case CAR_OPERATION_AUTOPARKING_2:		// Auto-Parking Mode
+				APP_voidAutoParking_MODE2();
+				break;
+
 			case CAR_OPERATION_RCCAR:		// RC Car Mode
 				APP_voidRemoteControl();
 				break;

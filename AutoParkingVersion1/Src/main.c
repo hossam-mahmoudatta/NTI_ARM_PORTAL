@@ -25,7 +25,7 @@ u8 	g_u8Flag = CA_ADAS_FORWARD_STATE;
 #define CAR_OPERATION_AUTOPARKING 	1
 #define CAR_OPERATION_COLLISIONAVOID	2
 #define CAR_OPERATION_RCCAR		3
-u8 g_u8OperationMode = CAR_OPERATION_COLLISIONAVOID;
+u8 g_u8OperationMode = CAR_OPERATION_AUTOPARKING;
 
 
 u32 volatile IC1_Val1 = 0;
@@ -362,7 +362,7 @@ void APP_voidAutoParking()
 
 		//move LF backward
 		MOTOR_LF_GO_BACKWARD();
-		_delay_ms(400);
+		_delay_ms(1000);
 		MOTOR_LF_STOP();
 
 
